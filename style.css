@@ -96,9 +96,9 @@ main {
   border: 0.5px solid var(--color-hvr);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
   border-radius: 10px;
-  width: 320px;
-  height: 320px;
-  margin: 5px;
+  width: 300px;
+  height: 300px;
+  margin: 10px;
   overflow: hidden;
 }
 
@@ -110,7 +110,7 @@ main {
 .image {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  height: 216px;
+  height: 203px;
 }
 
 img {
@@ -140,10 +140,4 @@ footer {
 
 .heart {
   color: var(--color-hvr);
-}
-
-@media (max-width: 600px) {
-  .card {
-    margin: 5px 0;
-  }
 }
