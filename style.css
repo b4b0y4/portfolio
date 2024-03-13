@@ -1,0 +1,145 @@
+[data-theme="light"] {
+  --color-bg: #eeeeee;
+  --color-txt: #222831;
+  --color-2nd: #eeeeee;
+  --color-hvr: #76abae;
+}
+
+[data-theme="dark"] {
+  --color-bg: #222831;
+  --color-txt: #eeeeee;
+  --color-2nd: #31363f;
+  --color-hvr: #76abae;
+}
+
+body,
+html {
+  font-family: "Nunito", sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-txt);
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+  min-height: 100vh;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.mode-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  border: none;
+  color: var(--color-txt);
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0;
+  font-size: 1.4em;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  color: var(--color-txt);
+  background-color: var(--color-bg);
+  max-width: 1000px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.intro {
+  margin-bottom: 10px;
+}
+
+.intro p {
+  line-height: 1.5;
+  margin: 0;
+}
+
+.myname {
+  font-size: 1.5em;
+  font-weight: 800;
+  color: var(--color-hvr);
+}
+
+.social span {
+  margin-right: 5px;
+}
+
+.social a {
+  text-decoration: none;
+  color: var(--color-hvr);
+  font-size: 1.2em;
+  margin-right: 15px;
+}
+
+.card-box {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+}
+
+.card {
+  background-color: var(--color-2nd);
+  border: 0.5px solid var(--color-hvr);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  width: 320px;
+  height: 320px;
+  margin: 5px;
+  overflow: hidden;
+}
+
+.card:hover {
+  background-color: var(--color-hvr);
+  color: var(--color-2nd);
+}
+
+.image {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  height: 216px;
+}
+
+img {
+  max-width: 100%;
+}
+
+.description {
+  padding: 10px;
+}
+
+.description h2 {
+  margin: 0;
+  font-size: large;
+}
+
+.description p {
+  margin: 0;
+  font-size: small;
+}
+
+footer {
+  display: flex;
+  justify-content: end;
+  font-size: 0.8em;
+  padding: 0 20px;
+}
+
+.heart {
+  color: var(--color-hvr);
+}
+
+@media (max-width: 600px) {
+}
