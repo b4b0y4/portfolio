@@ -44,6 +44,7 @@ main {
   flex: 1;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   color: var(--color-txt);
   background-color: var(--color-bg);
   max-width: 1000px;
@@ -142,4 +143,7 @@ footer {
 }
 
 @media (max-width: 600px) {
+  .card {
+    margin: 5px 0;
+  }
 }
