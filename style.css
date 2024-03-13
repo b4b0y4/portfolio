@@ -141,3 +141,9 @@ footer {
 .heart {
   color: var(--color-hvr);
 }
+
+@media (max-width: 600px) {
+  .card {
+    margin: 10px 0;
+  }
+}
