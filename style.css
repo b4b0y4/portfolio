@@ -93,7 +93,6 @@ main {
 
 .card {
   background-color: var(--color-2nd);
-  border: 0.5px solid var(--color-hvr);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
   border-radius: 10px;
   width: 300px;
@@ -110,11 +109,14 @@ main {
 .image {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  height: 203px;
+  padding: 2px;
+  height: 199px;
 }
 
 img {
-  max-width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  width: 100%;
 }
 
 .description {
