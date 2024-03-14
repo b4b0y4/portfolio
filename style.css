@@ -112,7 +112,7 @@ main {
 .image {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  padding: 2px;
+  padding: 2px 2px 0;
   height: 198px;
 }
 
@@ -128,7 +128,7 @@ img {
   align-items: center;
   justify-content: center;
   padding: 10px;
-  height: 78px;
+  height: 80px;
 }
 
 .description h2 {
