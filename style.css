@@ -82,7 +82,7 @@ main {
 }
 
 .social a:hover {
-  opacity: 0.6;
+  filter: brightness(80%);
 }
 
 .card-box {
