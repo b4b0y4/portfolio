@@ -144,14 +144,3 @@ img {
   margin: 0;
   font-size: small;
 }
-
-footer {
-  display: flex;
-  justify-content: end;
-  font-size: 0.8em;
-  padding: 0 20px;
-}
-
-.heart {
-  color: var(--color-hvr);
-}
