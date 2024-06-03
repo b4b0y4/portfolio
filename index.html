@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" class="no-flash">
 
 <head>
   <meta charset="UTF-8" />
@@ -23,7 +23,7 @@
 
   <main>
 
-    <button class="mode-button" data-theme-toggle><i class="fa-solid fa-circle-half-stroke"></i></button>
+    <button class="mode-button"><i class="fa-solid fa-circle-half-stroke"></i></button>
 
     <div class="intro-box">
       <div class="intro">
@@ -77,7 +77,19 @@
 
   </main>
 
-  <script src="./script.js" type="module"></script>
+  <script>
+    const root = document.documentElement
+    const isDarkMode = JSON.parse(localStorage.getItem("darkMode"))
+
+    if (isDarkMode) root.classList.toggle("dark-mode")
+    root.classList.remove("no-flash")
+
+    document.querySelector(".mode-button").addEventListener("click", () => {
+      root.classList.toggle("dark-mode")
+      const updateMode = root.classList.contains("dark-mode")
+      localStorage.setItem("darkMode", updateMode)
+    })
+  </script>
 </body>
 
 </html>

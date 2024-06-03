@@ -1,15 +1,19 @@
-[data-theme="light"] {
-  --color-bg: #eeeeee;
-  --color-txt: #222831;
-  --color-2nd: #eeeeee;
-  --color-hvr: #76abae;
+:root {
+  --color-bg: #ececef;
+  --color-txt: #5c5c5c;
+  --color-2nd: #e0e0e0;
+  --color-hvr: #969697;
 }
 
-[data-theme="dark"] {
-  --color-bg: #222831;
-  --color-txt: #eeeeee;
-  --color-2nd: #31363f;
-  --color-hvr: #76abae;
+:root.dark-mode {
+  --color-bg: #212122;
+  --color-txt: #adadae;
+  --color-2nd: #2d2e2e;
+  --color-hvr: #7e7d7d;
+}
+
+.no-flash {
+  visibility: hidden;
 }
 
 body,
@@ -87,6 +91,7 @@ main {
   color: var(--color-hvr);
   font-size: 1.2em;
   margin-right: 15px;
+  transition: filter 0.1s ease-in-out;
 }
 
 .social a:hover {
