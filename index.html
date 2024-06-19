@@ -11,49 +11,40 @@
   <link rel="icon" type="image/png" sizes="192x192" href="./images/favicon/android-chrome-192x192.png">
   <link rel="icon" type="image/x-icon" href="./images/favicon/favicon.ico">
   <link rel="stylesheet" href="./style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
     rel="stylesheet">
 
 </head>
 
 <body>
+  <header>
+    <div class="social">
+      <img class="theme" src="./images/326000207.png" alt="">
+      <div>
+        <a href="https://twitter.com/b4b0y4" target="_blank">twitter</a>
+        <a href="https://github.com/b4b0y4" target="_blank">github</a>
+      </div>
+    </div>
+    <div class="intro">
+      <p>Hey, I'm <span class="myname">baboya</span>!</p>
+      <p>I'm learning coding to make cool stuff on Ethereum.</p>
+    </div>
+  </header>
 
   <main>
 
-    <button class="mode-button"><i class="fa-solid fa-circle-half-stroke"></i></button>
-
-    <div class="intro-box">
-      <div class="intro">
-        <img src="./images/326000207.png" alt="">
-        <p>Hey, I'm <span class="myname">baboya</span> !</p>
-        <p>I'm learning coding to make cool stuff on Ethereum.</p>
-      </div>
-      <div class="social">
-        <a href="https://twitter.com/b4b0y4" target="_blank"><span><i
-              class="fa-brands fa-twitter"></i></span>twitter</a>
-        <a href="https://github.com/b4b0y4" target="_blank"><span><i class="fa-brands fa-github"></i></span>github</a>
-      </div>
-    </div>
-
     <div class="card-box">
-
       <a href="https://blocks.baboya.eth.limo" target="_blank" class="card-link">
         <div class="card">
           <div class="image">
             <img src="./images/blocks.png" alt="">
           </div>
           <div class="description">
-            <div>
-              <h2>blocks</h2>
-              <p>Generate any work from Art Blocks and Bright Moments collections, directly from Ethereum, and save a
-                HTML file of
-                your
-                favorites.
-              </p>
-            </div>
+            <h2>blocks</h2>
+            <p>Generate live scripts for any Art Blocks collections, and more.
+            </p>
           </div>
         </div>
       </a>
@@ -64,11 +55,8 @@
             <img src="./images/fundMe.png" alt="" class="fm">
           </div>
           <div class="description">
-            <div>
-              <h2>fundMe</h2>
-              <p>My front end for the Fund Me lesson from @PatrickAlphaC. If you don't know what to do with your sepolia
-                Eth, send it this way!!</p>
-            </div>
+            <h2>fundMe</h2>
+            <p>My front end for the Fund Me lesson from @PatrickAlphaC.</p>
           </div>
         </div>
       </a>
@@ -77,6 +65,10 @@
 
   </main>
 
+  <footer>
+    <P>☺︎ 2022-20??, baboya</P>
+  </footer>
+
   <script>
     const root = document.documentElement
     const isDarkMode = JSON.parse(localStorage.getItem("darkMode"))
@@ -84,7 +76,7 @@
     if (isDarkMode) root.classList.toggle("dark-mode")
     root.classList.remove("no-flash")
 
-    document.querySelector(".mode-button").addEventListener("click", () => {
+    document.querySelector(".theme").addEventListener("click", () => {
       root.classList.toggle("dark-mode")
       const updateMode = root.classList.contains("dark-mode")
       localStorage.setItem("darkMode", updateMode)
