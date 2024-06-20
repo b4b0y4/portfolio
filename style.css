@@ -64,7 +64,6 @@ nav {
 
 .logo a {
   font-size: 1.1em;
-  color: inherit;
 }
 
 .theme {
@@ -77,13 +76,13 @@ nav {
 
 nav a {
   text-decoration: none;
-  color: var(--color-hvr);
+  color: var(--color-txt);
   margin-left: 5px;
   transition: color 0.3s ease-in-out;
 }
 
 nav a:hover {
-  color: var(--color-txt);
+  color: var(--color-hvr);
 }
 
 .intro p {
@@ -117,18 +116,20 @@ main {
   height: 280px;
   margin: 10px;
   overflow: hidden;
+  transition: color 0.3s ease-in-out;
 }
 
 .card:hover {
   cursor: pointer;
+  color: var(--color-hvr);
 }
 
-img {
+.card img {
   width: 100%;
   transition: transform 0.3s ease-in-out;
 }
 
-img:hover {
+.card img:hover {
   transform: scale(1.01);
 }
 
