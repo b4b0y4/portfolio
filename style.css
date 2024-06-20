@@ -54,7 +54,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 0 20px;
+  padding: 10px 0;
 }
 
 .logo {
@@ -83,6 +83,10 @@ nav a {
 
 nav a:hover {
   color: var(--color-hvr);
+}
+
+.intro {
+  margin-top: 10px;
 }
 
 .intro p {
