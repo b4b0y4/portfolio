@@ -62,16 +62,16 @@ nav {
   align-items: center;
 }
 
-.logo a {
-  font-size: 1.1em;
-}
-
-.theme {
+.logo img {
   max-width: 1.8em;
   padding: 1px;
   background-color: var(--color-hvr);
   border-radius: 50%;
   cursor: pointer;
+}
+
+.logo a {
+  font-size: 1.1em;
 }
 
 nav a {
