@@ -120,21 +120,15 @@ main {
   height: 280px;
   margin: 10px;
   overflow: hidden;
-  transition: color 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
 }
 
 .card:hover {
-  cursor: pointer;
-  color: var(--color-hvr);
+  transform: scale(1.01);
 }
 
 .card img {
   width: 100%;
-  transition: transform 0.3s ease-in-out;
-}
-
-.card img:hover {
-  transform: scale(1.01);
 }
 
 .title {
