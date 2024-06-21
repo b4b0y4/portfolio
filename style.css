@@ -20,13 +20,6 @@
   box-sizing: border-box;
 }
 
-@font-face {
-  font-family: "Source Code Pro";
-  src: url("/SourceCodePro-VariableFont_wght.ttf") format("truetype");
-  font-weight: 100 900;
-  /* font-display: swap; */
-}
-
 body,
 html {
   font-family: "Source Code Pro", monospace;
