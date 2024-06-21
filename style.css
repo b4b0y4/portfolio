@@ -1,3 +1,9 @@
+@font-face {
+  font-family: "Source Code Pro";
+  src: url("/SourceCodePro-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+}
+
 :root {
   --color-bg: #f1f1f2;
   --color-txt: #5c5c5c;
