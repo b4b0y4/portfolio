@@ -72,17 +72,23 @@ nav {
 
 .logo a {
   font-size: 1.1em;
-}
-
-nav a {
   text-decoration: none;
   color: var(--color-txt);
   margin-left: 5px;
-  transition: color 0.3s ease-in-out;
 }
 
-nav a:hover {
-  color: var(--color-hvr);
+.logo a:hover {
+  color: var(--color-txt);
+}
+
+.social a {
+  text-decoration: none;
+  color: var(--color-txt);
+  margin-left: 5px;
+}
+
+.social a:hover {
+  border-bottom: 1.5px solid var(--color-txt);
 }
 
 .intro {
@@ -120,15 +126,15 @@ main {
   height: 280px;
   margin: 10px;
   overflow: hidden;
-  transition: transform 0.3s ease-in-out;
 }
 
-.card:hover {
-  transform: scale(1.01);
+.card:hover img {
+  transform: scale(1.02);
 }
 
 .card img {
   width: 100%;
+  transition: transform 0.3s ease-in-out;
 }
 
 .title {
