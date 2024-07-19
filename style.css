@@ -46,7 +46,6 @@ header {
   display: flex;
   flex-direction: column;
   padding: 10px;
-  max-width: 990px;
   width: 100%;
 }
 
@@ -92,7 +91,7 @@ nav {
 }
 
 .intro {
-  margin-top: 20px;
+  margin: 20px 5px;
 }
 
 .intro p {
@@ -102,17 +101,13 @@ nav {
 
 main {
   flex: 1;
-  display: flex;
-  align-items: center;
-  max-width: 990px;
   margin: 20px auto;
 }
 
 .card-box {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   flex-wrap: wrap;
-  max-width: 960px;
 }
 
 .card-link {
@@ -138,7 +133,7 @@ main {
 }
 
 .title {
-  margin: 5px 0;
+  margin: 2.5px 0;
 }
 
 .description {
@@ -152,7 +147,6 @@ footer {
   text-align: left;
   font-size: 0.8em;
   color: var(--color-hvr);
-  max-width: 990px;
   width: 100%;
   padding: 0 10px;
 }
