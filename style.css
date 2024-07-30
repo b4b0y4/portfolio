@@ -111,9 +111,9 @@ main {
 
 .card-box {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 300px);
+  grid-template-columns: repeat(auto-fill, 320px);
   grid-auto-rows: 1fr;
-  gap: 0 20px;
+  gap: 0;
   justify-content: center;
   max-width: 90%;
 }
