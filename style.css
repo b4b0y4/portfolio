@@ -101,13 +101,21 @@ nav {
 
 main {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
   margin: 20px auto;
 }
 
 .card-box {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-auto-rows: 1fr;
+  gap: 0 20px;
   justify-content: center;
-  flex-wrap: wrap;
+  max-width: 90%;
 }
 
 .card-link {
@@ -121,6 +129,7 @@ main {
   height: 280px;
   margin: 10px;
   overflow: hidden;
+  will-change: transform;
 }
 
 .card:hover img {
@@ -149,10 +158,4 @@ footer {
   color: var(--color-hvr);
   width: 100%;
   padding: 0 10px;
-}
-
-@media (max-width: 640px) {
-  .card-box {
-    justify-content: center;
-  }
 }
