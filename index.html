@@ -69,7 +69,7 @@
 
   <script>
     const root = document.documentElement
-    const isDarkMode = JSON.parse(localStorage.getItem("darkMode")) || window.matchMedia("(prefers-color-scheme: dark)").matches
+    const isDarkMode = JSON.parse(localStorage.getItem("darkMode"))
 
     if (isDarkMode) root.classList.toggle("dark-mode")
     root.classList.remove("no-flash")
@@ -79,12 +79,6 @@
       const updateMode = root.classList.contains("dark-mode")
       localStorage.setItem("darkMode", updateMode)
     })
-
-    window
-      .matchMedia("(prefers-color-scheme: dark)")
-      .addEventListener("change", (event) => {
-        root.classList.toggle("dark-mode")
-      })
   </script>
 </body>
 
