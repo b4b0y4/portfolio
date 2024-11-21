@@ -62,7 +62,7 @@ nav {
 }
 
 .logo img {
-  max-width: 2em;
+  max-width: 1.8em;
   padding: 1px;
   background-color: var(--color-hvr);
   border-radius: 50%;
