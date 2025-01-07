@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>baboya</title>
   <link rel="icon" type="image/svg+xml" href="./images/1316.svg">
-  <link rel="stylesheet" href="./css/styles.css" />
+  <link rel="stylesheet" href="./styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
@@ -63,7 +63,19 @@
     <P>©2022-2025, BABOYA</P>
   </footer>
 
-  <script src="./js/script.js"></script>
+  <script>
+    const root = document.documentElement
+    const isDarkMode = JSON.parse(localStorage.getItem("darkMode"))
+
+    if (isDarkMode) root.classList.toggle("dark-mode")
+    root.classList.remove("no-flash")
+
+    document.querySelector(".theme").addEventListener("click", () => {
+      root.classList.toggle("dark-mode")
+      const updateMode = root.classList.contains("dark-mode")
+      localStorage.setItem("darkMode", updateMode)
+    })
+  </script>
 
 </body>
 
