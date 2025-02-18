@@ -1,94 +1,104 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="no-flash">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>baboya</title>
+    <link rel="icon" type="image/svg+xml" href="./images/1316.svg" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossoriginz />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>baboya</title>
-  <link rel="icon" type="image/svg+xml" href="./images/1316.svg">
-  <link rel="stylesheet" href="./styles.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
-    rel="stylesheet">
-</head>
-
-<body>
-  <header>
-    <nav>
-      <div class="logo">
-        <img class="theme" src="./images/1316.svg" alt="">
-        <a href="/">BABOYA</a>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <img class="theme" src="./images/1316.svg" alt="" />
+          <a href="/">BABOYA</a>
+        </div>
+        <div class="social">
+          <a href="https://twitter.com/b4b0y4" target="_blank">TWITTER</a>
+          <a href="https://github.com/b4b0y4" target="_blank">GITHUB</a>
+        </div>
+      </nav>
+      <div class="intro">
+        <p>I'm learning coding to make cool stuff on Ethereum.</p>
       </div>
-      <div class="social">
-        <a href="https://twitter.com/b4b0y4" target="_blank">TWITTER</a>
-        <a href="https://github.com/b4b0y4" target="_blank">GITHUB</a>
+    </header>
+
+    <main>
+      <div class="card-box">
+        <a
+          href="https://b4b0y4.github.io/claimMarket/"
+          target="_blank"
+          class="card-link"
+        >
+          <div class="card">
+            <div class="image">
+              <img src="./images/rainbow.png" alt="" />
+            </div>
+            <p class="title">RAINBOW</p>
+            <p class="description">
+              Claim and exchange onchain SVG. (On Sepolia testnet)
+            </p>
+          </div>
+        </a>
+
+        <a
+          href="https://blocks.baboya.eth.limo"
+          target="_blank"
+          class="card-link"
+        >
+          <div class="card">
+            <div class="image">
+              <img src="./images/blocks.png" alt="" />
+            </div>
+            <p class="title">BLOCKS</p>
+            <p class="description">
+              Generate live scripts for any Art Blocks collections, and more.
+            </p>
+          </div>
+        </a>
+
+        <a
+          href="https://b4b0y4.github.io/fundMe/"
+          target="_blank"
+          class="card-link"
+        >
+          <div class="card">
+            <div class="image">
+              <img src="./images/fundMe.png" alt="" class="fm" />
+            </div>
+            <p class="title">FUNDME</p>
+            <p class="description">
+              My front end for the Fund Me lesson from @PatrickAlphaC.
+            </p>
+          </div>
+        </a>
       </div>
-    </nav>
-    <div class="intro">
-      <p>I'm learning coding to make cool stuff on Ethereum.</p>
-    </div>
-  </header>
+    </main>
 
-  <main>
+    <footer>
+      <p>©2022-2025 BABOYA</p>
+    </footer>
 
-    <div class="card-box">
+    <script>
+      const root = document.documentElement;
+      const isDarkMode = JSON.parse(localStorage.getItem("darkMode"));
 
-      <a href="https://b4b0y4.github.io/claim/" target="_blank" class="card-link">
-        <div class="card">
-          <div class="image">
-            <img src="./images/rainbow.png" alt="">
-          </div>
-          <p class="title">RAINBOW</p>
-          <p class="description">Claim and exchange onchain SVG. (On Sepolia testnet)
-          </p>
-        </div>
-      </a>
+      if (isDarkMode) root.classList.toggle("dark-mode");
+      root.classList.remove("no-flash");
 
-      <a href="https://blocks.baboya.eth.limo" target="_blank" class="card-link">
-        <div class="card">
-          <div class="image">
-            <img src="./images/blocks.png" alt="">
-          </div>
-          <p class="title">BLOCKS</p>
-          <p class="description">Generate live scripts for any Art Blocks collections, and more.
-          </p>
-        </div>
-      </a>
-
-      <a href="https://b4b0y4.github.io/fundMe/" target="_blank" class="card-link">
-        <div class="card">
-          <div class="image">
-            <img src="./images/fundMe.png" alt="" class="fm">
-          </div>
-          <p class="title">FUNDME</p>
-          <p class="description">My front end for the Fund Me lesson from @PatrickAlphaC.
-          </p>
-        </div>
-      </a>
-
-    </div>
-
-  </main>
-
-  <footer>
-    <P>©2022-2025 BABOYA</P>
-  </footer>
-
-  <script>
-    const root = document.documentElement
-    const isDarkMode = JSON.parse(localStorage.getItem("darkMode"))
-
-    if (isDarkMode) root.classList.toggle("dark-mode")
-    root.classList.remove("no-flash")
-
-    document.querySelector(".theme").addEventListener("click", () => {
-      root.classList.toggle("dark-mode")
-      const updateMode = root.classList.contains("dark-mode")
-      localStorage.setItem("darkMode", updateMode)
-    })
-  </script>
-
-</body>
-
+      document.querySelector(".theme").addEventListener("click", () => {
+        root.classList.toggle("dark-mode");
+        const updateMode = root.classList.contains("dark-mode");
+        localStorage.setItem("darkMode", updateMode);
+      });
+    </script>
+  </body>
 </html>
