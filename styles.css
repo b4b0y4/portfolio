@@ -42,25 +42,30 @@ body {
   width: 100%;
 }
 
+header,
+main,
+footer {
+  max-width: 960px;
+  width: 100%;
+}
+
 header {
   display: flex;
   flex-direction: column;
-  padding: 10px 20px;
-  width: 100%;
+  padding: 10px;
 }
 
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 0;
 }
 
 h1 {
   font-size: 1.2em;
   font-weight: 400;
   color: var(--color-txt);
-  margin: 5px 0px;
+  margin: 0;
 }
 
 .logo {
@@ -93,7 +98,7 @@ h1 {
 
 .intro p {
   line-height: 1.5;
-  margin: 0;
+  margin: 5px 0 0;
   color: var(--color-sec);
 }
 
@@ -107,8 +112,8 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
   margin: 0;
+  padding: 0;
 }
 
 .card-box {
@@ -116,7 +121,7 @@ main {
   grid-template-columns: repeat(auto-fill, 320px);
   grid-auto-rows: 1fr;
   gap: 0;
-  max-width: 95%;
+  max-width: 100%;
 }
 
 .card-link {
@@ -143,24 +148,24 @@ main {
 }
 
 .title {
-  margin: 2.5px 0;
+  margin: 3px;
 }
 
 .description {
-  margin: 0;
+  margin: 3px;
   font-size: 0.9em;
   color: var(--color-sec);
 }
 
 footer {
-  width: 100%;
-  padding: 10px 20px 0px;
+  padding: 10px;
 }
 
 footer p {
   font-size: 0.9em;
   color: var(--color-sec);
   line-height: 1;
+  margin: 10px 0 0;
 }
 
 footer a {
