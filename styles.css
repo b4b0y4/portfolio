@@ -1,13 +1,13 @@
 :root {
   --color-bg: #f1f1f2;
   --color-txt: #5c5c5c;
-  --color-hvr: #969697;
+  --color-sec: #969697;
 }
 
 :root.dark-mode {
   --color-bg: #19191a;
   --color-txt: #adadae;
-  --color-hvr: #7e7d7d;
+  --color-sec: #7e7d7d;
 }
 
 .no-flash {
@@ -56,38 +56,35 @@ nav {
   padding: 10px 0;
 }
 
+h1 {
+  font-size: 1.2em;
+  font-weight: 400;
+  color: var(--color-txt);
+  margin: 5px 0px;
+}
+
 .logo {
   display: flex;
   align-items: center;
 }
 
 .logo img {
-  max-width: 2em;
+  max-width: 3em;
   padding: 1px;
-  background-color: var(--color-hvr);
+  background-color: var(--color-sec);
   border-radius: 50%;
   cursor: pointer;
 }
 
 .logo a {
-  font-size: 1.2em;
+  font-size: 1.4em;
   text-decoration: none;
   color: var(--color-txt);
-  margin-left: 5px;
+  margin-left: 10px;
 }
 
 .logo a:hover {
   color: var(--color-txt);
-}
-
-.social a {
-  text-decoration: none;
-  color: var(--color-txt);
-  margin-left: 5px;
-}
-
-.social a:hover {
-  border-bottom: 1.5px solid var(--color-txt);
 }
 
 .intro {
@@ -97,6 +94,11 @@ nav {
 .intro p {
   line-height: 1.5;
   margin: 0;
+  color: var(--color-sec);
+}
+
+.intro p span {
+  color: var(--color-txt);
 }
 
 main {
@@ -106,7 +108,7 @@ main {
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin: 20px auto;
+  margin: 0;
 }
 
 .card-box {
@@ -147,14 +149,26 @@ main {
 .description {
   margin: 0;
   font-size: 0.9em;
+  color: var(--color-sec);
 }
 
 footer {
-  display: flex;
-  justify-content: flex-start;
-  text-align: left;
-  font-size: 0.8em;
-  color: var(--color-hvr);
   width: 100%;
   padding: 0 20px;
+}
+
+footer p {
+  font-size: 0.9em;
+  color: var(--color-sec);
+  line-height: 1;
+}
+
+footer a {
+  text-decoration: none;
+  color: var(--color-txt);
+  margin-left: 5px;
+}
+
+footer a:hover {
+  border-bottom: 1.5px solid var(--color-txt);
 }
