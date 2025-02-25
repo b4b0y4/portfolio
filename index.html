@@ -127,16 +127,18 @@
       });
 
       let btn = document.querySelector(".contact-btn");
+      let menu = document.querySelector(".contact-menu");
+
       ["click", "touchend"].forEach((evt) =>
         btn.addEventListener(evt, (e) => {
           e.preventDefault();
-          document.querySelector(".contact-menu").classList.toggle("show");
+          e.stopPropagation();
+          menu.classList.toggle("show");
         }),
       );
 
       document.onclick = (e) => {
-        if (!btn.contains(e.target))
-          document.querySelector(".contact-menu").classList.remove("show");
+        if (!btn.contains(e.target)) menu.classList.remove("show");
       };
     </script>
   </body>
