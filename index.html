@@ -129,13 +129,7 @@
       const btn = document.querySelector(".contact-btn");
       const menu = document.querySelector(".contact-menu");
 
-      btn.addEventListener("touchend", (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        menu.classList.contains("show")
-          ? menu.classList.remove("show")
-          : menu.classList.add("show");
-      });
+      btn.addEventListener("touchend", () => menu.classList.add("show"));
 
       document.onclick = (e) => {
         if (!btn.contains(e.target)) menu.classList.remove("show");
