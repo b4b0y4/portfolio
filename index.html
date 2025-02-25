@@ -129,13 +129,11 @@
       let btn = document.querySelector(".contact-btn");
       let menu = document.querySelector(".contact-menu");
 
-      ["click", "touchend"].forEach((evt) =>
-        btn.addEventListener(evt, (e) => {
-          e.preventDefault();
-          e.stopPropagation();
-          menu.classList.toggle("show");
-        }),
-      );
+      btn.addEventListener("touchend", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        menu.classList.toggle("show");
+      });
 
       document.onclick = (e) => {
         if (!btn.contains(e.target)) menu.classList.remove("show");
