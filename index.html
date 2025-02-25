@@ -126,18 +126,17 @@
         localStorage.setItem("darkMode", updateMode);
       });
 
-      let btn = document.querySelector(".contact-btn");
-      let menu = document.querySelector(".contact-menu");
+      const btn = document.querySelector(".contact-btn");
+      const menu = document.querySelector(".contact-menu");
 
-      btn.addEventListener("touchend", (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        menu.classList.toggle("show");
-      });
-
-      document.onclick = (e) => {
-        if (!btn.contains(e.target)) menu.classList.remove("show");
-      };
+      btn.addEventListener(
+        "touchstart",
+        (e) => {
+          e.preventDefault();
+          menu.classList.toggle("show");
+        },
+        { passive: false },
+      );
     </script>
   </body>
 </html>
