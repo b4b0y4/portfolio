@@ -116,6 +116,7 @@ nav {
   pointer-events: none;
 }
 
+.contact-menu.show,
 .contact-container:hover .contact-menu {
   opacity: 1;
   transform: translateY(0);
