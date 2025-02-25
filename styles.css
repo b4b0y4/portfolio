@@ -105,7 +105,7 @@ nav {
   top: 100%;
   background-color: var(--color-bg);
   padding: 10px;
-  display: hidden;
+  display: flex;
   flex-direction: column;
   min-width: 160px;
   opacity: 0;
@@ -116,7 +116,6 @@ nav {
   pointer-events: none;
 }
 
-.contact-menu.show,
 .contact-container:hover .contact-menu {
   opacity: 1;
   transform: translateY(0);
