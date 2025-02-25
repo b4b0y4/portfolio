@@ -116,40 +116,6 @@ nav {
   pointer-events: none;
 }
 
-/* .contact-menu.show,
-.contact-container:hover .contact-menu {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: all;
-} */
-
-@media (min-width: 420px) {
-  .contact-menu {
-    transform: translateY(-7.5px);
-    transition:
-      opacity 0.3s ease-in-out,
-      transform 0.3s ease-in-out;
-  }
-
-  .contact-container:hover .contact-menu {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: all;
-  }
-}
-
-@media (max-width: 420px) {
-  .contact-menu {
-    transform: translateY(0);
-    transition: opacity 0.3s ease-in-out;
-  }
-
-  .contact-menu.show {
-    opacity: 1;
-    pointer-events: all;
-  }
-}
-
 .contact-menu a {
   text-decoration: none;
   color: var(--color-sec);
@@ -249,4 +215,20 @@ footer p {
   color: var(--color-sec);
   line-height: 1;
   margin: 0;
+}
+
+@media (min-width: 420px) {
+  .contact-container:hover .contact-menu {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+  }
+}
+
+@media (max-width: 420px) {
+  .contact-menu.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+  }
 }

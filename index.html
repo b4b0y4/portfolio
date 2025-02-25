@@ -129,8 +129,7 @@
       const btn = document.querySelector(".contact-btn");
       const menu = document.querySelector(".contact-menu");
 
-      // Handle mobile devices
-      if (window.matchMedia("(max-width: 767px)").matches) {
+      if (window.matchMedia("(max-width: 420px)").matches) {
         btn.addEventListener("click", (e) => {
           e.stopPropagation();
           menu.classList.toggle("show");
