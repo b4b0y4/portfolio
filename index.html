@@ -126,8 +126,18 @@
         localStorage.setItem("darkMode", updateMode);
       });
 
-      document.querySelector(".contact-btn").onclick = () =>
-        document.querySelector(".contact-menu").classList.toggle("show");
+      let btn = document.querySelector(".contact-btn");
+      ["click", "touchend"].forEach((evt) =>
+        btn.addEventListener(evt, (e) => {
+          e.preventDefault();
+          document.querySelector(".contact-menu").classList.toggle("show");
+        }),
+      );
+
+      document.onclick = (e) => {
+        if (!btn.contains(e.target))
+          document.querySelector(".contact-menu").classList.remove("show");
+      };
     </script>
   </body>
 </html>
