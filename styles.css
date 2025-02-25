@@ -61,13 +61,6 @@ nav {
   align-items: center;
 }
 
-h1 {
-  font-size: 1.1em;
-  font-weight: 400;
-  color: var(--color-txt);
-  margin: 0;
-}
-
 .logo {
   display: flex;
   align-items: center;
@@ -92,8 +85,67 @@ h1 {
   color: var(--color-txt);
 }
 
+.contact-container {
+  position: relative;
+}
+
+.contact-btn {
+  font-family: "Source Code Pro", monospace;
+  font-size: 1.1em;
+  background: none;
+  border: none;
+  color: var(--color-txt);
+  cursor: pointer;
+}
+
+.contact-menu {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background-color: var(--color-bg);
+  padding: 10px;
+  display: hidden;
+  flex-direction: column;
+  min-width: 160px;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition:
+    opacity 0.3s ease-in-out,
+    transform 0.3s ease-in-out;
+  pointer-events: none;
+}
+
+.contact-container:hover .contact-menu {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+
+.contact-menu a {
+  text-decoration: none;
+  color: var(--color-sec);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 7px;
+}
+
+.contact-menu a:last-child {
+  margin-bottom: 0;
+}
+
+.contact-menu a span {
+  color: var(--color-txt);
+  transition: color 0.3s ease;
+}
+
+.contact-menu a:hover span {
+  color: var(--color-sec);
+}
+
 .intro {
-  margin: 20px 0px;
+  margin: 10px 0px;
+  max-width: 500px;
 }
 
 .intro p {
@@ -135,7 +187,6 @@ main {
   height: 280px;
   margin: 10px;
   overflow: hidden;
-  will-change: transform;
 }
 
 .card:hover img {
@@ -148,32 +199,25 @@ main {
 }
 
 .title {
-  margin: 3px;
+  margin: 2.5px;
 }
 
 .description {
-  margin: 3px;
+  margin: 2.5px;
   font-size: 0.9em;
   color: var(--color-sec);
 }
 
 footer {
   padding: 10px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
 }
 
 footer p {
-  font-size: 0.9em;
+  font-size: 0.8em;
   color: var(--color-sec);
   line-height: 1;
-  margin: 10px 0 0;
-}
-
-footer a {
-  text-decoration: none;
-  color: var(--color-txt);
-  margin-left: 5px;
-}
-
-footer a:hover {
-  border-bottom: 1.5px solid var(--color-txt);
+  margin: 0;
 }
