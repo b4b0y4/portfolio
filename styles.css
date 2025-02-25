@@ -42,17 +42,11 @@ body {
   width: 100%;
 }
 
-header,
-main,
-footer {
-  max-width: 960px;
-  width: 100%;
-}
-
 header {
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  width: 100%;
+  padding: 20px;
 }
 
 nav {
@@ -85,61 +79,25 @@ nav {
   color: var(--color-txt);
 }
 
-.contact-container {
-  position: relative;
-}
-
-.contact-btn {
-  font-family: "Source Code Pro", monospace;
-  font-size: 1.1em;
-  background: none;
-  border: none;
-  padding: 0;
-  color: var(--color-txt);
-  cursor: pointer;
-}
-
-.contact-menu {
-  position: absolute;
-  right: 0;
-  top: 100%;
-  background-color: var(--color-bg);
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  min-width: 160px;
-  opacity: 0;
-  transform: translateY(-7.5px);
-  transition:
-    opacity 0.3s ease-in-out,
-    transform 0.3s ease-in-out;
-  pointer-events: none;
-}
-
-.contact-menu a {
-  text-decoration: none;
-  color: var(--color-sec);
+.contact {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
+  width: 135px;
 }
 
-.contact-menu a:last-child {
-  margin-bottom: 0;
-}
-
-.contact-menu a span {
+.contact a {
+  text-decoration: none;
   color: var(--color-txt);
-  transition: color 0.3s ease;
+  transition: color 0.3s ease-in-out;
 }
 
-.contact-menu a:hover span {
+.contact a:hover {
   color: var(--color-sec);
 }
 
 .intro {
-  margin: 10px 0px;
+  margin-top: 10px;
   max-width: 500px;
 }
 
@@ -159,8 +117,9 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
   margin: 0;
-  padding: 0;
+  padding: 0 10px;
 }
 
 .card-box {
@@ -204,10 +163,11 @@ main {
 }
 
 footer {
-  padding: 10px;
   display: flex;
   justify-content: end;
   align-items: center;
+  width: 100%;
+  padding: 10px 20px;
 }
 
 footer p {
@@ -215,20 +175,4 @@ footer p {
   color: var(--color-sec);
   line-height: 1;
   margin: 0;
-}
-
-@media (min-width: 420px) {
-  .contact-container:hover .contact-menu {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: all;
-  }
-}
-
-@media (max-width: 420px) {
-  .contact-menu.show {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: all;
-  }
 }

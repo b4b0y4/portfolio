@@ -21,22 +21,15 @@
           <img class="theme" src="./img/1316.svg" alt="" />
           <a href="/">BABOYA</a>
         </div>
-        <div class="contact-container">
-          <button class="contact-btn">CONTACT</button>
-          <div class="contact-menu">
-            <a href="https://github.com/b4b0y4" target="_blank">
-              GitHub <span>@b4b0y4</span>
-            </a>
-            <a href="https://twitter.com/b4b0y4" target="_blank">
-              Twitter <span>@b4b0y4</span>
-            </a>
-          </div>
+        <div class="contact">
+          <a href="https://github.com/b4b0y4" target="_blank">GitHub</a>
+          <a href="https://twitter.com/b4b0y4" target="_blank">Twitter</a>
         </div>
       </nav>
       <div class="intro">
         <p>
           I'm <span>learning</span> coding to make cool stuff on
-          <span>Ethereum</span>. Available for <span>work</span>!
+          <span>Ethereum</span>. I'm available for <span>work</span>, no BS!
         </p>
       </div>
     </header>
@@ -125,22 +118,6 @@
         const updateMode = root.classList.contains("dark-mode");
         localStorage.setItem("darkMode", updateMode);
       });
-
-      const btn = document.querySelector(".contact-btn");
-      const menu = document.querySelector(".contact-menu");
-
-      if (window.matchMedia("(max-width: 420px)").matches) {
-        btn.addEventListener("click", (e) => {
-          e.stopPropagation();
-          menu.classList.toggle("show");
-        });
-
-        document.addEventListener("click", (e) => {
-          if (!btn.contains(e.target) && !menu.contains(e.target)) {
-            menu.classList.remove("show");
-          }
-        });
-      }
     </script>
   </body>
 </html>
