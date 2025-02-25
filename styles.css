@@ -62,7 +62,7 @@ nav {
 }
 
 h1 {
-  font-size: 1.2em;
+  font-size: 1.1em;
   font-weight: 400;
   color: var(--color-txt);
   margin: 0;
@@ -74,7 +74,7 @@ h1 {
 }
 
 .logo img {
-  max-width: 3em;
+  max-width: 2.5em;
   padding: 1px;
   background-color: var(--color-sec);
   border-radius: 50%;
