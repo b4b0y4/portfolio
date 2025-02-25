@@ -129,15 +129,11 @@
       const btn = document.querySelector(".contact-btn");
       const menu = document.querySelector(".contact-menu");
 
-      btn.addEventListener("touchstart", (e) => e.preventDefault(), {
-        passive: false,
-      });
+      btn.addEventListener("touchend", () => menu.classList.add("show"));
 
-      btn.addEventListener("touchend", () => menu.classList.toggle("show"));
-
-      document.addEventListener("touchstart", (e) => {
+      document.onclick = (e) => {
         if (!btn.contains(e.target)) menu.classList.remove("show");
-      });
+      };
     </script>
   </body>
 </html>
