@@ -75,10 +75,6 @@ nav {
   margin-left: 10px;
 }
 
-.logo a:hover {
-  color: var(--color-txt);
-}
-
 .contact {
   display: flex;
   justify-content: space-between;
