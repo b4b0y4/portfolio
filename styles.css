@@ -38,13 +38,10 @@ html {
 body {
   display: flex;
   flex-direction: column;
-  align-items: center;
   width: 100%;
 }
 
 header {
-  display: flex;
-  flex-direction: column;
   width: 100%;
   padding: 20px;
 }
@@ -108,7 +105,6 @@ nav {
 main {
   flex: 1;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
