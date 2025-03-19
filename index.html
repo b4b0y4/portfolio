@@ -18,7 +18,7 @@
     <header>
       <nav>
         <div class="logo">
-          <img class="theme" src="./img/stranger.png" alt="" />
+          <img src="./img/stranger.png" alt="" />
           <a href="/">BABOYA</a>
         </div>
         <div class="contact">
@@ -108,16 +108,20 @@
 
     <script>
       const root = document.documentElement;
-      const isDarkMode = JSON.parse(localStorage.getItem("darkMode"));
 
-      if (isDarkMode) root.classList.toggle("dark-mode");
+      function applySystemTheme() {
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)",
+        ).matches;
+        root.classList.toggle("dark-mode", prefersDark);
+      }
+
+      applySystemTheme();
       root.classList.remove("no-flash");
 
-      document.querySelector(".theme").addEventListener("click", () => {
-        root.classList.toggle("dark-mode");
-        const updateMode = root.classList.contains("dark-mode");
-        localStorage.setItem("darkMode", updateMode);
-      });
+      window
+        .matchMedia("(prefers-color-scheme: dark)")
+        .addEventListener("change", applySystemTheme);
     </script>
   </body>
 </html>
