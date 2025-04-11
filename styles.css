@@ -31,9 +31,9 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  min-height: 100vh;
   overflow-x: hidden;
   min-height: 100dvh;
+  height: 100%;
 }
 
 body {
