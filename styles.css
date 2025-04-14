@@ -59,6 +59,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  /* background-color: orange; */
 }
 
 .logo {
@@ -74,6 +75,7 @@ header {
 }
 
 .logo h1 {
+  margin: 0;
   font-size: 1.4em;
   font-weight: 400;
   color: var(--color-txt);
@@ -88,20 +90,14 @@ nav {
 }
 
 nav a {
-  position: relative;
   text-decoration: none;
-  color: var(--color-txt);
+  color: var(--color-sec);
+  transition: color 0.3s ease-in-out;
 }
 
-nav a.active::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -5px;
-  width: 100%;
-  height: 1.5px;
-  background-color: var(--color-txt);
-  border-radius: 5px;
+nav a:hover,
+nav a.active {
+  color: var(--color-txt);
 }
 
 .burger-menu {
