@@ -53,7 +53,7 @@ footer {
 header {
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 100;
   background-color: var(--color-bg);
   padding: 20px;
   display: flex;
@@ -108,7 +108,7 @@ nav a.active {
   width: 20px;
   height: 20px;
   position: relative;
-  z-index: 20;
+  z-index: 200;
 }
 
 .bar {
