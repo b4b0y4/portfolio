@@ -59,7 +59,6 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* background-color: orange; */
 }
 
 .logo {
@@ -196,6 +195,7 @@ main {
 
 .intro p {
   color: var(--color-sec);
+  margin-top: 0;
 }
 
 .intro p span {
@@ -203,7 +203,7 @@ main {
 }
 
 .contact {
-  margin-top: 80px;
+  margin-top: 40px;
 }
 
 .contact h2 {
