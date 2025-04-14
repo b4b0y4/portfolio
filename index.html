@@ -15,130 +15,133 @@
   </head>
 
   <body>
-    <header>
-      <div class="logo">
-        <img src="./img/stranger.png" alt="" />
-        <h1>BABOYA</h1>
-      </div>
-
-      <button class="burger-menu" aria-label="Menu">
-        <div class="bar"></div>
-        <div class="bar"></div>
-      </button>
-
-      <nav>
-        <a href="#" data-page="portfolio">PORTFOLIO</a>
-        <a href="#" data-page="about">ABOUT</a>
-      </nav>
-    </header>
-
-    <template id="portfolio-template">
-      <div class="card-box">
-        <a
-          href="https://b4b0y4.github.io/claimMarket/"
-          target="_blank"
-          class="card-link"
-        >
-          <div class="card">
-            <div class="image">
-              <img src="./img/rainbow.png" alt="" />
-            </div>
-            <p class="title">RAINBOW</p>
-            <p class="description">
-              Claim and exchange onchain SVG on Sepolia testnet.
-            </p>
-          </div>
-        </a>
-
-        <a
-          href="https://b4b0y4.github.io/connect/"
-          target="_blank"
-          class="card-link"
-        >
-          <div class="card">
-            <div class="image">
-              <img src="./img/connect.png" alt="" />
-            </div>
-            <p class="title">CONNECT</p>
-            <p class="description">
-              A simple connectivity component with EIP-6963 support.
-            </p>
-          </div>
-        </a>
-
-        <a
-          href="https://blocks.baboya.eth.limo/"
-          target="_blank"
-          class="card-link"
-        >
-          <div class="card">
-            <div class="image">
-              <img src="./img/blocks.png" alt="" />
-            </div>
-            <p class="title">BLOCKS</p>
-            <p class="description">
-              Generate live scripts for any Art Blocks collections, and more...
-            </p>
-          </div>
-        </a>
-
-        <a
-          href="https://b4b0y4.github.io/fundMe/"
-          target="_blank"
-          class="card-link"
-        >
-          <div class="card">
-            <div class="image">
-              <img src="./img/fundMe.png" alt="" />
-            </div>
-            <p class="title">FUNDME</p>
-            <p class="description">
-              My front end for the Fund Me lesson from @PatrickAlphaC.
-            </p>
-          </div>
-        </a>
-      </div>
-    </template>
-
-    <template id="about-template">
-      <div class="about-box">
-        <div class="intro">
-          <p>
-            I'm <span>learning</span> coding to make cool stuff on
-            <span>Ethereum</span>.
-          </p>
-          <p>
-            I believe in <span>minimalism</span>, building without dependencies,
-            genuine <span>decentralization</span>, and creating for the sake of
-            <span>creation</span> rather than speculation.
-          </p>
-          <p>
-            While the current crypto landscape may have drifted from its core
-            values, the beauty of <span>permissionless systems</span> is that we
-            can still build what we believe in.
-          </p>
-          <p>I'm fascinated by <span>generative art</span>!</p>
+    <div class="wrapper">
+      <header>
+        <div class="logo">
+          <img src="./img/stranger.png" alt="" />
+          <h1>BABOYA</h1>
         </div>
 
-        <div class="contact">
-          <h2>CONTACT</h2>
-          <ul>
-            <li>
-              <a href="https://github.com/b4b0y4" target="_blank">GitHub</a>
-            </li>
-            <li>
-              <a href="https://twitter.com/b4b0y4" target="_blank">Twitter</a>
-            </li>
-          </ul>
+        <button class="burger-menu" aria-label="Menu">
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </button>
+
+        <nav>
+          <a href="#" data-page="portfolio">PORTFOLIO</a>
+          <a href="#" data-page="about">ABOUT</a>
+        </nav>
+      </header>
+
+      <template id="portfolio-template">
+        <div class="card-box">
+          <a
+            href="https://b4b0y4.github.io/claimMarket/"
+            target="_blank"
+            class="card-link"
+          >
+            <div class="card">
+              <div class="image">
+                <img src="./img/rainbow.png" alt="" />
+              </div>
+              <p class="title">RAINBOW</p>
+              <p class="description">
+                Claim and exchange onchain SVG on Sepolia testnet.
+              </p>
+            </div>
+          </a>
+
+          <a
+            href="https://b4b0y4.github.io/connect/"
+            target="_blank"
+            class="card-link"
+          >
+            <div class="card">
+              <div class="image">
+                <img src="./img/connect.png" alt="" />
+              </div>
+              <p class="title">CONNECT</p>
+              <p class="description">
+                A simple connectivity component with EIP-6963 support.
+              </p>
+            </div>
+          </a>
+
+          <a
+            href="https://blocks.baboya.eth.limo/"
+            target="_blank"
+            class="card-link"
+          >
+            <div class="card">
+              <div class="image">
+                <img src="./img/blocks.png" alt="" />
+              </div>
+              <p class="title">BLOCKS</p>
+              <p class="description">
+                Generate live scripts for any Art Blocks collections, and
+                more...
+              </p>
+            </div>
+          </a>
+
+          <a
+            href="https://b4b0y4.github.io/fundMe/"
+            target="_blank"
+            class="card-link"
+          >
+            <div class="card">
+              <div class="image">
+                <img src="./img/fundMe.png" alt="" />
+              </div>
+              <p class="title">FUNDME</p>
+              <p class="description">
+                My front end for the Fund Me lesson from @PatrickAlphaC.
+              </p>
+            </div>
+          </a>
         </div>
-      </div>
-    </template>
+      </template>
 
-    <main></main>
+      <template id="about-template">
+        <div class="about-box">
+          <div class="intro">
+            <p>
+              I'm <span>learning</span> coding to make cool stuff on
+              <span>Ethereum</span>.
+            </p>
+            <p>
+              I believe in <span>minimalism</span>, building without
+              dependencies, genuine <span>decentralization</span>, and creating
+              for the sake of <span>creation</span> rather than speculation.
+            </p>
+            <p>
+              While the current crypto landscape may have drifted from its core
+              values, the beauty of <span>permissionless systems</span> is that
+              we can still build what we believe in.
+            </p>
+            <p>I'm fascinated by <span>generative art</span>!</p>
+          </div>
 
-    <footer>
-      <p>Made with ❤️ by baboya</p>
-    </footer>
+          <div class="contact">
+            <h2>CONTACT</h2>
+            <ul>
+              <li>
+                <a href="https://github.com/b4b0y4" target="_blank">GitHub</a>
+              </li>
+              <li>
+                <a href="https://twitter.com/b4b0y4" target="_blank">Twitter</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </template>
+
+      <main></main>
+
+      <footer>
+        <p>Made with ❤️ by baboya</p>
+      </footer>
+    </div>
 
     <script src="script.js"></script>
   </body>
