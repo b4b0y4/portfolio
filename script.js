@@ -2,33 +2,30 @@ document.addEventListener("DOMContentLoaded", () => {
   const main = document.querySelector("main");
   const nav = document.querySelector("nav");
   const burgerMenu = document.querySelector(".burger-menu");
-  const navLinks = nav.querySelectorAll("a");
 
-  function setActivePage(page) {
-    navLinks.forEach((link) => link.classList.remove("active"));
-    const activeLink = nav.querySelector(`[data-page="${page}"]`);
-    if (activeLink) {
-      activeLink.classList.add("active");
-    }
-  }
+  loadPage();
 
-  function loadContent(page) {
+  function loadPage(
+    page = sessionStorage.getItem("currentPage") || "portfolio",
+  ) {
     const template = document.getElementById(`${page}-template`);
-    if (template) {
-      main.innerHTML = "";
-      main.appendChild(template.content.cloneNode(true));
-      setActivePage(page);
-      sessionStorage.setItem("currentPage", page);
-    }
-  }
+    if (!template) return;
 
-  const savedPage = sessionStorage.getItem("currentPage");
-  loadContent(savedPage || "portfolio");
+    main.innerHTML = "";
+    main.appendChild(template.content.cloneNode(true));
+
+    nav.querySelectorAll("a").forEach((link) => {
+      link.classList.toggle("active", link.dataset.page === page);
+    });
+
+    sessionStorage.setItem("currentPage", page);
+  }
 
   nav.addEventListener("click", (e) => {
-    if (e.target.dataset.page) {
+    const page = e.target.dataset.page;
+    if (page) {
       e.preventDefault();
-      loadContent(e.target.dataset.page);
+      loadPage(page);
       burgerMenu.classList.remove("active");
       nav.classList.remove("active");
     }
@@ -40,18 +37,12 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const root = document.documentElement;
+  const darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
 
-  function applySystemTheme() {
-    const prefersDark = window.matchMedia(
-      "(prefers-color-scheme: dark)",
-    ).matches;
-    root.classList.toggle("dark-mode", prefersDark);
-  }
+  const updateTheme = () =>
+    root.classList.toggle("dark-mode", darkModeMediaQuery.matches);
 
-  applySystemTheme();
+  updateTheme();
   root.classList.remove("no-flash");
-
-  window
-    .matchMedia("(prefers-color-scheme: dark)")
-    .addEventListener("change", applySystemTheme);
+  darkModeMediaQuery.addEventListener("change", updateTheme);
 });
