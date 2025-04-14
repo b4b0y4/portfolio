@@ -18,22 +18,21 @@
     <header>
       <div class="logo">
         <img src="./img/stranger.png" alt="" />
-        <a href="/">BABOYA</a>
+        <h1>BABOYA</h1>
       </div>
-      <div class="contact">
-        <a href="https://github.com/b4b0y4" target="_blank">GitHub</a>
-        <a href="https://twitter.com/b4b0y4" target="_blank">Twitter</a>
-      </div>
+
+      <button class="burger-menu" aria-label="Menu">
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </button>
+
+      <nav>
+        <a href="#" data-page="portfolio">Portfolio</a>
+        <a href="#" data-page="about">About</a>
+      </nav>
     </header>
 
-    <div class="intro">
-      <p>
-        I'm <span>learning</span> coding to make cool stuff on
-        <span>Ethereum</span>.
-      </p>
-    </div>
-
-    <main>
+    <template id="portfolio-template">
       <div class="card-box">
         <a
           href="https://b4b0y4.github.io/claimMarket/"
@@ -99,28 +98,37 @@
           </div>
         </a>
       </div>
-    </main>
+    </template>
+
+    <template id="about-template">
+      <div class="about-box">
+        <div class="intro">
+          <p>
+            I'm <span>learning</span> coding to make cool stuff on
+            <span>Ethereum</span>.
+          </p>
+        </div>
+
+        <div class="contact">
+          <h2>Contact</h2>
+          <ul>
+            <li>
+              <a href="https://github.com/b4b0y4" target="_blank">GitHub</a>
+            </li>
+            <li>
+              <a href="https://twitter.com/b4b0y4" target="_blank">Twitter</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </template>
+
+    <main></main>
 
     <footer>
       <p>Made with ❤️ by baboya</p>
     </footer>
 
-    <script>
-      const root = document.documentElement;
-
-      function applySystemTheme() {
-        const prefersDark = window.matchMedia(
-          "(prefers-color-scheme: dark)",
-        ).matches;
-        root.classList.toggle("dark-mode", prefersDark);
-      }
-
-      applySystemTheme();
-      root.classList.remove("no-flash");
-
-      window
-        .matchMedia("(prefers-color-scheme: dark)")
-        .addEventListener("change", applySystemTheme);
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
