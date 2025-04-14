@@ -209,7 +209,6 @@ main {
 .contact h2 {
   font-size: 1.3em;
   font-weight: 400;
-  color: var(--color-sec);
 }
 
 .contact ul {
@@ -222,7 +221,7 @@ main {
 }
 
 .contact a {
-  color: var(--color-txt);
+  color: var(--color-sec);
   text-decoration: none;
   transition: color 0.3s ease-in-out;
 }
