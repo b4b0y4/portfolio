@@ -2,6 +2,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const main = document.querySelector("main");
   const nav = document.querySelector("nav");
   const burgerMenu = document.querySelector(".burger-menu");
+  const imagesToPreload = [
+    "./img/blocks.png",
+    "./img/rainbow.png",
+    "./img/connect.png",
+    "./img/fundMe.png",
+  ];
+
+  imagesToPreload.forEach((src) => {
+    const img = new Image();
+    img.src = src;
+  });
 
   loadPage();
 
