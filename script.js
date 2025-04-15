@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     main.innerHTML = "";
     main.appendChild(template.content.cloneNode(true));
+    document.querySelector(".wrapper").scrollTop = 0;
 
     nav.querySelectorAll("a").forEach((link) => {
       link.classList.toggle("active", link.dataset.page === page);
