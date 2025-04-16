@@ -3,11 +3,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const nav = document.querySelector("nav");
   const burgerMenu = document.querySelector(".burger-menu");
 
-  function loadPage(
-    page = sessionStorage.getItem("currentPage") || "portfolio",
-  ) {
+  function loadPage(page = window.location.hash.slice(1) || "portfolio") {
     const template = document.getElementById(`${page}-template`);
-    if (!template) return;
 
     main.innerHTML = "";
     main.appendChild(template.content.cloneNode(true));
@@ -16,25 +13,19 @@ document.addEventListener("DOMContentLoaded", () => {
     nav.querySelectorAll("a").forEach((link) => {
       link.classList.toggle("active", link.dataset.page === page);
     });
-
-    sessionStorage.setItem("currentPage", page);
   }
 
-  nav.addEventListener("click", (e) => {
-    const page = e.target.dataset.page;
-    if (page) {
-      e.preventDefault();
-      loadPage(page);
-      burgerMenu.classList.remove("active");
-      nav.classList.remove("active");
-    }
+  window.addEventListener("hashchange", () => {
+    loadPage(window.location.hash.slice(1));
+    burgerMenu.classList.remove("active");
+    nav.classList.remove("active");
   });
+
+  loadPage();
+  document.documentElement.classList.remove("no-flash");
 
   burgerMenu.addEventListener("click", () => {
     burgerMenu.classList.toggle("active");
     nav.classList.toggle("active");
   });
-
-  loadPage();
-  document.documentElement.classList.remove("no-flash");
 });
