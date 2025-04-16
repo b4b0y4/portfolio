@@ -13,6 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
     nav.querySelectorAll("a").forEach((link) => {
       link.classList.toggle("active", link.dataset.page === page);
     });
+
+    if (!window.location.hash) window.location.hash = page;
   }
 
   window.addEventListener("hashchange", () => {
