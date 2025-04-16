@@ -2,19 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const main = document.querySelector("main");
   const nav = document.querySelector("nav");
   const burgerMenu = document.querySelector(".burger-menu");
-  const imagesToPreload = [
-    "./img/blocks.png",
-    "./img/rainbow.png",
-    "./img/connect.png",
-    "./img/fundMe.png",
-  ];
-
-  imagesToPreload.forEach((src) => {
-    const img = new Image();
-    img.src = src;
-  });
-
-  loadPage();
 
   function loadPage(
     page = sessionStorage.getItem("currentPage") || "portfolio",
@@ -48,13 +35,6 @@ document.addEventListener("DOMContentLoaded", () => {
     nav.classList.toggle("active");
   });
 
-  const root = document.documentElement;
-  const darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-
-  const updateTheme = () =>
-    root.classList.toggle("dark-mode", darkModeMediaQuery.matches);
-
-  updateTheme();
-  root.classList.remove("no-flash");
-  darkModeMediaQuery.addEventListener("change", updateTheme);
+  loadPage();
+  document.documentElement.classList.remove("no-flash");
 });

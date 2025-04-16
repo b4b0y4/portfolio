@@ -1,13 +1,16 @@
 :root {
+  color-scheme: light dark;
   --color-bg: #f0f0f0;
   --color-txt: #5c5c5c;
   --color-sec: #969697;
 }
 
-:root.dark-mode {
-  --color-bg: #19191a;
-  --color-txt: #adadae;
-  --color-sec: #7e7d7d;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #19191a;
+    --color-txt: #adadae;
+    --color-sec: #7e7d7d;
+  }
 }
 
 .no-flash {
@@ -185,7 +188,7 @@ main > * {
 .card-box {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
+  gap: 30px;
   max-width: 100%;
 }
 
@@ -193,15 +196,10 @@ main > * {
   text-decoration: none;
   color: inherit;
   display: inline-block;
-  width: 100%;
-  max-width: 350px;
-  min-width: 300px;
 }
 
 .card {
-  width: 100%;
-  min-height: 275px;
-  max-height: 320.75px;
+  width: 300px;
   overflow: hidden;
 }
 
