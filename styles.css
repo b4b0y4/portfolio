@@ -294,7 +294,8 @@ footer p {
     background-color: var(--color-bg);
     flex-direction: column;
     justify-content: center;
-    padding: 20px;
+    padding: 30px;
+    gap: 40px;
     transition: right 0.3s ease;
   }
 
