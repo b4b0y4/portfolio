@@ -190,7 +190,7 @@ main > * {
 .card-box {
   padding: 20px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 25px;
   max-width: 100%;
 }
@@ -202,7 +202,8 @@ main > * {
 }
 
 .card {
-  width: 300px;
+  min-width: 240px;
+  max-width: 300px;
   overflow: hidden;
 }
 
