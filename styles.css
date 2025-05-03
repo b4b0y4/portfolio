@@ -2,14 +2,16 @@
   color-scheme: light dark;
   --color-bg: #f0f0f0;
   --color-txt: #5c5c5c;
-  --color-sec: #969697;
+  --color-link: #969697;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --color-bg: #19191a;
     --color-txt: #adadae;
-    --color-sec: #7e7d7d;
+    --color-link: #7e7d7d;
   }
 }
 
@@ -80,7 +82,7 @@ header {
 .logo img {
   max-width: 2.5em;
   padding: 1px;
-  background-color: var(--color-sec);
+  background-color: var(--color-link);
   border-radius: 50%;
 }
 
@@ -192,7 +194,8 @@ main > * {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 25px;
-  max-width: 100%;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .card-link {
@@ -205,6 +208,8 @@ main > * {
   min-width: 240px;
   max-width: 300px;
   overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .card:hover img {
@@ -218,12 +223,12 @@ main > * {
 
 .title {
   margin: 2.5px;
+  font-size: 1.1em;
 }
 
 .description {
   margin: 2.5px;
   font-size: 0.9em;
-  color: var(--color-sec);
 }
 
 .about-box {
@@ -233,13 +238,12 @@ main > * {
 }
 
 .intro p {
-  color: var(--color-sec);
   margin-top: 0;
   line-height: 1.5;
 }
 
 .intro p span {
-  color: var(--color-txt);
+  font-weight: 600;
 }
 
 .contact {
@@ -261,7 +265,7 @@ main > * {
 }
 
 .contact a {
-  color: var(--color-sec);
+  color: var(--color-link);
   text-decoration: none;
   transition: color 0.3s ease-in-out;
 }
@@ -280,7 +284,6 @@ footer {
 
 footer p {
   font-size: 0.8em;
-  color: var(--color-sec);
   line-height: 1;
   margin: 0;
 }
@@ -314,5 +317,9 @@ footer p {
 
   nav a.active::after {
     transform: scaleX(0);
+  }
+
+  .contact a:hover {
+    color: var(--color-link);
   }
 }
