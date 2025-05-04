@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const burger = document.querySelector(".burger-menu");
 
   function loadPage(page = window.location.hash.slice(1) || "portfolio") {
-    const template = document.getElementById(`${page}-template`);
+    const template = document.getElementById(`${page}`);
 
     main.innerHTML = "";
     main.appendChild(template.content.cloneNode(true));
