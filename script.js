@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     main.innerHTML = "";
     main.appendChild(template.content.cloneNode(true));
-    document.querySelector(".wrapper").scrollTop = 0;
 
     if (!window.location.hash) window.location.hash = page;
   }
@@ -19,11 +18,11 @@ document.addEventListener("DOMContentLoaded", () => {
     nav.classList.remove("active");
   });
 
-  loadPage();
-  document.documentElement.classList.remove("no-flash");
-
   burger.addEventListener("click", () => {
     burger.classList.toggle("active");
     nav.classList.toggle("active");
   });
+
+  loadPage();
+  document.documentElement.classList.remove("no-flash");
 });
