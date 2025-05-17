@@ -15,10 +15,6 @@
   }
 }
 
-.no-flash {
-  visibility: hidden;
-}
-
 @font-face {
   font-family: "Source Code Pro";
   src: url("/SourceCodePro-VariableFont_wght.ttf") format("truetype");

@@ -23,5 +23,4 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   loadPage();
-  document.documentElement.classList.remove("no-flash");
 });
