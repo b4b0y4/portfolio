@@ -15,13 +15,6 @@
   }
 }
 
-@font-face {
-  font-family: "Source Code Pro";
-  src: url("/SourceCodePro-VariableFont_wght.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
 *,
 *::before,
 *::after {
@@ -31,6 +24,9 @@
 body,
 html {
   font-family: "Source Code Pro", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
   background-color: var(--color-bg);
   color: var(--color-txt);
   margin: 0;
