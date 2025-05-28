@@ -253,7 +253,7 @@ footer p {
   nav {
     position: fixed;
     top: 0;
-    right: -100vw;
+    right: 0;
     width: 100vw;
     height: 100dvh;
     background-color: var(--color-bg);
@@ -261,10 +261,13 @@ footer p {
     justify-content: center;
     padding: 30px;
     gap: 40px;
-    transition: right 0.3s ease;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
   }
 
   nav.active {
-    right: 0;
+    opacity: 1;
+    pointer-events: auto;
   }
 }
