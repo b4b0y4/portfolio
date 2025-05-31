@@ -29,7 +29,10 @@ html {
   color: var(--color-txt);
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
   min-height: 100dvh;
+  height: 100%;
 }
 
 .wrapper {
