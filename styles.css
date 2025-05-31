@@ -33,8 +33,14 @@ html {
 }
 
 .wrapper {
+  overflow-x: hidden;
   width: 100%;
-  min-height: 100dvh;
+  height: 100dvh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   display: flex;
   flex-direction: column;
   padding: env(safe-area-inset-top) env(safe-area-inset-right)
@@ -57,8 +63,6 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: calc(-1 * env(safe-area-inset-top));
-  padding-top: calc(20px + env(safe-area-inset-top));
 }
 
 .logo {
@@ -221,7 +225,7 @@ footer p {
     top: 0;
     right: 0;
     width: 100vw;
-    height: 100vh;
+    height: 100dvh;
     background-color: var(--color-bg);
     flex-direction: column;
     justify-content: center;
@@ -230,10 +234,6 @@ footer p {
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;
-    padding-top: calc(30px + env(safe-area-inset-top));
-    padding-bottom: calc(30px + env(safe-area-inset-bottom));
-    padding-left: calc(30px + env(safe-area-inset-left));
-    padding-right: calc(30px + env(safe-area-inset-right));
   }
 
   nav.active {
