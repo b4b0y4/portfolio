@@ -11,14 +11,26 @@
     <link rel="preload" as="image" href="./img/rainbow.png" />
     <link rel="preload" as="image" href="./img/connect.png" />
     <link rel="preload" as="image" href="./img/fundMe.png" />
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='white'/%3E%3C/svg%3E" />
-    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)">
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='white'/%3E%3C/svg%3E"
+    />
+    <meta
+      name="theme-color"
+      content="#ffffff"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#121212"
+      media="(prefers-color-scheme: dark)"
+    />
     <link rel="stylesheet" href="./styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400&display=swap"
       rel="stylesheet"
     />
   </head>
@@ -41,74 +53,73 @@
           <a href="https://warpcast.com/baboya.eth" target="_blank"
             >Farcaster</a
           >
+        </nav>
       </header>
 
       <template id="portfolio">
-         <div class="portfolio-wrapper">
-           <div class="intro">
-             <p>
-               I learned how to code so I could make cool stuff on Ethereum.
-             </p>
-           </div>
+        <div class="portfolio-wrapper">
+          <div class="intro">
+            <p>I learned how to code so I could make cool stuff on Ethereum.</p>
+          </div>
 
-           <div class="card-box">
-             <a
-               href="https://blocks.baboya.eth.limo/"
-               target="_blank"
-               class="card-link"
-             >
-               <div class="card">
-                 <img src="./img/blocks.png" alt="" />
-                 <p class="title">BLOCKS</p>
-                 <p class="description">
-                   Generate live scripts for any Art Blocks collections
-                 </p>
-               </div>
-             </a>
+          <div class="card-box">
+            <a
+              href="https://blocks.baboya.eth.limo/"
+              target="_blank"
+              class="card-link"
+            >
+              <div class="card">
+                <img src="./img/blocks.png" alt="BLOCKS project screenshot" />
+                <p class="title">BLOCKS</p>
+                <p class="description">
+                  Generate live scripts for any Art Blocks collections
+                </p>
+              </div>
+            </a>
 
-             <a
-               href="https://b4b0y4.github.io/claimMarket/"
-               target="_blank"
-               class="card-link"
-             >
-               <div class="card">
-                 <img src="./img/rainbow.png" alt="" />
-                 <p class="title">RAINBOW</p>
-                 <p class="description">
-                   Claim and exchange onchain SVG on Sepolia
-                 </p>
-               </div>
-             </a>
+            <a
+              href="https://b4b0y4.github.io/claimMarket/"
+              target="_blank"
+              class="card-link"
+            >
+              <div class="card">
+                <img src="./img/rainbow.png" alt="RAINBOW project screenshot" />
+                <p class="title">RAINBOW</p>
+                <p class="description">
+                  Claim and exchange onchain SVG on Sepolia
+                </p>
+              </div>
+            </a>
 
-             <a
-               href="https://b4b0y4.github.io/connect/"
-               target="_blank"
-               class="card-link"
-             >
-               <div class="card">
-                 <img src="./img/connect.png" alt="" />
-                 <p class="title">CONNECT</p>
-                 <p class="description">
-                   Connectivity component with EIP-6963 support
-                 </p>
-               </div>
-             </a>
+            <a
+              href="https://b4b0y4.github.io/connect/"
+              target="_blank"
+              class="card-link"
+            >
+              <div class="card">
+                <img src="./img/connect.png" alt="CONNECT project screenshot" />
+                <p class="title">CONNECT</p>
+                <p class="description">
+                  Connectivity component with EIP-6963 support
+                </p>
+              </div>
+            </a>
 
-             <a
-               href="https://b4b0y4.github.io/fundMe/"
-               target="_blank"
-               class="card-link"
-             >
-               <div class="card">
-                 <img src="./img/fundMe.png" alt="" />
-                 <p class="title">FUNDME</p>
-                 <p class="description">
-                   Front end for the lesson from @PatrickAlphaC
-                 </p>
-               </div>
-             </a>
-           </div>
-         </div>
+            <a
+              href="https://b4b0y4.github.io/fundMe/"
+              target="_blank"
+              class="card-link"
+            >
+              <div class="card">
+                <img src="./img/fundMe.png" alt="FUNDME project screenshot" />
+                <p class="title">FUNDME</p>
+                <p class="description">
+                  Front end for the lesson from @PatrickAlphaC
+                </p>
+              </div>
+            </a>
+          </div>
+        </div>
       </template>
 
       <main></main>
@@ -119,32 +130,34 @@
     </div>
 
     <script>
-    const loadPage = (page = window.location.hash.slice(1) || "portfolio") => {
-      const template = document.getElementById(page);
-      const main = document.querySelector("main");
-      main.innerHTML = "";
-      main.appendChild(template.content.cloneNode(true));
+      const loadPage = (
+        page = window.location.hash.slice(1) || "portfolio",
+      ) => {
+        const template = document.getElementById(page);
+        const main = document.querySelector("main");
+        main.innerHTML = "";
+        main.appendChild(template.content.cloneNode(true));
 
-      if (!window.location.hash) window.location.hash = page;
-    };
+        if (!window.location.hash) window.location.hash = page;
+      };
 
-    document.addEventListener("DOMContentLoaded", () => {
-      const nav = document.querySelector("nav");
-      const burger = document.querySelector(".burger-menu");
+      document.addEventListener("DOMContentLoaded", () => {
+        const nav = document.querySelector("nav");
+        const burger = document.querySelector(".burger-menu");
 
-      window.addEventListener("hashchange", () => {
-        loadPage(window.location.hash.slice(1));
-        burger.classList.remove("active");
-        nav.classList.remove("active");
+        window.addEventListener("hashchange", () => {
+          loadPage(window.location.hash.slice(1));
+          burger.classList.remove("active");
+          nav.classList.remove("active");
+        });
+
+        burger.addEventListener("click", () => {
+          burger.classList.toggle("active");
+          nav.classList.toggle("active");
+        });
+
+        loadPage();
       });
-
-      burger.addEventListener("click", () => {
-        burger.classList.toggle("active");
-        nav.classList.toggle("active");
-      });
-
-      loadPage();
-    });
     </script>
   </body>
 </html>
