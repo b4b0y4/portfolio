@@ -163,7 +163,6 @@ nav a {
 }
 
 main {
-  /* display: flex; */
   flex: 1;
 }
 
@@ -221,13 +220,17 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: calc(100dvh - 200px);
   padding: 25px;
+}
+
+.about-intro {
+  max-width: 900px;
   margin: 0 auto;
 }
 
 .about-intro p {
   color: var(--color-2nd);
-  max-width: 900px;
   margin-top: 0;
   line-height: 1.5;
 }
