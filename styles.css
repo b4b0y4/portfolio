@@ -3,6 +3,7 @@
   --color-bg: #ffffff;
   --color-txt: #00091c;
   --color-2nd: #636363;
+  -webkit-text-size-adjust: none;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -216,7 +217,7 @@ main {
   font-size: 0.9em;
 }
 
-.about-box {
+.about-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
