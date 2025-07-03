@@ -163,11 +163,8 @@ nav a {
 }
 
 main {
-  display: flex;
+  /* display: flex; */
   flex: 1;
-  width: 100%;
-  overflow-y: auto;
-  -webkit-overflow-scrolling:;
 }
 
 .portfolio-wrapper {
@@ -297,10 +294,5 @@ footer p {
     flex-direction: row;
     justify-content: center;
     gap: 30px;
-  }
-
-  .card-box {
-    grid-template-columns: 1fr;
-    width: 100%;
   }
 }
