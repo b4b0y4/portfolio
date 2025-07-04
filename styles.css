@@ -1,7 +1,6 @@
 :root {
   color-scheme: light dark;
   --color-bg: #ffffff;
-  --color-bg-rgb: 255, 255, 255;
   --color-txt: #00091c;
   --color-2nd: #636363;
   -webkit-text-size-adjust: none;
@@ -10,7 +9,6 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --color-bg: #121212;
-    --color-bg-rgb: 18, 18, 18;
     --color-txt: #dee1e7;
     --color-2nd: #929292;
   }
@@ -61,9 +59,7 @@ header {
   position: sticky;
   top: env(safe-area-inset-top);
   z-index: 100;
-  background-color: rgba(var(--color-bg-rgb), 0.8);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background-color: var(--color-bg);
   padding: 25px;
   display: flex;
   justify-content: space-between;
@@ -197,7 +193,7 @@ main {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 25px;
   max-width: 100%;
-  margin: 0 auto;
+  margin: 0 auto 50px;
 }
 
 .card-link {
@@ -249,7 +245,6 @@ footer {
   justify-content: end;
   align-items: center;
   padding: 20px 25px;
-  margin-top: 50px;
 }
 
 footer p {
