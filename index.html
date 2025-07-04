@@ -33,7 +33,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="farcaster/style.css">
+    <link rel="stylesheet" href="farcaster/style.css" />
     <link rel="stylesheet" href="./styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -61,9 +61,15 @@
             <a href="#about" data-page="about">About</a>
           </div>
           <div class="socials">
-            <a href="https://github.com/b4b0y4" target="_blank"><i class="fa-brands fa-github"></i></a>
-            <a href="https://twitter.com/b4b0y4" target="_blank"><i class="fa-brands fa-twitter"></i></a>
-            <a href="https://farcaster.xyz/baboya.eth" target="_blank"><i class="fc fc-farcaster"></i></a>
+            <a href="https://github.com/b4b0y4" target="_blank"
+              ><i class="fa-brands fa-github"></i
+            ></a>
+            <a href="https://twitter.com/b4b0y4" target="_blank"
+              ><i class="fa-brands fa-twitter"></i
+            ></a>
+            <a href="https://farcaster.xyz/baboya.eth" target="_blank"
+              ><i class="fc fc-farcaster"></i
+            ></a>
           </div>
         </nav>
       </header>
@@ -137,12 +143,33 @@
       <template id="about">
         <div class="about-wrapper">
           <div class="about-intro">
-            <p>I learned how to code so I could make cool stuff on <span>Ethereum</span>.</p>
-            <p>I'm fascinated by generative art. Discovering that beautiful shapes and patterns could come from code was mind-blowing, the perfect blend of <span>logic</span> and <span>creativity</span>.</p>
-            <p><span>Minimalism</span> is a guiding principle in my life. I believe in living simply and coding simply. I strive to create solutions that are minimal, functional, and accessible, avoiding unnecessary complexity.</p>
-            <p>Profit is not my driving force. I want to create and collaborate on meaningful projects built with <span>integrity</span>, transparency, and purpose, rejecting greed-driven shortcuts.</p>
-            <p>If you share this vision, let's build <span>together</span>. Let's create things that matter, things that stand the test of time and bring value to the world.</p>
+            <p>
+              I learned how to code so I could make cool stuff on
+              <span>Ethereum</span>.
+            </p>
+            <p>
+              I'm fascinated by generative art. Discovering that beautiful
+              shapes and patterns could come from code was mind-blowing, the
+              perfect blend of <span>logic</span> and <span>creativity</span>.
+            </p>
+            <p>
+              <span>Minimalism</span> is a guiding principle in my life. I
+              believe in living simply and coding simply. I strive to create
+              solutions that are minimal, functional, and accessible, avoiding
+              unnecessary complexity.
+            </p>
+            <p>
+              Profit is not my driving force. I want to create and collaborate
+              on meaningful projects built with <span>integrity</span>,
+              transparency, and purpose, rejecting greed-driven shortcuts.
+            </p>
+            <p>
+              If you share this vision, let's build <span>together</span>. Let's
+              create things that matter, things that stand the test of time and
+              bring value to the world.
+            </p>
           </div>
+        </div>
       </template>
 
       <main></main>
@@ -165,7 +192,7 @@
 
         link.querySelectorAll("a").forEach((link) => {
           link.classList.toggle("active", link.dataset.page === page);
-        })
+        });
 
         if (!window.location.hash) window.location.hash = page;
       };
