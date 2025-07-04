@@ -153,9 +153,14 @@
         page = window.location.hash.slice(1) || "portfolio",
       ) => {
         const template = document.getElementById(page);
+        const link = document.querySelector(".link");
         const main = document.querySelector("main");
         main.innerHTML = "";
         main.appendChild(template.content.cloneNode(true));
+
+        link.querySelectorAll("a").forEach((link) => {
+          link.classList.toggle("active", link.dataset.page === page);
+        })
 
         if (!window.location.hash) window.location.hash = page;
       };
