@@ -161,6 +161,7 @@
         const main = document.querySelector("main");
         main.innerHTML = "";
         main.appendChild(template.content.cloneNode(true));
+        document.querySelector(".wrapper").scrollTop = 0;
 
         link.querySelectorAll("a").forEach((link) => {
           link.classList.toggle("active", link.dataset.page === page);
