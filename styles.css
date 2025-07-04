@@ -222,7 +222,7 @@ main {
 }
 
 .about-intro {
-  max-width: 900px;
+  max-width: 800px;
   margin: 0 auto;
 }
 
@@ -230,6 +230,10 @@ main {
   color: var(--color-2nd);
   margin-top: 0;
   line-height: 1.5;
+}
+
+.about-intro p span {
+  color: var(--color-txt);
 }
 
 footer {
