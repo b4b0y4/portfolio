@@ -177,31 +177,6 @@
 
         loadPage();
       });
-
-      let lastScrollY = window.scrollY;
-              let scrollTimer = null;
-
-              const header = document.querySelector('header');
-
-              window.addEventListener('scroll', () => {
-                // Clear the existing timer
-                if (scrollTimer !== null) {
-                  clearTimeout(scrollTimer);
-                }
-
-                // Set a new timer
-                scrollTimer = setTimeout(() => {
-                  const currentScrollY = window.scrollY;
-
-                  if (currentScrollY > lastScrollY) {
-                    header.classList.add('hide');
-                  } else {
-                    header.classList.remove('hide');
-                  }
-
-                  lastScrollY = currentScrollY;
-                }, 50); // Small delay for better performance
-              });
     </script>
   </body>
 </html>
