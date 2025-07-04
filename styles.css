@@ -219,11 +219,11 @@ footer p {
     justify-content: center;
     align-items: center;
     padding: 30px;
-    gap: 30px;
+    gap: 40px;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;
-    font-size: 1.2em;
+    font-size: 1.4em;
   }
 
   nav.active {
