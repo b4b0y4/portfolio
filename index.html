@@ -48,17 +48,11 @@
         </button>
 
         <nav>
-          <div class="link">
-            <a href="#portfolio" data-page="portfolio">Portfolio</a>
-            <a href="#about" data-page="about">About</a>
-          </div>
-          <div class="ext-link">
-            <a href="https://github.com/b4b0y4" target="_blank">GitHub</a>
-            <a href="https://twitter.com/b4b0y4" target="_blank">Twitter</a>
-            <a href="https://farcaster.xyz/baboya.eth" target="_blank"
-              >Farcaster</a
-            >
-          </div>
+          <a href="https://github.com/b4b0y4" target="_blank">GitHub</a>
+          <a href="https://twitter.com/b4b0y4" target="_blank">Twitter</a>
+          <a href="https://farcaster.xyz/baboya.eth" target="_blank"
+            >Farcaster</a
+          >
         </nav>
       </header>
 
@@ -128,18 +122,6 @@
         </div>
       </template>
 
-      <template id="about">
-        <div class="about-wrapper">
-          <div class="about-intro">
-            <p>I learned how to code so I could make cool stuff on Ethereum.</p>
-            <p>
-              I'm fascinated by generative art, I believe in
-              minimalism, and creating simple things that bring
-              value to people.
-            </p>
-          </div>
-      </template>
-
       <main></main>
 
       <footer>
@@ -152,14 +134,9 @@
         page = window.location.hash.slice(1) || "portfolio",
       ) => {
         const template = document.getElementById(page);
-        const link = document.querySelector(".link");
         const main = document.querySelector("main");
         main.innerHTML = "";
         main.appendChild(template.content.cloneNode(true));
-
-        link.querySelectorAll("a").forEach((lk) => {
-              lk.classList.toggle("active", lk.dataset.page === page);
-            });
 
         if (!window.location.hash) window.location.hash = page;
       };
