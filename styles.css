@@ -30,8 +30,8 @@ body {
   color: var(--color-txt);
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
   min-height: 100dvh;
+  overflow: hidden;
 }
 
 .wrapper {
