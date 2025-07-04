@@ -26,6 +26,13 @@
       content="#121212"
       media="(prefers-color-scheme: dark)"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="./styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -48,11 +55,15 @@
         </button>
 
         <nav>
-          <a href="https://github.com/b4b0y4" target="_blank">GitHub</a>
-          <a href="https://twitter.com/b4b0y4" target="_blank">Twitter</a>
-          <a href="https://farcaster.xyz/baboya.eth" target="_blank"
-            >Farcaster</a
-          >
+          <div class="link">
+            <a href="#portfolio" data-page="portfolio">Portfolio</a>
+            <a href="#about" data-page="about">About</a>
+          </div>
+          <div class="socials">
+            <a href="https://github.com/b4b0y4" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="https://twitter.com/b4b0y4" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+            <!-- <a href="https://farcaster.xyz/baboya.eth" target="_blank">Farcaster</a> -->
+          </div>
         </nav>
       </header>
 
@@ -122,6 +133,14 @@
         </div>
       </template>
 
+      <template id="about">
+        <div class="about-wrapper">
+          <div class="about-intro">
+            <p>I learned how to code so I could make cool stuff on Ethereum.</p>
+            <p>I'm fascinated by generative art, I believe in minimalism, and creating simple things that bring value to people.</p>
+          </div>
+      </template>
+
       <main></main>
 
       <footer>
@@ -158,6 +177,31 @@
 
         loadPage();
       });
+
+      let lastScrollY = window.scrollY;
+              let scrollTimer = null;
+
+              const header = document.querySelector('header');
+
+              window.addEventListener('scroll', () => {
+                // Clear the existing timer
+                if (scrollTimer !== null) {
+                  clearTimeout(scrollTimer);
+                }
+
+                // Set a new timer
+                scrollTimer = setTimeout(() => {
+                  const currentScrollY = window.scrollY;
+
+                  if (currentScrollY > lastScrollY) {
+                    header.classList.add('hide');
+                  } else {
+                    header.classList.remove('hide');
+                  }
+
+                  lastScrollY = currentScrollY;
+                }, 50); // Small delay for better performance
+              });
     </script>
   </body>
 </html>
