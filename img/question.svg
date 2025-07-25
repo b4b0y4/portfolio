@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 267.5" class="question-svg">
+  <defs>
+    <style>
+      .question-mark {
+        fill: #636363;
+        font-family: 'Source Code Pro', monospace;
+        font-size: 120px;
+        font-weight: 400;
+        text-anchor: middle;
+        dominant-baseline: middle;
+      }
+      @media (prefers-color-scheme: dark) {
+        .question-mark {
+          fill: #929292;
+        }
+      }
+    </style>
+  </defs>
+
+  <text x="200" y="133.75" class="question-mark">?</text>
+</svg>
