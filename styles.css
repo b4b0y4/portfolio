@@ -1,7 +1,6 @@
 :root {
   color-scheme: light dark;
   --color-bg: #ffffff;
-  --color-bg-rgb: 255, 255, 255;
   --color-txt: #00091c;
   --color-2nd: #636363;
   -webkit-text-size-adjust: none;
@@ -10,7 +9,6 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --color-bg: #121212;
-    --color-bg-rgb: 18, 18, 18;
     --color-txt: #dee1e7;
     --color-2nd: #929292;
   }
@@ -65,7 +63,7 @@ header {
   position: sticky;
   top: env(safe-area-inset-top);
   z-index: 100;
-  background-color: rgba(var(--color-bg-rgb), 0.8);
+  background-color: var(--color-bg);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   padding: 25px;
