@@ -51,6 +51,14 @@ body {
   overflow: hidden;
 }
 
+header,
+main,
+footer {
+  max-width: 1250px;
+  margin: 0 auto;
+  width: 100%;
+}
+
 header {
   position: sticky;
   top: env(safe-area-inset-top);
@@ -181,6 +189,10 @@ main {
 .card-link {
   text-decoration: none;
   color: inherit;
+}
+
+.card {
+  overflow: hidden;
 }
 
 .card img {
