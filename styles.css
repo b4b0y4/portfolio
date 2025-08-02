@@ -303,7 +303,7 @@ footer p {
     height: 24px;
   }
 
-  nav a:hover {
+  header a:hover {
     text-decoration: none;
     color: var(--color-txt);
   }
