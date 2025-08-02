@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "Source Code Pro";
+  src: url("./SourceCodePro-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   color-scheme: light dark;
   --color-bg: #fffff8;
@@ -95,10 +103,9 @@ nav {
   gap: 30px;
 }
 
-nav a {
+header a {
   text-decoration: none;
   color: var(--color-txt);
-  transition: color 0.3s ease;
 }
 
 .link,
@@ -107,8 +114,24 @@ nav a {
   gap: 15px;
 }
 
-nav a:hover {
+.socials {
+  margin-top: 5px;
+}
+
+header a:hover {
+  text-decoration: underline;
   color: var(--color-2nd);
+}
+
+.social-icon {
+  width: 16.5px;
+  height: 16.5px;
+  fill: currentColor;
+}
+
+.social-icon.farcaster-icon {
+  width: 20px;
+  height: 20px;
 }
 
 .burger-menu {
@@ -286,7 +309,18 @@ footer p {
     gap: 30px;
   }
 
+  .social-icon {
+    width: 21.5px;
+    height: 21.5px;
+  }
+
+  .social-icon.farcaster-icon {
+    width: 25px;
+    height: 25px;
+  }
+
   nav a:hover {
+    text-decoration: none;
     color: var(--color-txt);
   }
 }
