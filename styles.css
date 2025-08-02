@@ -85,11 +85,6 @@ header.hide {
   transform: translateY(-100%);
 }
 
-.logo {
-  text-decoration: none;
-  color: var(--color-txt);
-}
-
 .logo h1 {
   margin: 0;
   font-size: 1.5em;
@@ -233,7 +228,6 @@ main {
 .about-wrapper {
   display: flex;
   align-items: center;
-  justify-content: center;
   min-height: calc(100dvh - 200px);
   padding: 25px;
 }
