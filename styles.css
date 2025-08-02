@@ -119,14 +119,9 @@ header a:hover {
 }
 
 .social-icon {
-  width: 16.5px;
-  height: 16.5px;
+  width: 18px;
+  height: 18px;
   fill: currentColor;
-}
-
-.social-icon.farcaster-icon {
-  width: 20px;
-  height: 20px;
 }
 
 .burger-menu {
@@ -304,13 +299,8 @@ footer p {
   }
 
   .social-icon {
-    width: 21.5px;
-    height: 21.5px;
-  }
-
-  .social-icon.farcaster-icon {
-    width: 25px;
-    height: 25px;
+    width: 24px;
+    height: 24px;
   }
 
   nav a:hover {
