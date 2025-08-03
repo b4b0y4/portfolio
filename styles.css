@@ -55,7 +55,7 @@ body {
     env(safe-area-inset-bottom) env(safe-area-inset-left);
 }
 
-.wrapper.no-scroll {
+.menu-toggle:checked + .wrapper {
   overflow: hidden;
 }
 
@@ -124,6 +124,10 @@ header a:hover {
   fill: currentColor;
 }
 
+.menu-toggle {
+  display: none;
+}
+
 .burger-menu {
   display: none;
   background: none;
@@ -156,12 +160,12 @@ header a:hover {
   bottom: 20%;
 }
 
-.burger-menu.active .bar:first-child {
+.menu-toggle:checked + .wrapper .burger-menu .bar:first-child {
   top: 50%;
   transform: translateY(-50%) rotate(45deg);
 }
 
-.burger-menu.active .bar:last-child {
+.menu-toggle:checked + .wrapper .burger-menu .bar:last-child {
   bottom: 50%;
   transform: translateY(50%) rotate(-45deg);
 }
@@ -276,7 +280,7 @@ footer p {
     transition: opacity 0.3s ease;
   }
 
-  nav.active {
+  .menu-toggle:checked + .wrapper nav {
     opacity: 1;
     pointer-events: auto;
   }

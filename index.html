@@ -32,16 +32,22 @@
   </head>
 
   <body>
+    <input
+      type="checkbox"
+      id="menu-toggle"
+      class="menu-toggle"
+      aria-label="Menu"
+    />
     <div class="wrapper">
       <header>
         <a href="#portfolio" data-page="portfolio" class="logo">
           <h1>BABOYA</h1>
         </a>
 
-        <button class="burger-menu" aria-label="Menu">
+        <label for="menu-toggle" class="burger-menu">
           <div class="bar"></div>
           <div class="bar"></div>
-        </button>
+        </label>
 
         <nav>
           <div class="link">
@@ -207,8 +213,6 @@
       };
 
       document.addEventListener("DOMContentLoaded", () => {
-        const nav = document.querySelector("nav");
-        const burger = document.querySelector(".burger-menu");
         const header = document.querySelector("header");
         const wrapper = document.querySelector(".wrapper");
         let lastScroll = 0;
@@ -223,17 +227,9 @@
           lastScroll = currentScroll;
         });
 
-        burger.addEventListener("click", () => {
-          burger.classList.toggle("active");
-          nav.classList.toggle("active");
-          wrapper.classList.toggle("no-scroll");
-        });
-
         window.addEventListener("hashchange", () => {
           loadPage(window.location.hash.slice(1));
-          burger.classList.remove("active");
-          nav.classList.remove("active");
-          wrapper.classList.remove("no-scroll");
+          document.getElementById("menu-toggle").checked = false;
         });
 
         loadPage();
