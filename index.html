@@ -200,34 +200,33 @@
     </div>
 
     <script>
+      const wrapper = document.querySelector(".wrapper");
+      const header = document.querySelector("header");
+      const main = document.querySelector("main");
+      const menuToggle = document.getElementById("menu-toggle");
+      let lastScroll = wrapper.scrollTop;
+
       const loadPage = (page = window.location.hash.slice(1) || "projects") => {
         const template = document.getElementById(page);
-        const main = document.querySelector("main");
         main.innerHTML = "";
         main.appendChild(template.content.cloneNode(true));
-        document.querySelector(".wrapper").scrollTop = 0;
+        wrapper.scrollTop = 0;
 
         if (!window.location.hash) window.location.hash = page;
       };
 
       document.addEventListener("DOMContentLoaded", () => {
-        const header = document.querySelector("header");
-        const wrapper = document.querySelector(".wrapper");
-        let lastScroll = 0;
-
         wrapper.addEventListener("scroll", () => {
-          const currentScroll = wrapper.scrollTop;
-          if (currentScroll > lastScroll && currentScroll > 100) {
-            header.classList.add("hide");
-          } else {
-            header.classList.remove("hide");
-          }
-          lastScroll = currentScroll;
+          header.classList.toggle(
+            "hide",
+            wrapper.scrollTop > lastScroll && wrapper.scrollTop > 100,
+          );
+          lastScroll = wrapper.scrollTop;
         });
 
         window.addEventListener("hashchange", () => {
           loadPage(window.location.hash.slice(1));
-          document.getElementById("menu-toggle").checked = false;
+          menuToggle.checked = false;
         });
 
         loadPage();
