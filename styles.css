@@ -202,11 +202,10 @@ main {
 
 .card img {
   width: 100%;
-  transition: transform 0.3s ease;
 }
 
 .card:hover img {
-  transform: scale(1.01);
+  filter: grayscale(50%);
 }
 
 .title {
@@ -306,5 +305,9 @@ footer p {
   header a:hover {
     text-decoration: none;
     color: var(--color-txt);
+  }
+
+  .card:hover img {
+    filter: none;
   }
 }
