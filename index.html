@@ -40,7 +40,7 @@
     />
     <div class="wrapper">
       <header>
-        <a href="#portfolio" data-page="portfolio" class="logo">
+        <a href="#projects" data-page="projects" class="logo">
           <h1>BABOYA</h1>
         </a>
 
@@ -51,10 +51,10 @@
 
         <nav>
           <div class="link">
-            <a href="#portfolio" data-page="portfolio">PORTFOLIO</a>
+            <a href="#projects" data-page="projects">PROJECTS</a>
             <a href="#about" data-page="about">ABOUT</a>
           </div>
-          <div class="socials">
+          <div class="contact">
             <a href="https://github.com/b4b0y4" target="_blank">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -103,8 +103,8 @@
         </nav>
       </header>
 
-      <template id="portfolio">
-        <div class="portfolio-wrapper">
+      <template id="projects">
+        <div class="projects-wrapper">
           <div class="port-intro">
             <p>I learned how to code so I could make cool stuff on Ethereum.</p>
           </div>
@@ -200,9 +200,7 @@
     </div>
 
     <script>
-      const loadPage = (
-        page = window.location.hash.slice(1) || "portfolio",
-      ) => {
+      const loadPage = (page = window.location.hash.slice(1) || "projects") => {
         const template = document.getElementById(page);
         const main = document.querySelector("main");
         main.innerHTML = "";

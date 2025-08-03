@@ -102,12 +102,12 @@ header a {
 }
 
 .link,
-.socials {
+.contact {
   display: flex;
   gap: 15px;
 }
 
-.socials {
+.contact {
   margin-top: 5px;
 }
 
@@ -172,7 +172,7 @@ main {
   flex: 1;
 }
 
-.portfolio-wrapper {
+.projects-wrapper {
   display: flex;
   flex-direction: column;
   padding: 25px;
@@ -289,7 +289,7 @@ footer p {
     gap: 40px;
   }
 
-  .socials {
+  .contact {
     position: absolute;
     bottom: 30px;
     left: 50%;
