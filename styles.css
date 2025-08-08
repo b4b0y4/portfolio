@@ -100,7 +100,7 @@ header a:hover {
   color: var(--color-2nd);
 }
 
-.social-icon {
+.contact-icon {
   width: 16px;
   height: 16px;
   fill: currentColor;
@@ -282,7 +282,7 @@ footer p {
     gap: 30px;
   }
 
-  .social-icon {
+  .contact-icon {
     width: 24px;
     height: 24px;
   }
