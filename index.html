@@ -104,7 +104,7 @@
 
       <template id="projects">
         <div class="projects-wrapper">
-          <div class="port-intro">
+          <div class="intro">
             <p>I learned how to code so I could make cool stuff on Ethereum.</p>
           </div>
 
@@ -170,7 +170,7 @@
 
       <template id="about">
         <div class="about-wrapper">
-          <div class="about-intro">
+          <div class="about-me">
             <p>
               <span>Minimalism</span> is a guiding principle in my life. I
               believe in living simply and coding simply. I push to create
@@ -194,7 +194,7 @@
       <main></main>
 
       <footer>
-        <p>&lt;/baboya&gt;</p>
+        <p>[2021-<span id="year"></span>] baboya</p>
       </footer>
     </div>
 
@@ -230,6 +230,7 @@
 
         loadPage();
       });
+      document.getElementById("year").textContent = new Date().getFullYear();
     </script>
   </body>
 </html>

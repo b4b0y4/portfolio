@@ -51,14 +51,6 @@ body {
     env(safe-area-inset-bottom) env(safe-area-inset-left);
 }
 
-header,
-main,
-footer {
-  max-width: 1250px;
-  margin: 0 auto;
-  width: 100%;
-}
-
 header {
   position: sticky;
   top: env(safe-area-inset-top);
@@ -170,12 +162,12 @@ main {
   padding: 25px;
 }
 
-.port-intro {
+.intro {
   max-width: 400px;
   margin-bottom: 50px;
 }
 
-.port-intro p {
+.intro p {
   color: var(--color-2nd);
   margin: 0;
   line-height: 1.5;
@@ -183,10 +175,10 @@ main {
 
 .card-box {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 25px;
   max-width: 100%;
-  margin: 0 auto 50px;
+  margin: 0 auto 30px;
 }
 
 .card-link {
@@ -220,18 +212,18 @@ main {
   padding: 25px;
 }
 
-.about-intro {
+.about-me {
   max-width: 800px;
   margin: 0 auto;
 }
 
-.about-intro p {
+.about-me p {
   color: var(--color-2nd);
   margin-top: 0;
   line-height: 1.5;
 }
 
-.about-intro p span {
+.about-me p span {
   color: var(--color-txt);
 }
 
