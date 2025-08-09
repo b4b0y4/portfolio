@@ -86,6 +86,7 @@ nav {
 header a {
   text-decoration: none;
   color: var(--color-txt);
+  transition: color 0.3s ease;
 }
 
 .link,
@@ -98,8 +99,7 @@ header a {
   margin-top: 2px;
 }
 
-header a:hover {
-  text-decoration: underline;
+nav a:hover {
   color: var(--color-2nd);
 }
 
@@ -191,6 +191,7 @@ main {
 
 .card img {
   width: 100%;
+  transition: filter 0.3s ease;
 }
 
 .card:hover img {
@@ -210,19 +211,29 @@ main {
 
 .about-wrapper {
   display: flex;
+  flex-direction: row;
   align-items: center;
+  gap: 40px;
+  max-width: 800px;
   min-height: calc(100dvh - 190px);
+  margin: 0 auto;
+}
+
+.about-wrapper img {
+  flex: 0 0 auto;
+  width: 300px;
+  order: 1;
 }
 
 .about-me {
-  max-width: 750px;
-  margin: 0 auto;
+  flex: 1;
+  order: 2;
 }
 
 .about-me p {
   color: var(--color-2nd);
   margin-top: 0;
-  line-height: 1.5;
+  line-height: 2;
 }
 
 .about-me p span {
@@ -242,7 +253,7 @@ footer p {
   margin: 0;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .burger-menu {
     display: block;
   }
@@ -289,12 +300,16 @@ footer p {
     height: 24px;
   }
 
-  header a:hover {
-    text-decoration: none;
+  nav a:hover {
     color: var(--color-txt);
   }
 
   .card:hover img {
     filter: none;
+  }
+
+  .about-wrapper {
+    flex-direction: column;
+    max-width: 100%;
   }
 }
