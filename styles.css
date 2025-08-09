@@ -178,8 +178,8 @@ main {
 
 .card-box {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  gap: 15px;
   max-width: 100%;
   margin: 0 auto;
 }
@@ -198,13 +198,13 @@ main {
 }
 
 .title {
-  margin: 2.5px;
+  margin: 2px;
   font-size: 1.1em;
 }
 
 .description {
   color: var(--color-2nd);
-  margin: 2.5px;
+  margin: 2px;
   font-size: 0.9em;
 }
 
