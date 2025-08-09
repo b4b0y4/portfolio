@@ -10,15 +10,15 @@
   color-scheme: light dark;
   -webkit-text-size-adjust: none;
 
-  --bg: #fffff8;
-  --txt: #262625;
-  --2nd: #757575;
+  --color-bg: #fffff8;
+  --color-txt: #262625;
+  --color-2nd: #757575;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #0f0e10;
-    --txt: #b4b4b4;
+    --color-bg: #0f0e10;
+    --color-txt: #b4b4b4;
   }
 }
 
@@ -34,8 +34,8 @@ body {
     "Source Code Pro", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
     monospace;
   font-weight: 400;
-  background-color: var(--bg);
-  color: var(--txt);
+  background-color: var(--color-bg);
+  color: var(--color-txt);
   margin: 0;
   padding: 0;
   min-height: 100dvh;
@@ -58,7 +58,7 @@ header {
   position: sticky;
   top: env(safe-area-inset-top);
   z-index: 100;
-  background-color: var(--bg);
+  background-color: var(--color-bg);
   padding: 25px;
   display: flex;
   justify-content: space-between;
@@ -85,7 +85,7 @@ nav {
 
 header a {
   text-decoration: none;
-  color: var(--txt);
+  color: var(--color-txt);
 }
 
 .link,
@@ -100,7 +100,7 @@ header a {
 
 header a:hover {
   text-decoration: underline;
-  color: var(--2nd);
+  color: var(--color-2nd);
 }
 
 .contact-icon {
@@ -129,7 +129,7 @@ header a:hover {
   width: 100%;
   height: 2px;
   border-radius: 5px;
-  background-color: var(--txt);
+  background-color: var(--color-txt);
   position: absolute;
   transition:
     transform 0.3s ease,
@@ -157,12 +157,12 @@ header a:hover {
 
 main {
   flex: 1;
+  padding: 25px;
 }
 
 .projects-wrapper {
   display: flex;
   flex-direction: column;
-  padding: 25px;
 }
 
 .intro {
@@ -171,7 +171,7 @@ main {
 }
 
 .intro p {
-  color: var(--2nd);
+  color: var(--color-2nd);
   margin: 0;
   line-height: 1.5;
 }
@@ -181,7 +181,7 @@ main {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 25px;
   max-width: 100%;
-  margin: 0 auto 5px;
+  margin: 0 auto;
 }
 
 .card-link {
@@ -203,7 +203,7 @@ main {
 }
 
 .description {
-  color: var(--2nd);
+  color: var(--color-2nd);
   margin: 2.5px;
   font-size: 0.9em;
 }
@@ -211,23 +211,22 @@ main {
 .about-wrapper {
   display: flex;
   align-items: center;
-  min-height: calc(100dvh - 200px);
-  padding: 25px;
+  min-height: calc(100dvh - 190px);
 }
 
 .about-me {
-  max-width: 800px;
+  max-width: 750px;
   margin: 0 auto;
 }
 
 .about-me p {
-  color: var(--2nd);
+  color: var(--color-2nd);
   margin-top: 0;
   line-height: 1.5;
 }
 
 .about-me p span {
-  color: var(--txt);
+  color: var(--color-txt);
 }
 
 footer {
@@ -238,7 +237,7 @@ footer {
 }
 
 footer p {
-  color: var(--2nd);
+  color: var(--color-2nd);
   font-size: 0.8em;
   margin: 0;
 }
@@ -254,7 +253,7 @@ footer p {
     width: 100vw;
     height: 100dvh;
     font-size: 1.4em;
-    background-color: var(--bg);
+    background-color: var(--color-bg);
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -292,7 +291,7 @@ footer p {
 
   header a:hover {
     text-decoration: none;
-    color: var(--txt);
+    color: var(--color-txt);
   }
 
   .card:hover img {
