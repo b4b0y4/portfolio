@@ -232,7 +232,7 @@ main {
 
 .about-me p {
   color: var(--color-2nd);
-  margin: 10px;
+  margin: 10px 0;
   line-height: 2;
 }
 
