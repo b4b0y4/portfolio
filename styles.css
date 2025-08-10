@@ -213,8 +213,8 @@ main {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 40px;
-  max-width: 800px;
+  gap: 20px;
+  max-width: 750px;
   min-height: calc(100dvh - 190px);
   margin: 0 auto;
 }
@@ -310,6 +310,9 @@ footer p {
 
   .about-wrapper {
     flex-direction: column;
-    max-width: 100%;
+  }
+
+  .about-wrapper img {
+    width: 100%;
   }
 }
