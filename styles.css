@@ -155,6 +155,10 @@ nav a:hover {
   transform: translateY(50%) rotate(-45deg);
 }
 
+.menu-toggle:checked + .wrapper {
+  overflow: hidden;
+}
+
 main {
   flex: 1;
   padding: 25px;
