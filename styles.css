@@ -218,14 +218,14 @@ main {
   flex-direction: row;
   align-items: center;
   gap: 20px;
-  max-width: 750px;
+  max-width: 860px;
   min-height: calc(100dvh - 190px);
   margin: 0 auto;
 }
 
 .about-wrapper img {
   flex: 0 0 auto;
-  width: 300px;
+  width: 45%;
   order: 1;
 }
 
