@@ -249,6 +249,7 @@ main {
 }
 
 .post-link h3 {
+  font-size: 1.1em;
   margin: 0 0 5px 0;
   color: var(--color-txt);
   transition: color 0.3s ease;
@@ -275,6 +276,7 @@ main {
 }
 
 .blog-post h2 {
+  font-size: 1.1em;
   color: var(--color-txt);
   margin: 0 0 10px 0;
 }
