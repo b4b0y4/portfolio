@@ -388,7 +388,8 @@ footer p {
 
   nav .link a:hover,
   nav .contact a:hover,
-  .post-link h3 {
+  .post-link:hover h3,
+  .back-link:hover {
     color: var(--color-txt);
   }
 
