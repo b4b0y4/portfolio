@@ -264,9 +264,17 @@
     <script>
       const wrapper = document.querySelector(".wrapper");
       const header = document.querySelector("header");
+      const nav = document.querySelector("nav");
       const main = document.querySelector("main");
       const menuToggle = document.getElementById("menu-toggle");
       let lastScroll = wrapper.scrollTop;
+
+      const renderTemplate = (templateId) => {
+        const template = document.getElementById(templateId);
+        main.innerHTML = "";
+        main.appendChild(template.content.cloneNode(true));
+        wrapper.scrollTop = 0;
+      };
 
       const loadPage = (page = window.location.hash.slice(1) || "projects") => {
         if (page.startsWith("blog/")) {
@@ -274,31 +282,23 @@
           loadBlogPost(postId);
           return;
         }
-        const template = document.getElementById(page);
-        main.innerHTML = "";
-        main.appendChild(template.content.cloneNode(true));
-        wrapper.scrollTop = 0;
 
-        if (!window.location.hash) window.location.hash = page;
+        renderTemplate(page);
+        if (!window.location.hash) {
+          window.location.hash = page;
+        }
       };
 
       const loadBlogPost = (postId) => {
-        const blogTemplate = document.getElementById("blog");
+        renderTemplate("blog");
+
         const postTemplate = document.getElementById(`blog-${postId}`);
-        const main = document.querySelector("main");
+        const postContent = document.getElementById("post-content");
+        const postList = document.querySelector(".post-list");
 
-        main.innerHTML = "";
-        main.appendChild(blogTemplate.content.cloneNode(true));
-
-        if (postTemplate) {
-          const postContent = document.getElementById("post-content");
-          const postList = document.querySelector(".post-list");
-          postList.style.display = "none";
-          postContent.style.display = "block";
-          postContent.appendChild(postTemplate.content.cloneNode(true));
-        }
-
-        wrapper.scrollTop = 0;
+        postList.style.display = "none";
+        postContent.style.display = "block";
+        postContent.appendChild(postTemplate.content.cloneNode(true));
       };
 
       document.addEventListener("DOMContentLoaded", () => {
@@ -315,9 +315,15 @@
           menuToggle.checked = false;
         });
 
+        nav.addEventListener("click", (e) => {
+          if (e.target.closest("a")) {
+            menuToggle.checked = false;
+          }
+        });
+
         loadPage();
+        document.getElementById("year").textContent = new Date().getFullYear();
       });
-      document.getElementById("year").textContent = new Date().getFullYear();
     </script>
   </body>
 </html>
