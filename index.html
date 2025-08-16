@@ -52,6 +52,7 @@
         <nav>
           <div class="link">
             <a href="#projects" data-page="projects">PROJECTS</a>
+            <a href="#blog" data-page="blog">BLOG</a>
             <a href="#about" data-page="about">ABOUT</a>
           </div>
           <div class="contact">
@@ -175,6 +176,45 @@
         </div>
       </template>
 
+      <template id="blog">
+        <div class="blog-wrapper">
+          <div class="blog-intro">
+            <p>{ My thoughts on things I remembered to write down. }</p>
+          </div>
+
+          <div class="blog-posts">
+            <div class="post-list">
+              <a href="#blog/procrastination" class="post-link">
+                <h3>Procrastination</h3>
+                <p class="post-date">2025 Aug 16</p>
+                <p class="post-excerpt">
+                  On starting things but never finishing...
+                </p>
+              </a>
+            </div>
+
+            <div
+              class="post-content"
+              id="post-content"
+              style="display: none"
+            ></div>
+          </div>
+        </div>
+      </template>
+
+      <template id="blog-procrastination">
+        <article class="blog-post">
+          <h2>Procrastination</h2>
+          <p class="post-date">2025 Aug 16</p>
+          <p>
+            I've been thinking a lot about how I start new things but don't very
+            often push through to finish them. I used to feel shitty about it.
+            Now i'm fine; I know that eventually I'll get back to it.
+          </p>
+          <a href="#blog" class="back-link">← Back to posts</a>
+        </article>
+      </template>
+
       <template id="about">
         <div class="about-wrapper">
           <div class="about-me">
@@ -214,12 +254,36 @@
       let lastScroll = wrapper.scrollTop;
 
       const loadPage = (page = window.location.hash.slice(1) || "projects") => {
+        if (page.startsWith("blog/")) {
+          const postId = page.replace("blog/", "");
+          loadBlogPost(postId);
+          return;
+        }
         const template = document.getElementById(page);
         main.innerHTML = "";
         main.appendChild(template.content.cloneNode(true));
         wrapper.scrollTop = 0;
 
         if (!window.location.hash) window.location.hash = page;
+      };
+
+      const loadBlogPost = (postId) => {
+        const blogTemplate = document.getElementById("blog");
+        const postTemplate = document.getElementById(`blog-${postId}`);
+        const main = document.querySelector("main");
+
+        main.innerHTML = "";
+        main.appendChild(blogTemplate.content.cloneNode(true));
+
+        if (postTemplate) {
+          const postContent = document.getElementById("post-content");
+          const postList = document.querySelector(".post-list");
+          postList.style.display = "none";
+          postContent.style.display = "block";
+          postContent.appendChild(postTemplate.content.cloneNode(true));
+        }
+
+        wrapper.scrollTop = 0;
       };
 
       document.addEventListener("DOMContentLoaded", () => {
