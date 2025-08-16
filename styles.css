@@ -177,7 +177,7 @@ main {
 .intro p {
   color: var(--color-sub);
   margin: 0;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 .card-box {
@@ -211,6 +211,7 @@ main {
   color: var(--color-sub);
   margin: 2px;
   font-size: 0.9em;
+  line-height: 1.6;
 }
 
 .blog-wrapper {
@@ -226,7 +227,7 @@ main {
 .blog-intro p {
   color: var(--color-sub);
   margin: 0;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 .blog-posts {
@@ -266,11 +267,11 @@ main {
 .post-excerpt {
   color: var(--color-sub);
   margin: 0;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 .blog-post {
-  line-height: 1.8;
+  line-height: 1.6;
 }
 
 .blog-post h2 {
