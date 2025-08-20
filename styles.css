@@ -250,7 +250,7 @@ main {
 
 .post-link h3 {
   font-size: 1.1em;
-  margin: 5px 0;
+  margin: 0;
   color: var(--color-txt);
   transition: color 0.3s ease;
 }
@@ -262,7 +262,7 @@ main {
 .post-date {
   color: var(--color-sub);
   font-size: 0.9em;
-  margin: 0 !important;
+  margin: 5px 0 !important;
 }
 
 .post-excerpt {
@@ -278,7 +278,7 @@ main {
 .blog-post h2 {
   font-size: 1.1em;
   color: var(--color-txt);
-  margin: 5px 0 0;
+  margin: 0;
 }
 
 .blog-post p {
