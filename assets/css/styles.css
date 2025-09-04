@@ -120,10 +120,10 @@ nav {
 .menu-toggle {
   display: none;
 
-  &:checked + .wrapper {
+  &:checked ~ .wrapper {
     overflow: hidden;
     position: fixed;
-    width: 100dvh;
+    width: 100dvw;
     height: 100dvh;
 
     & .burger-menu .bar:first-child {
