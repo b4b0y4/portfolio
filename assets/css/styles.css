@@ -122,6 +122,9 @@ nav {
 
   &:checked + .wrapper {
     overflow: hidden;
+    position: fixed;
+    width: 100dvh;
+    height: 100dvh;
 
     & .burger-menu .bar:first-child {
       top: 50%;
