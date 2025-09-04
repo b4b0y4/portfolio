@@ -119,6 +119,25 @@ nav {
 
 .menu-toggle {
   display: none;
+
+  &:checked + .wrapper {
+    overflow: hidden;
+
+    & .burger-menu .bar:first-child {
+      top: 50%;
+      transform: translateY(-50%) rotate(45deg);
+    }
+
+    & .burger-menu .bar:last-child {
+      bottom: 50%;
+      transform: translateY(50%) rotate(-45deg);
+    }
+
+    & nav {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
 }
 
 .burger-menu {
@@ -149,20 +168,6 @@ nav {
 
   &:last-child {
     inset-block-end: 20%;
-  }
-}
-
-.menu-toggle:checked + .wrapper {
-  overflow: hidden;
-
-  .burger-menu .bar:first-child {
-    inset-block-start: 50%;
-    transform: translateY(-50%) rotate(45deg);
-  }
-
-  .burger-menu .bar:last-child {
-    inset-block-end: 50%;
-    transform: translateY(50%) rotate(-45deg);
   }
 }
 
@@ -365,11 +370,6 @@ footer {
     opacity: 0;
     pointer-events: none;
     transition: opacity var(--transition-smooth);
-  }
-
-  .menu-toggle:checked + .wrapper nav {
-    opacity: 1;
-    pointer-events: auto;
   }
 
   .link {
