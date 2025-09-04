@@ -274,18 +274,17 @@
     </div>
 
     <script>
-      const wrapper = document.querySelector(".wrapper");
       const header = document.querySelector("header");
       const nav = document.querySelector("nav");
       const main = document.querySelector("main");
       const menuToggle = document.getElementById("menu-toggle");
-      let lastScroll = wrapper.scrollTop;
+      let lastScroll = window.scrollY;
 
       const renderTemplate = (templateId) => {
         const template = document.getElementById(templateId);
         main.innerHTML = "";
         main.appendChild(template.content.cloneNode(true));
-        wrapper.scrollTop = 0;
+        window.scrollTo(0, 0);
       };
 
       const loadPage = (page = window.location.hash.slice(1) || "projects") => {
@@ -314,12 +313,12 @@
       };
 
       document.addEventListener("DOMContentLoaded", () => {
-        wrapper.addEventListener("scroll", () => {
+        window.addEventListener("scroll", () => {
           header.classList.toggle(
             "hide",
-            wrapper.scrollTop > lastScroll && wrapper.scrollTop > 100,
+            window.scrollY > lastScroll && window.scrollY > 100,
           );
-          lastScroll = wrapper.scrollTop;
+          lastScroll = window.scrollY;
         });
 
         window.addEventListener("hashchange", () => {
