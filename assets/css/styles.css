@@ -132,7 +132,7 @@ nav {
 
 #theme-btn svg {
   position: absolute;
-  transition: all var(--smooth);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   width: 24px;
   height: 24px;
 }
