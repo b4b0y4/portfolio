@@ -323,97 +323,115 @@
         window.scrollTo(0, 0);
       };
 
+      const loadBlogPost = (postId) => {
+        renderTemplate("blog");
+        const postTemplate = document.getElementById(`blog-${postId}`);
+        const postContent = document.getElementById("post-content");
+        const postList = document.querySelector(".post-list");
+        postList.style.display = "none";
+        postContent.style.display = "block";
+        postContent.appendChild(postTemplate.content.cloneNode(true));
+      };
+
       const loadPage = (page = window.location.hash.slice(1) || "home") => {
         if (page.startsWith("blog/")) {
           const postId = page.replace("blog/", "");
           loadBlogPost(postId);
           return;
         }
-
         renderTemplate(page);
         if (!window.location.hash) {
           window.location.hash = page;
         }
       };
 
-      const loadBlogPost = (postId) => {
-        renderTemplate("blog");
+      const themeManager = {
+        themes: ["light", "dark"],
 
-        const postTemplate = document.getElementById(`blog-${postId}`);
-        const postContent = document.getElementById("post-content");
-        const postList = document.querySelector(".post-list");
-
-        postList.style.display = "none";
-        postContent.style.display = "block";
-        postContent.appendChild(postTemplate.content.cloneNode(true));
-      };
-
-      document.addEventListener("DOMContentLoaded", () => {
-        window.addEventListener("scroll", () => {
-          header.classList.toggle(
-            "hide",
-            window.scrollY > lastScroll && window.scrollY > 100,
-          );
-          lastScroll = window.scrollY;
-        });
-
-        window.addEventListener("hashchange", () => {
-          loadPage(window.location.hash.slice(1));
-          menuToggle.checked = false;
-        });
-
-        nav.addEventListener("click", (e) => {
-          if (e.target.closest("a")) {
-            menuToggle.checked = false;
-          }
-        });
-
-        const themeBtn = document.getElementById("theme-btn");
-        const themes = ["light", "dark"];
-
-        const getSystemTheme = () => {
+        getSystemTheme() {
           return window.matchMedia("(prefers-color-scheme: dark)").matches
             ? 1
             : 0;
-        };
+        },
 
-        const getCurrentTheme = () => {
+        getCurrentTheme() {
           const override = localStorage.getItem("themeOverride");
-          return override ? themes.indexOf(override) : getSystemTheme();
-        };
+          return override
+            ? this.themes.indexOf(override)
+            : this.getSystemTheme();
+        },
 
-        const applyTheme = () => {
-          const themeIndex = getCurrentTheme();
-          const theme = themes[themeIndex];
+        applyTheme() {
+          const themeIndex = this.getCurrentTheme();
+          const theme = this.themes[themeIndex];
           const isSystem = !localStorage.getItem("themeOverride");
-
           document.body.dataset.selectedTheme = theme;
           document.body.dataset.theme = theme;
           document.body.dataset.themeSource = isSystem ? "system" : "manual";
-        };
+        },
 
-        themeBtn.addEventListener("click", () => {
-          const currentIndex = getCurrentTheme();
-          const nextTheme = themes[(currentIndex + 1) % themes.length];
+        cycleTheme() {
+          const currentIndex = this.getCurrentTheme();
+          const nextTheme =
+            this.themes[(currentIndex + 1) % this.themes.length];
           localStorage.setItem("themeOverride", nextTheme);
-          applyTheme();
-        });
+          this.applyTheme();
+        },
 
-        themeBtn.addEventListener("dblclick", (e) => {
-          e.preventDefault();
+        resetToSystem() {
           localStorage.removeItem("themeOverride");
-          applyTheme();
-        });
+          this.applyTheme();
+        },
+      };
 
+      const handleScroll = () => {
+        header.classList.toggle(
+          "hide",
+          window.scrollY > lastScroll && window.scrollY > 100,
+        );
+        lastScroll = window.scrollY;
+      };
+
+      const handleHashChange = () => {
+        loadPage(window.location.hash.slice(1));
+        menuToggle.checked = false;
+      };
+
+      const handleNavClick = (e) => {
+        if (e.target.closest("a")) {
+          menuToggle.checked = false;
+        }
+      };
+
+      const handleThemeClick = () => {
+        themeManager.cycleTheme();
+      };
+
+      const handleThemeDoubleClick = (e) => {
+        e.preventDefault();
+        themeManager.resetToSystem();
+      };
+
+      const handleSystemThemeChange = () => {
+        if (!localStorage.getItem("themeOverride")) {
+          themeManager.applyTheme();
+        }
+      };
+
+      document.addEventListener("DOMContentLoaded", () => {
+        window.addEventListener("scroll", handleScroll);
+
+        window.addEventListener("hashchange", handleHashChange);
+        nav.addEventListener("click", handleNavClick);
+
+        const themeBtn = document.getElementById("theme-btn");
+        themeBtn.addEventListener("click", handleThemeClick);
+        themeBtn.addEventListener("dblclick", handleThemeDoubleClick);
         window
           .matchMedia("(prefers-color-scheme: dark)")
-          .addEventListener("change", () => {
-            if (!localStorage.getItem("themeOverride")) {
-              applyTheme();
-            }
-          });
+          .addEventListener("change", handleSystemThemeChange);
 
-        applyTheme();
+        themeManager.applyTheme();
         loadPage();
         document.getElementById("year").textContent = new Date().getFullYear();
       });
