@@ -23,12 +23,10 @@
   --transition-smooth: 0.3s ease;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-bg: #0f0e10;
-    --color-txt: #b4b4b4;
-    --color-sub: #868686;
-  }
+[data-theme="dark"] {
+  --color-bg: #0f0e10;
+  --color-txt: #b4b4b4;
+  --color-sub: #868686;
 }
 
 *,
@@ -51,6 +49,9 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100dvh;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
 }
 
 .wrapper {
@@ -97,24 +98,93 @@ header {
 nav {
   display: flex;
   align-items: center;
-  font-size: 1.1em;
+  font-size: 1.25em;
   gap: var(--spacing-sm);
 }
 
 .link,
 .contact {
   display: flex;
+  align-items: center;
   gap: var(--spacing-xs);
 }
 
-.contact {
-  margin-block-start: 2px;
+.contact a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .contact-icon {
-  width: 16px;
-  height: 16px;
-  fill: currentColor;
+  width: 22px;
+  height: 22px;
+  color: var(--color-txt);
+}
+
+#theme-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+  color: var(--color-txt);
+  position: relative;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#theme-btn svg {
+  position: absolute;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 24px;
+  height: 24px;
+}
+
+#theme-light {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
+#theme-dark {
+  opacity: 0;
+  transform: rotate(-90deg);
+}
+
+#theme-system {
+  opacity: 0;
+  transform: rotate(-90deg);
+}
+
+[data-selected-theme="dark"] #theme-light {
+  opacity: 0;
+  transform: rotate(90deg);
+}
+
+[data-selected-theme="dark"] #theme-dark {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
+[data-selected-theme="dark"] #theme-system {
+  opacity: 0;
+  transform: rotate(90deg);
+}
+
+[data-theme-source="system"] #theme-light {
+  opacity: 0;
+  transform: rotate(-90deg);
+}
+
+[data-theme-source="system"] #theme-dark {
+  opacity: 0;
+  transform: rotate(90deg);
+}
+
+[data-theme-source="system"] #theme-system {
+  opacity: 1;
+  transform: rotate(0deg);
 }
 
 .menu-toggle {
@@ -179,7 +249,7 @@ main {
   padding: var(--spacing-lg);
 }
 
-.projects-wrapper,
+.home-wrapper,
 .blog-wrapper {
   display: flex;
   flex-direction: column;
@@ -354,7 +424,7 @@ footer {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .burger-menu {
     display: block;
   }
@@ -394,6 +464,11 @@ footer {
   .contact-icon {
     width: 24px;
     height: 24px;
+  }
+
+  #theme-btn svg {
+    width: 27px;
+    height: 27px;
   }
 
   nav .link a:hover,
