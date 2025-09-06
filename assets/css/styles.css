@@ -50,8 +50,8 @@ body {
   padding: 0;
   min-height: 100dvh;
   transition:
-    background-color 0.3s,
-    color 0.3s;
+    background-color var(--smooth),
+    color var(--smooth);
 }
 
 .wrapper {
@@ -87,18 +87,13 @@ header {
   a {
     text-decoration: none;
     color: var(--color-txt);
-    transition: color var(--smooth);
-
-    &:hover {
-      color: var(--color-sub);
-    }
   }
 }
 
 nav {
   display: flex;
   align-items: center;
-  font-size: 1.25em;
+  font-size: 1.3em;
   gap: var(--spacing-sm);
 }
 
@@ -107,12 +102,12 @@ nav {
   display: flex;
   align-items: center;
   gap: var(--spacing-xs);
-}
 
-.contact a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .contact-icon {
@@ -137,7 +132,7 @@ nav {
 
 #theme-btn svg {
   position: absolute;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all var(--smooth);
   width: 24px;
   height: 24px;
 }
@@ -327,11 +322,6 @@ main {
 .card {
   img {
     width: 100%;
-    transition: filter var(--smooth);
-  }
-
-  &:hover img {
-    filter: grayscale(80%);
   }
 }
 
@@ -379,11 +369,6 @@ main {
     font-size: 1.1em;
     margin: 0 0 5px 0;
     color: var(--color-txt);
-    transition: color var(--smooth);
-  }
-
-  &:hover h3 {
-    color: var(--color-sub);
   }
 }
 
@@ -419,11 +404,6 @@ main {
   text-decoration: none;
   margin-block-start: var(--spacing-xl);
   display: inline-block;
-  transition: color var(--smooth);
-
-  &:hover {
-    color: var(--color-sub);
-  }
 }
 
 footer {
@@ -484,17 +464,6 @@ footer {
   #theme-btn svg {
     width: 27px;
     height: 27px;
-  }
-
-  nav .link a:hover,
-  nav .contact a:hover,
-  .post-link:hover h3,
-  .back-link:hover {
-    color: var(--color-txt);
-  }
-
-  .card:hover img {
-    filter: none;
   }
 
   .about-wrapper {
