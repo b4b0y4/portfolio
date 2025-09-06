@@ -20,7 +20,7 @@
   --spacing-xl: 30px;
   --spacing-2xl: 40px;
   --spacing-3xl: 50px;
-  --smooth: 0.3s ease-in-out;
+  --smooth: 0.3s ease;
 }
 
 [data-theme="dark"] {
