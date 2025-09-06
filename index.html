@@ -18,16 +18,6 @@
       sizes="180x180"
       href="./assets/img/apple-touch-icon.png"
     />
-    <!--<meta
-      name="theme-color"
-      content="#fffff8"
-      media="(prefers-color-scheme: light)"
-    />
-    <meta
-      name="theme-color"
-      content="#0f0e10"
-      media="(prefers-color-scheme: dark)"
-    />-->
     <link rel="stylesheet" href="./assets/css/styles.css" />
   </head>
 
@@ -40,7 +30,7 @@
     />
     <div class="wrapper">
       <header>
-        <a href="#home" data-page="projects" class="logo">
+        <a href="#home" data-page="home" class="logo">
           <h1>BABOYA</h1>
         </a>
 
@@ -53,7 +43,6 @@
           <div class="link">
             <a href="#home" data-page="home">HOME</a>
             <a href="#blog" data-page="blog">BLOG</a>
-            <a href="#about" data-page="about">ABOUT</a>
           </div>
           <div class="contact">
             <button id="theme-btn">
@@ -151,11 +140,31 @@
 
       <template id="home">
         <div class="home-wrapper">
-          <div class="intro">
-            <p>
-              I started learning how to code so I could make cool stuff on
-              Ethereum.
-            </p>
+          <div class="intro-accordion">
+            <input type="checkbox" id="intro-accordion" />
+            <label for="intro-accordion" class="accordion-header">
+              <p>
+                I started <span>learning</span> how to code so I could make cool
+                stuff on Ethereum.
+              </p>
+            </label>
+            <div class="accordion-content">
+              <p>
+                In my free time, I like to make little tools and learn new
+                things.
+              </p>
+              <p>
+                I'm a <span>minimalist</span> I guess, so I believe in living
+                simply and coding simply. That's how I want to make apps —
+                minimal, functional and no unnecessary complexity.
+              </p>
+              <p>
+                Let's do things with <span>purpose</span> and
+                <span>integrity</span>. Things that maybe stand the test of time
+                and bring value to the world. Money is nice but it's not
+                everything...
+              </p>
+            </div>
           </div>
 
           <div class="card-box">
@@ -285,30 +294,6 @@
 
           <a href="#blog" class="back-link">← Back to posts</a>
         </article>
-      </template>
-
-      <template id="about">
-        <div class="about-wrapper">
-          <div class="about-me">
-            <p>
-              Hey I'm baboya! I started <span>learning</span> how to code so I
-              could build cool stuff on Ethereum. In my free time, I like to
-              make little tools and learn new things.
-            </p>
-            <p>
-              I'm a <span>minimalist</span> I guess, so I believe in living
-              simply and coding simply. That's how I want to make apps —
-              minimal, functional and no unnecessary complexity.
-            </p>
-            <p>
-              Let's do things with <span>purpose</span> and
-              <span>integrity</span>. Things that maybe stand the test of time
-              and bring value to the world. Money is nice but it's not
-              everything...
-            </p>
-          </div>
-          <img src="./assets/img/me.png" alt="me" />
-        </div>
       </template>
 
       <main></main>

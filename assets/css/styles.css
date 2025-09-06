@@ -20,7 +20,7 @@
   --spacing-xl: 30px;
   --spacing-2xl: 40px;
   --spacing-3xl: 50px;
-  --transition-smooth: 0.3s ease;
+  --smooth: 0.3s ease;
 }
 
 [data-theme="dark"] {
@@ -72,7 +72,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: transform var(--transition-smooth);
+  transition: transform var(--smooth);
 
   &.hide {
     transform: translateY(-100%);
@@ -87,7 +87,7 @@ header {
   a {
     text-decoration: none;
     color: var(--color-txt);
-    transition: color var(--transition-smooth);
+    transition: color var(--smooth);
 
     &:hover {
       color: var(--color-sub);
@@ -232,15 +232,16 @@ nav {
   background-color: var(--color-txt);
   position: absolute;
   transition:
-    transform var(--transition-smooth),
-    inset-block var(--transition-smooth);
+    transform var(--smooth),
+    top var(--smooth),
+    bottom var(--smooth);
 
   &:first-child {
-    inset-block-start: 20%;
+    top: 20%;
   }
 
   &:last-child {
-    inset-block-end: 20%;
+    bottom: 20%;
   }
 }
 
@@ -255,15 +256,59 @@ main {
   flex-direction: column;
 }
 
-.intro {
-  max-width: 400px;
+.intro-accordion {
+  max-width: 800px;
   margin-block-end: var(--spacing-3xl);
+}
 
-  p {
-    color: var(--color-sub);
-    margin: 0;
-    line-height: 1.6;
-  }
+.intro-accordion input[type="checkbox"] {
+  display: none;
+}
+
+.accordion-header {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  margin: 0;
+}
+
+.accordion-header p {
+  color: var(--color-sub);
+  line-height: 1.6;
+  margin: 0;
+  display: inline;
+}
+
+.accordion-header::after {
+  content: ">";
+  transition: transform var(--smooth);
+  color: var(--color-txt);
+  display: inline-block;
+}
+
+.intro-accordion input[type="checkbox"]:checked + .accordion-header::after {
+  transform: rotate(90deg);
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--smooth);
+}
+
+.intro-accordion input[type="checkbox"]:checked ~ .accordion-content {
+  max-height: 400px;
+}
+
+.accordion-content p {
+  color: var(--color-sub);
+  line-height: 1.6;
+  margin: var(--spacing-xs) 0 0 0;
+}
+
+.accordion-header span,
+.accordion-content span {
+  color: var(--color-txt);
 }
 
 .card-box {
@@ -282,7 +327,7 @@ main {
 .card {
   img {
     width: 100%;
-    transition: filter var(--transition-smooth);
+    transition: filter var(--smooth);
   }
 
   &:hover img {
@@ -334,7 +379,7 @@ main {
     font-size: 1.1em;
     margin: 0 0 5px 0;
     color: var(--color-txt);
-    transition: color var(--transition-smooth);
+    transition: color var(--smooth);
   }
 
   &:hover h3 {
@@ -374,40 +419,10 @@ main {
   text-decoration: none;
   margin-block-start: var(--spacing-xl);
   display: inline-block;
-  transition: color var(--transition-smooth);
+  transition: color var(--smooth);
 
   &:hover {
     color: var(--color-sub);
-  }
-}
-
-.about-wrapper {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: var(--spacing-md);
-  max-width: 800px;
-  min-height: calc(100dvh - 190px);
-  margin: 0 auto;
-
-  img {
-    flex: 0 0 auto;
-    width: 40%;
-    order: 1;
-  }
-}
-
-.about-me {
-  flex: 1;
-  order: 2;
-
-  p {
-    color: var(--color-sub);
-    line-height: 1.6;
-
-    span {
-      color: var(--color-txt);
-    }
   }
 }
 
@@ -442,7 +457,7 @@ footer {
     padding: var(--spacing-xl);
     opacity: 0;
     pointer-events: none;
-    transition: opacity var(--transition-smooth);
+    transition: opacity var(--smooth);
   }
 
   .link {
