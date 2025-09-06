@@ -101,7 +101,7 @@ nav {
 .contact {
   display: flex;
   align-items: center;
-  gap: var(--spacing-xs);
+  gap: var(--spacing-sm);
 
   a {
     display: flex;
@@ -252,8 +252,7 @@ main {
 }
 
 .intro-accordion {
-  max-width: 800px;
-  margin: auto;
+  max-width: 500px;
   margin-block-end: var(--spacing-3xl);
 }
 
@@ -430,7 +429,7 @@ footer {
     inset: 0;
     width: 100vw;
     height: 100dvh;
-    font-size: 1.4em;
+    font-size: 1.5em;
     background-color: var(--color-bg);
     flex-direction: column;
     justify-content: center;
