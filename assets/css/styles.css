@@ -253,6 +253,7 @@ main {
 
 .intro-accordion {
   max-width: 800px;
+  margin: auto;
   margin-block-end: var(--spacing-3xl);
 }
 
