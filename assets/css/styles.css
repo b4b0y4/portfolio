@@ -20,7 +20,7 @@
   --spacing-xl: 30px;
   --spacing-2xl: 40px;
   --spacing-3xl: 50px;
-  --smooth: 0.3s ease;
+  --linear: 0.3s linear;
 }
 
 [data-theme="dark"] {
@@ -50,8 +50,8 @@ body {
   padding: 0;
   min-height: 100dvh;
   transition:
-    background-color var(--smooth),
-    color var(--smooth);
+    background-color var(--linear),
+    color var(--linear);
 }
 
 .wrapper {
@@ -72,7 +72,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: transform var(--smooth);
+  transition: transform var(--linear);
 
   &.hide {
     transform: translateY(-100%);
@@ -227,9 +227,9 @@ nav {
   background-color: var(--color-txt);
   position: absolute;
   transition:
-    transform var(--smooth),
-    top var(--smooth),
-    bottom var(--smooth);
+    transform var(--linear),
+    top var(--linear),
+    bottom var(--linear);
 
   &:first-child {
     top: 20%;
@@ -276,7 +276,7 @@ main {
 
 .accordion-header::after {
   content: ">";
-  transition: transform var(--smooth);
+  transition: transform var(--linear);
   color: var(--color-txt);
   display: inline-block;
 }
@@ -288,7 +288,7 @@ main {
 .accordion-content {
   max-height: 0;
   overflow: hidden;
-  transition: max-height var(--smooth);
+  transition: max-height var(--linear);
 }
 
 .intro-accordion input[type="checkbox"]:checked ~ .accordion-content {
@@ -437,7 +437,7 @@ footer {
     padding: var(--spacing-xl);
     opacity: 0;
     pointer-events: none;
-    transition: opacity var(--smooth);
+    transition: opacity var(--linear);
   }
 
   .link {
