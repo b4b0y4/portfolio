@@ -327,128 +327,84 @@
     </div>
 
     <script>
-      const header = document.querySelector("header");
-      const nav = document.querySelector("nav");
-      const main = document.querySelector("main");
-      const menuToggle = document.getElementById("menu-toggle");
-      let lastScroll = window.scrollY;
+      const header = document.querySelector("header"),
+        nav = document.querySelector("nav"),
+        main = document.querySelector("main"),
+        menuToggle = document.getElementById("menu-toggle");
+      let lastScroll = scrollY;
 
-      const renderTemplate = (templateId) => {
-        const template = document.getElementById(templateId);
+      const render = (t) => {
         main.innerHTML = "";
-        main.appendChild(template.content.cloneNode(true));
-        window.scrollTo(0, 0);
+        main.appendChild(document.getElementById(t).content.cloneNode(true));
+        scrollTo(0, 0);
       };
-
-      const loadBlogPost = (postId) => {
-        renderTemplate("blog");
-        const postTemplate = document.getElementById(`blog-${postId}`);
-        const postContent = document.getElementById("post-content");
-        const postList = document.querySelector(".post-list");
-        postList.style.display = "none";
-        postContent.style.display = "block";
-        postContent.appendChild(postTemplate.content.cloneNode(true));
+      const loadBlog = (id) => {
+        render("blog");
+        document.querySelector(".post-list").style.display = "none";
+        const pc = document.getElementById("post-content");
+        pc.style.display = "block";
+        pc.appendChild(
+          document.getElementById(`blog-${id}`).content.cloneNode(true),
+        );
       };
-
-      const loadPage = (page = window.location.hash.slice(1) || "home") => {
-        if (page.startsWith("blog/")) {
-          const postId = page.replace("blog/", "");
-          loadBlogPost(postId);
-          return;
-        }
-        renderTemplate(page);
-        if (!window.location.hash) {
-          window.location.hash = page;
-        }
+      const loadPage = (p = location.hash.slice(1) || "home") => {
+        p.startsWith("blog/") ? loadBlog(p.replace("blog/", "")) : render(p);
+        if (!location.hash) location.hash = p;
       };
 
       const themeManager = {
         themes: ["light", "dark"],
-
-        getSystemTheme() {
-          return window.matchMedia("(prefers-color-scheme: dark)").matches
-            ? 1
-            : 0;
+        sys: () => (matchMedia("(prefers-color-scheme: dark)").matches ? 1 : 0),
+        cur() {
+          return localStorage.themeOverride
+            ? this.themes.indexOf(localStorage.themeOverride)
+            : this.sys();
         },
-
-        getCurrentTheme() {
-          const override = localStorage.getItem("themeOverride");
-          return override
-            ? this.themes.indexOf(override)
-            : this.getSystemTheme();
+        apply() {
+          let o = localStorage.themeOverride,
+            t = this.themes[this.cur()];
+          Object.assign(document.body.dataset, {
+            theme: t,
+            themeSource: o ? "manual" : "system",
+            selectedTheme: o ? t : "",
+          });
         },
-
-        applyTheme() {
-          const themeIndex = this.getCurrentTheme();
-          const theme = this.themes[themeIndex];
-          const isSystem = !localStorage.getItem("themeOverride");
-          document.body.dataset.selectedTheme = theme;
-          document.body.dataset.theme = theme;
-          document.body.dataset.themeSource = isSystem ? "system" : "manual";
+        cycle() {
+          localStorage.themeOverride = this.themes[(this.cur() + 1) % 2];
+          this.apply();
         },
-
-        cycleTheme() {
-          const currentIndex = this.getCurrentTheme();
-          const nextTheme =
-            this.themes[(currentIndex + 1) % this.themes.length];
-          localStorage.setItem("themeOverride", nextTheme);
-          this.applyTheme();
-        },
-
-        resetToSystem() {
+        reset() {
           localStorage.removeItem("themeOverride");
-          this.applyTheme();
+          this.apply();
         },
       };
 
-      const handleScroll = () => {
-        header.classList.toggle(
-          "hide",
-          window.scrollY > lastScroll && window.scrollY > 100,
+      addEventListener("DOMContentLoaded", () => {
+        addEventListener(
+          "scroll",
+          () =>
+            header.classList.toggle(
+              "hide",
+              scrollY > lastScroll && scrollY > 100,
+            ),
+          { passive: true },
         );
-        lastScroll = window.scrollY;
-      };
-
-      const handleHashChange = () => {
-        loadPage(window.location.hash.slice(1));
-        menuToggle.checked = false;
-      };
-
-      const handleNavClick = (e) => {
-        if (e.target.closest("a")) {
+        addEventListener("hashchange", () => {
+          loadPage(location.hash.slice(1));
           menuToggle.checked = false;
-        }
-      };
-
-      const handleThemeClick = () => {
-        themeManager.cycleTheme();
-      };
-
-      const handleThemeDoubleClick = (e) => {
-        e.preventDefault();
-        themeManager.resetToSystem();
-      };
-
-      const handleSystemThemeChange = () => {
-        if (!localStorage.getItem("themeOverride")) {
-          themeManager.applyTheme();
-        }
-      };
-
-      document.addEventListener("DOMContentLoaded", () => {
-        window.addEventListener("scroll", handleScroll);
-
-        window.addEventListener("hashchange", handleHashChange);
-        nav.addEventListener("click", handleNavClick);
-
-        const themeBtn = document.getElementById("theme-btn");
-        themeBtn.addEventListener("click", handleThemeClick);
-        themeBtn.addEventListener("dblclick", handleThemeDoubleClick);
-        window
-          .matchMedia("(prefers-color-scheme: dark)")
-          .addEventListener("change", handleSystemThemeChange);
-
-        themeManager.applyTheme();
+        });
+        nav.addEventListener(
+          "click",
+          (e) => e.target.closest("a") && (menuToggle.checked = false),
+        );
+        const btn = document.getElementById("theme-btn");
+        btn.onclick = () => themeManager.cycle();
+        btn.ondblclick = (e) => (e.preventDefault(), themeManager.reset());
+        matchMedia("(prefers-color-scheme: dark)").addEventListener(
+          "change",
+          () => !localStorage.themeOverride && themeManager.apply(),
+        );
+        themeManager.apply();
         loadPage();
         document.getElementById("year").textContent = new Date().getFullYear();
       });
