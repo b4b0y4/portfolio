@@ -382,13 +382,16 @@
       addEventListener("DOMContentLoaded", () => {
         addEventListener(
           "scroll",
-          () =>
+          () => {
             header.classList.toggle(
               "hide",
               scrollY > lastScroll && scrollY > 100,
-            ),
+            );
+            lastScroll = scrollY;
+          },
           { passive: true },
         );
+
         addEventListener("hashchange", () => {
           loadPage(location.hash.slice(1));
           menuToggle.checked = false;
@@ -397,9 +400,11 @@
           "click",
           (e) => e.target.closest("a") && (menuToggle.checked = false),
         );
+
         const btn = document.getElementById("theme-btn");
         btn.onclick = () => themeManager.cycle();
         btn.ondblclick = (e) => (e.preventDefault(), themeManager.reset());
+
         matchMedia("(prefers-color-scheme: dark)").addEventListener(
           "change",
           () => !localStorage.themeOverride && themeManager.apply(),
