@@ -332,7 +332,6 @@
         main = document.querySelector("main"),
         menuToggle = document.getElementById("menu-toggle");
       let lastScroll = scrollY;
-
       const render = (t) => {
         main.innerHTML = "";
         main.appendChild(document.getElementById(t).content.cloneNode(true));
@@ -351,7 +350,6 @@
         p.startsWith("blog/") ? loadBlog(p.replace("blog/", "")) : render(p);
         if (!location.hash) location.hash = p;
       };
-
       const themeManager = {
         themes: ["light", "dark"],
         sys: () => (matchMedia("(prefers-color-scheme: dark)").matches ? 1 : 0),
@@ -378,7 +376,6 @@
           this.apply();
         },
       };
-
       addEventListener("DOMContentLoaded", () => {
         addEventListener(
           "scroll",
