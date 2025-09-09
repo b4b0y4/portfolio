@@ -256,7 +256,7 @@ main {
 }
 
 .intro-accordion input[type="checkbox"]:checked ~ .accordion-content {
-  max-height: 400px;
+  max-height: 120px;
 }
 
 .accordion-content p {
@@ -430,11 +430,7 @@ footer {
     height: 27px;
   }
 
-  .about-wrapper {
-    flex-direction: column;
-
-    img {
-      width: 100%;
-    }
+  .intro-accordion input[type="checkbox"]:checked ~ .accordion-content {
+    max-height: 200px;
   }
 }
