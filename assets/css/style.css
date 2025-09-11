@@ -23,12 +23,10 @@
   --smooth: 0.3s ease;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-bg: #0f0e10;
-    --color-txt: #b4b4b4;
-    --color-sub: #868686;
-  }
+[data-theme="dark"] {
+  --color-bg: #0f0e10;
+  --color-txt: #b4b4b4;
+  --color-sub: #868686;
 }
 
 *,
@@ -116,6 +114,36 @@ nav {
   width: 20px;
   height: 20px;
   color: var(--color-txt);
+}
+
+#theme-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+  color: var(--color-txt);
+  position: relative;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & svg {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    transform: rotate(-90deg);
+  }
+}
+
+[data-selected-theme="light"][data-theme-source="manual"] #theme-light,
+[data-selected-theme="dark"][data-theme-source="manual"] #theme-dark,
+[data-theme-source="system"] #theme-system {
+  opacity: 1;
+  transform: rotate(0);
 }
 
 .menu-toggle {
@@ -396,6 +424,11 @@ footer {
   .contact-icon {
     width: 24px;
     height: 24px;
+  }
+
+  #theme-btn svg {
+    width: 27px;
+    height: 27px;
   }
 
   .intro-accordion input[type="checkbox"]:checked ~ .accordion-content {
