@@ -6,6 +6,16 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, viewport-fit=cover"
     />
+    <meta
+      name="theme-color"
+      content="#fffff8"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#0f0e10"
+      media="(prefers-color-scheme: dark)"
+    />
     <title>baboya</title>
     <link rel="preload" as="image" href="./assets/img/blocks.png" />
     <link rel="preload" as="image" href="./assets/img/starter-init.png" />
@@ -46,55 +56,6 @@
           </div>
 
           <div class="contact">
-            <button id="theme-btn">
-              <svg
-                id="theme-light"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 16 16"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.33"
-              >
-                <circle cx="8" cy="8" r="3.33" />
-                <path
-                  d="M8 0.67v1.33M8 14v1.33M2.81 2.81l0.95 0.95M12.24 12.24l0.95 0.95M0.67 8h1.33M14 8h1.33M2.81 13.19l0.95-0.95M12.24 3.76l0.95-0.95"
-                />
-              </svg>
-              <svg
-                id="theme-dark"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 16 16"
-                fill="currentColor"
-              >
-                <path d="M14 8.53A6 6 0 1 1 7.47 2 4.67 4.67 0 0 0 14 8.53z" />
-              </svg>
-              <svg
-                id="theme-system"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 16 16"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.33"
-              >
-                <rect
-                  x="1.33"
-                  y="2"
-                  width="13.33"
-                  height="9.33"
-                  rx="1.33"
-                  ry="1.33"
-                />
-                <line x1="5.33" y1="14" x2="10.67" y2="14" />
-                <line x1="8" y1="11.33" x2="8" y2="14" />
-              </svg>
-            </button>
-
             <a href="https://github.com/b4b0y4" target="_blank">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -102,7 +63,6 @@
                 height="24"
                 fill="currentColor"
                 viewBox="0 0 16 16"
-                class="contact-icon"
               >
                 <path
                   d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"
@@ -116,7 +76,6 @@
                 height="24"
                 fill="currentColor"
                 viewBox="0 0 16 16"
-                class="contact-icon"
               >
                 <path
                   d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334q.002-.211-.006-.422A6.7 6.7 0 0 0 16 3.542a6.7 6.7 0 0 1-1.889.518 3.3 3.3 0 0 0 1.447-1.817 6.5 6.5 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.32 9.32 0 0 1-6.767-3.429 3.29 3.29 0 0 0 1.018 4.382A3.3 3.3 0 0 1 .64 6.575v.045a3.29 3.29 0 0 0 2.632 3.218 3.2 3.2 0 0 1-.865.115 3 3 0 0 1-.614-.057 3.28 3.28 0 0 0 3.067 2.277A6.6 6.6 0 0 1 .78 13.58a6 6 0 0 1-.78-.045A9.34 9.34 0 0 0 5.026 15"
@@ -129,7 +88,6 @@
                 width="24"
                 height="24"
                 viewBox="100 100 800 800"
-                class="contact-icon"
                 fill="currentColor"
               >
                 <path
@@ -347,32 +305,6 @@
         p.startsWith("blog/") ? loadBlog(p.replace("blog/", "")) : render(p);
         if (!location.hash) location.hash = p;
       };
-      const themeManager = {
-        themes: ["light", "dark"],
-        sys: () => (matchMedia("(prefers-color-scheme: dark)").matches ? 1 : 0),
-        cur() {
-          return localStorage.themeOverride
-            ? this.themes.indexOf(localStorage.themeOverride)
-            : this.sys();
-        },
-        apply() {
-          let o = localStorage.themeOverride,
-            t = this.themes[this.cur()];
-          Object.assign(document.body.dataset, {
-            theme: t,
-            themeSource: o ? "manual" : "system",
-            selectedTheme: o ? t : "",
-          });
-        },
-        cycle() {
-          localStorage.themeOverride = this.themes[(this.cur() + 1) % 2];
-          this.apply();
-        },
-        reset() {
-          localStorage.removeItem("themeOverride");
-          this.apply();
-        },
-      };
       addEventListener("DOMContentLoaded", () => {
         addEventListener(
           "scroll",
@@ -393,14 +325,6 @@
           "click",
           (e) => e.target.closest("a") && (menuToggle.checked = false),
         );
-        const btn = document.getElementById("theme-btn");
-        btn.onclick = () => themeManager.cycle();
-        btn.ondblclick = (e) => (e.preventDefault(), themeManager.reset());
-        matchMedia("(prefers-color-scheme: dark)").addEventListener(
-          "change",
-          () => !localStorage.themeOverride && themeManager.apply(),
-        );
-        themeManager.apply();
         loadPage();
         document.getElementById("year").textContent = new Date().getFullYear();
       });

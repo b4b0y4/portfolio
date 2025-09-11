@@ -23,10 +23,12 @@
   --smooth: 0.3s ease;
 }
 
-[data-theme="dark"] {
-  --color-bg: #0f0e10;
-  --color-txt: #b4b4b4;
-  --color-sub: #868686;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #0f0e10;
+    --color-txt: #b4b4b4;
+    --color-sub: #868686;
+  }
 }
 
 *,
@@ -107,43 +109,20 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: color var(--smooth);
+
+    &:hover,
+    &:hover svg {
+      color: var(--color-sub);
+    }
   }
-}
-
-.contact-icon {
-  width: 22px;
-  height: 22px;
-  color: var(--color-txt);
-}
-
-#theme-btn {
-  border: none;
-  background: none;
-  cursor: pointer;
-  padding: 0;
-  color: var(--color-txt);
-  position: relative;
-  width: 24px;
-  height: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
   & svg {
-    position: absolute;
-    width: 24px;
-    height: 24px;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    opacity: 0;
-    transform: rotate(-90deg);
+    width: 20px;
+    height: 20px;
+    color: var(--color-txt);
+    transition: color var(--smooth);
   }
-}
-
-[data-selected-theme="light"][data-theme-source="manual"] #theme-light,
-[data-selected-theme="dark"][data-theme-source="manual"] #theme-dark,
-[data-theme-source="system"] #theme-system {
-  opacity: 1;
-  transform: rotate(0);
 }
 
 .menu-toggle {
@@ -284,10 +263,17 @@ main {
 .card-link {
   text-decoration: none;
   color: inherit;
+
+  &:hover img {
+    filter: grayscale(0);
+  }
 }
 
 .card img {
   width: 100%;
+  filter: grayscale(1);
+  opacity: 0.9;
+  transition: filter var(--smooth);
 }
 
 .title {
@@ -334,6 +320,11 @@ main {
     font-size: 1.1em;
     margin: 0 0 5px 0;
     color: var(--color-txt);
+    transition: color var(--smooth);
+  }
+
+  &:hover h3 {
+    color: var(--color-sub);
   }
 }
 
@@ -369,6 +360,11 @@ main {
   text-decoration: none;
   margin-block-start: var(--spacing-xl);
   display: inline-block;
+  transition: color var(--smooth);
+
+  &:hover {
+    color: var(--color-sub);
+  }
 }
 
 footer {
@@ -424,11 +420,6 @@ footer {
   .contact-icon {
     width: 24px;
     height: 24px;
-  }
-
-  #theme-btn svg {
-    width: 27px;
-    height: 27px;
   }
 
   .intro-accordion input[type="checkbox"]:checked ~ .accordion-content {
