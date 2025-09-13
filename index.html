@@ -236,12 +236,6 @@
                 </p>
               </a>
             </div>
-
-            <div
-              class="post-content"
-              id="post-content"
-              style="display: none"
-            ></div>
           </div>
         </div>
       </template>
@@ -287,23 +281,16 @@
         main = document.querySelector("main"),
         menuToggle = document.getElementById("menu-toggle");
       let lastScroll = scrollY;
-      const render = (t) => {
-        main.innerHTML = "";
-        main.appendChild(document.getElementById(t).content.cloneNode(true));
-        scrollTo(0, 0);
-      };
-      const loadBlog = (id) => {
-        render("blog");
-        document.querySelector(".post-list").style.display = "none";
-        const pc = document.getElementById("post-content");
-        pc.style.display = "block";
-        pc.appendChild(
-          document.getElementById(`blog-${id}`).content.cloneNode(true),
-        );
-      };
-      const loadPage = (p = location.hash.slice(1) || "home") => {
-        p.startsWith("blog/") ? loadBlog(p.replace("blog/", "")) : render(p);
-        if (!location.hash) location.hash = p;
+      const loadPage = (page = location.hash.slice(1) || "home") => {
+        const templateId = page.replace("/", "-");
+        const template = document.getElementById(templateId);
+        if (template) {
+          main.innerHTML = "";
+          main.appendChild(template.content.cloneNode(true));
+          scrollTo(0, 0);
+        } else {
+          location.hash = "home";
+        }
       };
       addEventListener("DOMContentLoaded", () => {
         addEventListener(
