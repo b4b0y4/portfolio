@@ -9,7 +9,6 @@
 :root {
   color-scheme: light dark;
   -webkit-text-size-adjust: 100%;
-
   --color-bg: #fffff8;
   --color-txt: #262625;
   --color-sub: #757575;
@@ -75,17 +74,14 @@ header {
   justify-content: space-between;
   align-items: center;
   transition: transform var(--smooth);
-
   &.hide {
     transform: translateY(-100%);
   }
-
   & h1 {
     margin: 0;
     font-size: 1.5em;
     font-weight: 400;
   }
-
   & a {
     text-decoration: none;
     color: var(--color-txt);
@@ -104,19 +100,16 @@ nav {
   display: flex;
   align-items: center;
   gap: var(--spacing-sm);
-
   & a {
     display: flex;
     align-items: center;
     justify-content: center;
     transition: color var(--smooth);
-
     &:hover,
     &:hover svg {
       color: var(--color-sub);
     }
   }
-
   & svg {
     width: 19px;
     height: 19px;
@@ -127,23 +120,19 @@ nav {
 
 .menu-toggle {
   display: none;
-
   &:checked ~ .wrapper {
     overflow: hidden;
     position: fixed;
     width: 100dvw;
     height: 100dvh;
-
     & .burger-menu .bar:first-child {
       top: 50%;
       transform: translateY(-50%) rotate(45deg);
     }
-
     & .burger-menu .bar:last-child {
       bottom: 50%;
       transform: translateY(50%) rotate(-45deg);
     }
-
     & nav {
       opacity: 1;
       pointer-events: auto;
@@ -173,11 +162,9 @@ nav {
     transform var(--smooth),
     top var(--smooth),
     bottom var(--smooth);
-
   &:first-child {
     top: 20%;
   }
-
   &:last-child {
     bottom: 20%;
   }
@@ -197,15 +184,12 @@ main {
 .intro-accordion {
   max-width: 610px;
   margin-block-end: var(--spacing-3xl);
-
   & input[type="checkbox"] {
     display: none;
   }
-
   & input[type="checkbox"]:checked + .accordion-header::after {
     transform: rotate(90deg);
   }
-
   & input[type="checkbox"]:checked ~ .accordion-content {
     max-height: 120px;
   }
@@ -216,18 +200,15 @@ main {
   position: relative;
   display: inline-block;
   margin: 0;
-
   & p {
     color: var(--color-sub);
     line-height: 1.6;
     margin: 0;
     display: inline;
   }
-
   & span {
     color: var(--color-txt);
   }
-
   &::after {
     content: ">";
     transition: transform var(--smooth);
@@ -240,13 +221,11 @@ main {
   max-height: 0;
   overflow: hidden;
   transition: max-height var(--smooth);
-
   & p {
     color: var(--color-sub);
     line-height: 1.6;
     margin: var(--spacing-xs) 0 0 0;
   }
-
   & span {
     color: var(--color-txt);
   }
@@ -263,7 +242,6 @@ main {
 .card-link {
   text-decoration: none;
   color: inherit;
-
   &:hover img {
     filter: grayscale(0);
   }
@@ -291,7 +269,6 @@ main {
 .blog-intro {
   max-width: 800px;
   margin: 0 auto var(--spacing-3xl);
-
   & p {
     color: var(--color-sub);
     margin: 0;
@@ -315,14 +292,12 @@ main {
   color: inherit;
   padding: var(--spacing-md) 0;
   border-block-end: 1px solid var(--color-sub);
-
   & h3 {
     font-size: 1.1em;
     margin: 0 0 5px 0;
     color: var(--color-txt);
     transition: color var(--smooth);
   }
-
   &:hover h3 {
     color: var(--color-sub);
   }
@@ -344,13 +319,11 @@ main {
   max-width: 800px;
   margin: 0 auto;
   line-height: 1.6;
-
   & h2 {
     font-size: 1.1em;
     color: var(--color-txt);
     margin: 0 0 var(--spacing-xs) 0;
   }
-
   & p {
     color: var(--color-sub);
     margin-block-end: var(--spacing-md);
@@ -363,7 +336,6 @@ main {
   margin-block-start: var(--spacing-xl);
   display: inline-block;
   transition: color var(--smooth);
-
   &:hover {
     color: var(--color-sub);
   }
@@ -374,7 +346,6 @@ footer {
   justify-content: end;
   align-items: center;
   padding: var(--spacing-md) var(--spacing-lg);
-
   & p {
     color: var(--color-sub);
     font-size: 0.8em;
@@ -417,7 +388,6 @@ footer {
     flex-direction: row;
     justify-content: center;
     gap: var(--spacing-xl);
-
     & svg {
       width: 22px;
       height: 22px;
