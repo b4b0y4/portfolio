@@ -250,7 +250,6 @@ main {
 .card img {
   width: 100%;
   filter: grayscale(1);
-  opacity: 0.9;
   transition: filter var(--smooth);
 }
 
