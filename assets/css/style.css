@@ -435,7 +435,7 @@ footer {
   }
 
   .intro-accordion {
-    margin-bottom: var(--spacing-xl);
+    margin-bottom: var(--spacing-xs);
     & input[type="checkbox"]:checked ~ .accordion-content {
       max-height: 200px;
     }
@@ -454,6 +454,13 @@ footer {
     }
     & img {
       width: 100%;
+      order: 1;
+    }
+  }
+
+  .archive-cards .card {
+    flex-direction: column-reverse;
+    & .card-text {
       order: 1;
     }
   }
