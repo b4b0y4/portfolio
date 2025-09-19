@@ -394,8 +394,7 @@ footer {
 }
 
 .social-links {
-  display: block;
-  margin-top: 0;
+  display: inline-block;
   & p {
     color: var(--color-txt);
     display: grid;
@@ -457,7 +456,7 @@ footer {
       cursor: pointer;
     }
     & .accordion-header::after {
-      content: ">";
+      content: "→";
       display: inline-block;
       transition: transform var(--smooth);
       color: var(--color-txt);
