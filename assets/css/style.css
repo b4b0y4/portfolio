@@ -95,8 +95,7 @@ nav {
   gap: var(--spacing-sm);
 }
 
-.link,
-.contact {
+.link {
   display: flex;
   align-items: center;
   gap: var(--spacing-sm);
@@ -105,16 +104,9 @@ nav {
     align-items: center;
     justify-content: center;
     transition: color var(--smooth);
-    &:hover,
-    &:hover svg {
+    &:hover {
       color: var(--color-sub);
     }
-  }
-  & svg {
-    width: 19px;
-    height: 19px;
-    color: var(--color-txt);
-    transition: color var(--smooth);
   }
 }
 
@@ -196,7 +188,7 @@ main {
     transform: rotate(90deg);
   }
   & input[type="checkbox"]:checked ~ .accordion-content {
-    max-height: 170px;
+    max-height: 200px;
   }
 }
 
@@ -220,7 +212,7 @@ main {
 }
 
 .accordion-content {
-  max-height: 170px;
+  max-height: 200px;
   overflow: hidden;
   transition: max-height var(--smooth);
   & p {
