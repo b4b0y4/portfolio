@@ -304,6 +304,11 @@ main {
 
 .archive-cards .card {
   flex-direction: row-reverse;
+  align-items: flex-end;
+  & .title,
+  & .description {
+    text-align: right;
+  }
 }
 
 .blog-wrapper {
@@ -462,6 +467,10 @@ footer {
     flex-direction: column-reverse;
     & .card-text {
       order: 1;
+    }
+    & .title,
+    & .description {
+      text-align: left;
     }
   }
 }
