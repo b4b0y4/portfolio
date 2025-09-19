@@ -182,6 +182,11 @@ main {
   gap: var(--spacing-3xl);
 }
 
+.home-left {
+  display: flex;
+  flex-direction: column;
+}
+
 .intro-accordion {
   max-width: 400px;
   & input[type="checkbox"] {
@@ -231,11 +236,6 @@ main {
   }
 }
 
-.home-left {
-  display: flex;
-  flex-direction: column;
-}
-
 .social-links {
   margin-top: auto;
   & p {
@@ -254,10 +254,14 @@ main {
   }
 }
 
+.social-links-main {
+  display: none;
+}
+
 .card-box {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-lg);
+  gap: var(--spacing-md);
   flex: 1;
 }
 
@@ -265,7 +269,7 @@ main {
   text-decoration: none;
   color: inherit;
   display: block;
-  padding-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-md);
   border-bottom: 1px dotted var(--color-sub);
   &:last-of-type {
     border-bottom: none;
@@ -393,14 +397,28 @@ main {
 
 footer {
   display: flex;
-  justify-content: end;
-  align-items: center;
+  justify-content: space-between;
+  align-items: end;
   padding: var(--spacing-md) var(--spacing-lg);
   & p {
     color: var(--color-sub);
     font-size: 0.8em;
     margin: 0;
   }
+}
+
+.social-links-footer {
+  display: block;
+  font-size: 0.9em;
+  margin-top: 0;
+}
+.social-links-footer p {
+  color: var(--color-txt);
+  grid-template-columns: 80px 1fr;
+  margin: 5px 0 0 0;
+}
+.social-links-footer p:first-child {
+  margin-top: 0;
 }
 
 @media (max-width: 768px) {
@@ -444,6 +462,10 @@ footer {
     & input[type="checkbox"]:checked ~ .accordion-content {
       max-height: 200px;
     }
+  }
+
+  .social-links-main {
+    display: inline-block;
   }
 
   .card-box {
