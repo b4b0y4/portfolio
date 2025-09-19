@@ -284,7 +284,7 @@ main {
   }
 }
 
-.project-cards .card {
+.archive-cards .card {
   flex-direction: row-reverse;
   align-items: flex-end;
   & .title,
@@ -492,7 +492,7 @@ footer {
     }
   }
 
-  .project-cards .card {
+  .archive-cards .card {
     flex-direction: column-reverse;
     align-items: flex-start;
     & .card-text {
