@@ -201,7 +201,7 @@ main {
 }
 
 .accordion-header {
-  cursor: pointer;
+  cursor: default;
   position: relative;
   display: inline-block;
   margin: 0;
@@ -215,15 +215,12 @@ main {
     color: var(--color-txt);
   }
   &::after {
-    content: ">";
-    transition: transform var(--smooth);
-    color: var(--color-txt);
-    display: inline-block;
+    display: none;
   }
 }
 
 .accordion-content {
-  max-height: 0;
+  max-height: 170px;
   overflow: hidden;
   transition: max-height var(--smooth);
   & p {
@@ -236,26 +233,15 @@ main {
   }
 }
 
-.social-links {
-  margin-top: auto;
-  & p {
-    margin: var(--spacing-xs) 0 0 0;
-    display: grid;
-    grid-template-columns: 110px 1fr;
-    align-items: center;
+.pointer-to-projects {
+  text-align: center;
+  margin-top: 100px;
+  & .desktop-arrow {
+    display: inline;
   }
-  & a {
-    text-decoration: none;
-    color: var(--color-sub);
-    transition: color var(--smooth);
-    &:hover {
-      color: var(--color-txt);
-    }
+  & .mobile-arrow {
+    display: none;
   }
-}
-
-.social-links-main {
-  display: none;
 }
 
 .card-box {
@@ -407,18 +393,26 @@ footer {
   }
 }
 
-.social-links-footer {
+.social-links {
   display: block;
-  font-size: 0.9em;
   margin-top: 0;
-}
-.social-links-footer p {
-  color: var(--color-txt);
-  grid-template-columns: 80px 1fr;
-  margin: 5px 0 0 0;
-}
-.social-links-footer p:first-child {
-  margin-top: 0;
+  & p {
+    color: var(--color-txt);
+    display: grid;
+    grid-template-columns: 85px 1fr;
+    margin: 5px 0 0 0;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  & a {
+    text-decoration: none;
+    color: var(--color-sub);
+    transition: color var(--smooth);
+    &:hover {
+      color: var(--color-txt);
+    }
+  }
 }
 
 @media (max-width: 768px) {
@@ -459,13 +453,35 @@ footer {
 
   .intro-accordion {
     margin-bottom: var(--spacing-xs);
+    & .accordion-header {
+      cursor: pointer;
+    }
+    & .accordion-header::after {
+      content: ">";
+      display: inline-block;
+      transition: transform var(--smooth);
+      color: var(--color-txt);
+    }
+    & .accordion-content {
+      max-height: 0;
+    }
     & input[type="checkbox"]:checked ~ .accordion-content {
       max-height: 200px;
     }
   }
 
-  .social-links-main {
-    display: inline-block;
+  .pointer-to-projects {
+    margin-top: var(--spacing-sm);
+    text-align: left;
+    & p {
+      margin: 0;
+    }
+    & .desktop-arrow {
+      display: none;
+    }
+    & .mobile-arrow {
+      display: inline;
+    }
   }
 
   .card-box {
@@ -487,6 +503,7 @@ footer {
 
   .archive-cards .card {
     flex-direction: column-reverse;
+    align-items: flex-start;
     & .card-text {
       order: 1;
     }
