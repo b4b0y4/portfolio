@@ -236,7 +236,7 @@ main {
 }
 
 .social-links {
-  display: block;
+  display: inline-block;
   & a {
     font-size: 0.9em;
     color: var(--color-sub);
