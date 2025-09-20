@@ -10,8 +10,8 @@
   color-scheme: light dark;
   -webkit-text-size-adjust: 100%;
   --color-bg: #fffff8;
-  --color-txt: #262625;
-  --color-sub: #757575;
+  --color-txt: #121212;
+  --color-sub: #a5a5a5;
   --color-bg-sub: color-mix(in srgb, var(--color-bg) 95%, black);
   --spacing-xs: 10px;
   --spacing-sm: 15px;
@@ -27,7 +27,7 @@
   :root {
     --color-bg: #101010;
     --color-txt: #b8b8b8;
-    --color-sub: #868686;
+    --color-sub: #6a6a6a;
     --color-bg-sub: color-mix(in srgb, var(--color-bg) 95%, white);
   }
 }
