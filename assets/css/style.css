@@ -172,7 +172,7 @@ main {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  gap: var(--spacing-3xl);
+  gap: var(--spacing-xl);
 }
 
 .home-left {
@@ -186,7 +186,7 @@ main {
 }
 
 .intro-accordion {
-  max-width: 400px;
+  max-width: 390px;
   & input[type="checkbox"] {
     display: none;
   }
@@ -289,7 +289,7 @@ main {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  gap: var(--spacing-2xl);
+  gap: var(--spacing-xl);
   & .card-text {
     flex: 1;
   }
@@ -449,6 +449,7 @@ footer {
   }
 
   .intro-accordion {
+    max-width: 100%;
     & .accordion-header {
       cursor: pointer;
     }
