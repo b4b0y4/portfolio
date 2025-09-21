@@ -408,6 +408,15 @@ footer {
   }
 }
 
+@media (max-width: 900px) {
+  .intro-accordion {
+    max-width: 350px;
+  }
+  .card img {
+    width: 250px;
+  }
+}
+
 @media (max-width: 768px) {
   .burger-menu {
     display: block;
