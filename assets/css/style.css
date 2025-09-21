@@ -445,7 +445,7 @@ footer {
   }
 
   main {
-    padding: 0 var(--spacing-lg) var(--spacing-lg);
+    padding: 0 var(--spacing-lg) var(--spacing-xs);
   }
 
   .home-wrapper {
