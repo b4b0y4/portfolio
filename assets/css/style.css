@@ -387,19 +387,18 @@ main {
     margin: 0 0 var(--spacing-xs) 0;
   }
   & p {
-    color: var(--color-sub);
     margin-block-end: var(--spacing-md);
   }
 }
 
 .back-link {
-  color: var(--color-txt);
+  color: var(--color-sub);
   text-decoration: none;
   margin-block-start: var(--spacing-xl);
   display: inline-block;
   transition: color var(--smooth);
   &:hover {
-    color: var(--color-sub);
+    color: var(--color-txt);
   }
 }
 
