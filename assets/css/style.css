@@ -283,6 +283,9 @@ main {
   &:hover img {
     filter: grayscale(0);
   }
+  &:hover .description {
+    color: var(--color-txt);
+  }
 }
 
 .card {
@@ -302,6 +305,7 @@ main {
     margin: 2px;
     font-size: 0.9em;
     line-height: 1.6;
+    transition: color var(--smooth);
   }
   & img {
     width: 280px;
@@ -336,6 +340,7 @@ main {
 
 .blog-posts {
   max-width: 800px;
+  width: 100%;
   margin: 0 auto;
 }
 
