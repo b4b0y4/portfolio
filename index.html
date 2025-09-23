@@ -33,16 +33,6 @@
       name="twitter:image"
       content="https://baboya.eth.limo/assets/img/apple-touch-icon.png"
     />
-    <meta
-      name="theme-color"
-      content="#fffff8"
-      media="(prefers-color-scheme: light)"
-    />
-    <meta
-      name="theme-color"
-      content="#101010"
-      media="(prefers-color-scheme: dark)"
-    />
     <title>baboya</title>
     <link rel="preload" as="image" href="./assets/img/blocks.png" />
     <link rel="preload" as="image" href="./assets/img/dappkit.png" />
@@ -53,7 +43,42 @@
       sizes="180x180"
       href="./assets/img/apple-touch-icon.png"
     />
-    <link rel="stylesheet" href="./assets/css/style.css" />
+    <script>
+      const themeManager = {
+        themes: ["light", "dark"],
+        sys: () => (matchMedia("(prefers-color-scheme: dark)").matches ? 1 : 0),
+        cur() {
+          return localStorage.themeOverride
+            ? this.themes.indexOf(localStorage.themeOverride)
+            : this.sys();
+        },
+        apply() {
+          let o = localStorage.themeOverride,
+            t = this.themes[this.cur()];
+          Object.assign(document.documentElement.dataset, {
+            theme: t,
+            themeSource: o ? "manual" : "system",
+            selectedTheme: o ? t : "",
+          });
+        },
+        cycle() {
+          localStorage.themeOverride = this.themes[(this.cur() + 1) % 2];
+          this.apply();
+        },
+        reset() {
+          localStorage.removeItem("themeOverride");
+          this.apply();
+        },
+      };
+      themeManager.apply();
+      matchMedia("(prefers-color-scheme: dark)").addEventListener(
+        "change",
+        () => !localStorage.themeOverride && themeManager.apply(),
+      );
+      window.themeManager = themeManager;
+    </script>
+
+    <link rel="stylesheet" href="./assets/css/styles.css" />
   </head>
 
   <body>
@@ -69,18 +94,69 @@
           <h1>BABOYA</h1>
         </a>
 
-        <label for="menu-toggle" class="burger-menu">
-          <div class="bar"></div>
-          <div class="bar"></div>
-        </label>
-
-        <nav>
-          <div class="link">
-            <a href="#home" data-page="home">HOME</a>
-            <a href="#blog" data-page="blog">BLOG</a>
-            <a href="#dump" data-page="dump">DUMP</a>
-          </div>
-        </nav>
+        <div class="header-right">
+          <nav>
+            <div class="link">
+              <a href="#home" data-page="home">HOME</a>
+              <a href="#blog" data-page="blog">BLOG</a>
+              <a href="#dump" data-page="dump">DUMP</a>
+            </div>
+          </nav>
+          <button id="theme-btn" aria-label="Toggle theme">
+            <svg
+              id="theme-light"
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="22"
+              viewBox="0 0 16 16"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.33"
+            >
+              <circle cx="8" cy="8" r="3.33" />
+              <path
+                d="M8 0.67v1.33M8 14v1.33M2.81 2.81l0.95 0.95M12.24 12.24l0.95 0.95M0.67 8h1.33M14 8h1.33M2.81 13.19l0.95-0.95M12.24 3.76l0.95-0.95"
+              />
+            </svg>
+            <svg
+              id="theme-dark"
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="22"
+              viewBox="0 0 16 16"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.33"
+            >
+              <path d="M14 8.53A6 6 0 1 1 7.47 2 4.67 4.67 0 0 0 14 8.53z" />
+            </svg>
+            <svg
+              id="theme-system"
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="22"
+              viewBox="0 0 16 16"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.33"
+            >
+              <rect
+                x="1.33"
+                y="2"
+                width="13.33"
+                height="9.33"
+                rx="1.33"
+                ry="1.33"
+              />
+              <line x1="5.33" y1="14" x2="10.67" y2="14" />
+              <line x1="8" y1="11.33" x2="8" y2="14" />
+            </svg>
+          </button>
+          <label for="menu-toggle" class="burger-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </label>
+        </div>
       </header>
 
       <template id="home">
@@ -394,6 +470,11 @@
         }
       };
       addEventListener("DOMContentLoaded", () => {
+        let btn = document.getElementById("theme-btn");
+        if (btn) {
+          btn.onclick = () => themeManager.cycle();
+          btn.ondblclick = (e) => (e.preventDefault(), themeManager.reset());
+        }
         addEventListener(
           "scroll",
           () => {

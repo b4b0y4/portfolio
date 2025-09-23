@@ -7,7 +7,6 @@
 }
 
 :root {
-  color-scheme: light dark;
   -webkit-text-size-adjust: 100%;
   --color-bg: #fffff8;
   --color-txt: #121212;
@@ -23,13 +22,11 @@
   --smooth: 0.3s ease;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-bg: #101010;
-    --color-txt: #b8b8b8;
-    --color-sub: #6a6a6a;
-    --color-bg-sub: color-mix(in srgb, var(--color-bg) 95%, white);
-  }
+[data-theme="dark"] {
+  --color-bg: #101010;
+  --color-txt: #b8b8b8;
+  --color-sub: #6a6a6a;
+  --color-bg-sub: color-mix(in srgb, var(--color-bg) 95%, white);
 }
 
 *,
@@ -87,6 +84,12 @@ header {
     text-decoration: none;
     color: var(--color-txt);
   }
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
 }
 
 nav {
@@ -161,6 +164,31 @@ nav {
   &:last-child {
     bottom: 20%;
   }
+}
+
+#theme-btn {
+  border: 0;
+  background: 0;
+  cursor: pointer;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-txt);
+  & svg {
+    position: absolute;
+    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    transform: rotate(-90deg);
+  }
+}
+
+[data-selected-theme="light"][data-theme-source="manual"] #theme-light,
+[data-selected-theme="dark"][data-theme-source="manual"] #theme-dark,
+[data-theme-source="system"] #theme-system {
+  opacity: 1;
+  transform: rotate(0);
 }
 
 main {
@@ -445,11 +473,11 @@ footer {
   .link {
     flex-direction: column;
     align-items: center;
-    gap: var(--spacing-2xl);
+    gap: var(--spacing-3xl);
   }
 
   main {
-    padding: 0 var(--spacing-lg) var(--spacing-xs);
+    padding: 0 var(--spacing-lg) var(--spacing-lg);
   }
 
   .home-wrapper {
@@ -522,4 +550,9 @@ footer {
       text-align: left;
     }
   }
+}
+
+.menu-toggle:checked ~ .wrapper #theme-btn {
+  opacity: 0;
+  pointer-events: none;
 }
