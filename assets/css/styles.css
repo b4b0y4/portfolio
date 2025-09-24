@@ -34,6 +34,7 @@
 *::after {
   margin: 0;
   padding: 0;
+  font-weight: 400;
   box-sizing: border-box;
 }
 
@@ -45,7 +46,6 @@ html,
 body {
   font-family:
     "Source Code Pro", ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
-  font-weight: 400;
   background-color: var(--color-bg);
   color: var(--color-txt);
   min-height: 100dvh;
@@ -78,7 +78,6 @@ header {
   }
   & h1 {
     font-size: 1.5em;
-    font-weight: 400;
   }
   & a {
     text-decoration: none;
@@ -208,13 +207,12 @@ main {
   flex-direction: column;
 }
 
-.intro-about {
-  font-size: 1.1em;
-  margin-bottom: var(--spacing-xs);
-}
-
 .intro-accordion {
   max-width: 390px;
+  & h2 {
+    font-size: 1.1em;
+    margin-bottom: var(--spacing-xs);
+  }
   & input[type="checkbox"] {
     display: none;
   }
@@ -233,7 +231,6 @@ main {
   & p {
     color: var(--color-sub);
     line-height: 1.6;
-    margin: 0;
     display: inline;
   }
   & span {
@@ -251,7 +248,7 @@ main {
   & p {
     color: var(--color-sub);
     line-height: 1.6;
-    margin: var(--spacing-xs) 0 0 0;
+    margin-top: var(--spacing-xs);
   }
   & span {
     color: var(--color-txt);
@@ -259,8 +256,10 @@ main {
 }
 
 .connect {
-  font-size: 1.1em;
-  margin-top: var(--spacing-3xl);
+  & h2 {
+    font-size: 1.1em;
+    margin-top: var(--spacing-3xl);
+  }
 }
 
 .social-links {
@@ -270,7 +269,7 @@ main {
     color: var(--color-sub);
     display: grid;
     grid-template-columns: 150px 1fr;
-    margin: var(--spacing-xs) 0 0 0;
+    margin-top: var(--spacing-xs);
     text-decoration: none;
     color: var(--color-sub);
     transition: color var(--smooth);
@@ -281,8 +280,10 @@ main {
 }
 
 .pointer-to-projects {
-  font-size: 1.1em;
-  margin-top: var(--spacing-3xl);
+  & h2 {
+    font-size: 1.1em;
+    margin-top: var(--spacing-3xl);
+  }
   & .desktop-arrow {
     display: inline;
   }
@@ -327,7 +328,6 @@ main {
   & h3 {
     margin: 2px;
     font-size: 1.1em;
-    font-weight: 400;
   }
   & .card-teaser {
     color: var(--color-sub);
@@ -361,9 +361,8 @@ main {
 .blog-intro {
   max-width: 800px;
   margin: 0 auto var(--spacing-xl);
-  & p {
+  & h2 {
     font-size: 1.1em;
-    line-height: 1.6;
   }
 }
 
@@ -387,8 +386,7 @@ main {
   transition: background-color var(--smooth);
   & h3 {
     font-size: 1.1em;
-    font-weight: 400;
-    margin: 0 0 5px 0;
+    margin-bottom: 5px;
     color: var(--color-txt);
   }
   &:hover {
@@ -399,7 +397,7 @@ main {
 .post-date {
   color: var(--color-sub);
   font-size: 0.9em;
-  margin: 0 0 var(--spacing-xs) 0;
+  margin-bottom: var(--spacing-xs);
 }
 
 .post-teaser {
@@ -413,19 +411,18 @@ main {
   line-height: 1.6;
   & h2 {
     font-size: 1.1em;
-    font-weight: 400;
     color: var(--color-txt);
-    margin: 0 0 5px 0;
+    margin-bottom: 5px;
   }
   & p {
-    margin: 0 0 var(--spacing-md) 0;
+    margin-bottom: var(--spacing-md);
   }
 }
 
 .back-link {
   color: var(--color-sub);
   text-decoration: none;
-  margin-block-start: var(--spacing-xl);
+  margin-top: var(--spacing-xl);
   display: inline-block;
   transition: color var(--smooth);
   &:hover {
@@ -520,11 +517,15 @@ footer {
   }
 
   .connect {
-    margin-top: var(--spacing-md);
+    & h2 {
+      margin-top: var(--spacing-md);
+    }
   }
 
   .pointer-to-projects {
-    margin: var(--spacing-md) 0 0 0;
+    & h2 {
+      margin-top: var(--spacing-md);
+    }
     & .desktop-arrow {
       display: none;
     }
@@ -535,7 +536,7 @@ footer {
 
   .card-box {
     width: 100%;
-    margin-block-start: 0;
+    margin-top: 0;
   }
 
   .card {
