@@ -415,7 +415,7 @@ main {
     font-size: 1.1em;
     font-weight: 400;
     color: var(--color-txt);
-    margin: 0;
+    margin: 0 0 5px 0;
   }
   & p {
     margin-block-end: var(--spacing-md);
