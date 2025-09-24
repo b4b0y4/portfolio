@@ -386,7 +386,7 @@ main {
   border-block-end: 1px dotted var(--color-sub);
   transition: background-color var(--smooth);
   & h3 {
-    font-size: 1.2em;
+    font-size: 1.1em;
     font-weight: 400;
     margin: 0 0 5px 0;
     color: var(--color-txt);
@@ -412,10 +412,10 @@ main {
   margin: 0 auto;
   line-height: 1.6;
   & h2 {
-    font-size: 1.2em;
+    font-size: 1.1em;
     font-weight: 400;
     color: var(--color-txt);
-    margin: 0 0 var(--spacing-xs) 0;
+    margin: 0;
   }
   & p {
     margin-block-end: var(--spacing-md);
