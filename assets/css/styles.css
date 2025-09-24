@@ -441,6 +441,14 @@ footer {
     color: var(--color-sub);
     font-size: 0.8em;
   }
+  & a {
+    color: var(--color-sub);
+    text-decoration: none;
+    transition: color var(--smooth);
+    &:hover {
+      color: var(--color-txt);
+    }
+  }
 }
 
 @media (max-width: 900px) {
