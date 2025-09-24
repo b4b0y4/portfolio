@@ -418,7 +418,7 @@ main {
     margin: 0 0 5px 0;
   }
   & p {
-    margin-block-end: var(--spacing-md);
+    margin: 0 0 var(--spacing-md) 0;
   }
 }
 
