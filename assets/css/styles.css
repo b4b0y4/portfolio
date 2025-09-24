@@ -311,7 +311,7 @@ main {
   &:hover img {
     filter: grayscale(0);
   }
-  &:hover .description {
+  &:hover .card-teaser {
     color: var(--color-txt);
   }
 }
@@ -324,11 +324,12 @@ main {
   & .card-text {
     flex: 1;
   }
-  & .title {
+  & h3 {
     margin: 2px;
     font-size: 1.1em;
+    font-weight: 400;
   }
-  & .description {
+  & .card-teaser {
     color: var(--color-sub);
     margin: 2px;
     font-size: 0.9em;
@@ -346,8 +347,8 @@ main {
 .dump-cards .card {
   flex-direction: row-reverse;
   align-items: flex-end;
-  & .title,
-  & .description {
+  & h3,
+  & .card-teaser {
     text-align: right;
   }
 }
@@ -385,7 +386,8 @@ main {
   border-block-end: 1px dotted var(--color-sub);
   transition: background-color var(--smooth);
   & h3 {
-    font-size: 1.1em;
+    font-size: 1.2em;
+    font-weight: 400;
     margin: 0 0 5px 0;
     color: var(--color-txt);
   }
@@ -400,7 +402,7 @@ main {
   margin: 0 0 var(--spacing-xs) 0;
 }
 
-.post-excerpt {
+.post-teaser {
   color: var(--color-sub);
   line-height: 1.6;
 }
@@ -410,7 +412,8 @@ main {
   margin: 0 auto;
   line-height: 1.6;
   & h2 {
-    font-size: 1.1em;
+    font-size: 1.2em;
+    font-weight: 400;
     color: var(--color-txt);
     margin: 0 0 var(--spacing-xs) 0;
   }
@@ -545,8 +548,8 @@ footer {
     & .card-text {
       order: 1;
     }
-    & .title,
-    & .description {
+    & h3,
+    & .card-teaser {
       text-align: left;
     }
   }
