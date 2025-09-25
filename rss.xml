@@ -6,17 +6,10 @@
   <description>A feed of my projects and thoughts.</description>
 
   <item>
-    <title>blocks</title>
-    <link>https://blocks.baboya.eth.limo</link>
-    <description><![CDATA[<img src="https://baboya.eth.limo/assets/img/blocks.png" alt="blocks Image" width="1600"><br>Generate live scripts for any Art Blocks (+Engine) collections.]]></description>
-    <pubDate>Thu, 22 Feb 2024 05:00:00 GMT</pubDate>
-  </item>
-
-  <item>
-    <title>Procrastination</title>
-    <link>https://baboya.eth.limo/#blog/procrastination</link>
-    <description>On starting things but never finishing...</description>
-    <pubDate>Sat, 16 Aug 2025 08:00:00 GMT</pubDate>
+    <title>pool</title>
+    <link>https://pool.baboya.eth.limo</link>
+    <description><![CDATA[<img src="https://baboya.eth.limo/assets/img/pool.png" alt="pool Image" width="1600"><br>A lightweight multi-chain interface for PoolTogether V5 WETH vaults.]]></description>
+    <pubDate>Sun, 21 Sep 2025 08:00:00 GMT</pubDate>
   </item>
 
   <item>
@@ -27,10 +20,17 @@
   </item>
 
   <item>
-    <title>pool</title>
-    <link>https://pool.baboya.eth.limo</link>
-    <description><![CDATA[<img src="https://baboya.eth.limo/assets/img/pool.png" alt="pool Image" width="1600"><br>A lightweight multi-chain interface for PoolTogether V5 WETH vaults.]]></description>
-    <pubDate>Sun, 21 Sep 2025 08:00:00 GMT</pubDate>
+    <title>Procrastination</title>
+    <link>https://baboya.eth.limo/#blog/procrastination</link>
+    <description>On starting things but never finishing...</description>
+    <pubDate>Sat, 16 Aug 2025 08:00:00 GMT</pubDate>
+  </item>
+
+  <item>
+    <title>blocks</title>
+    <link>https://blocks.baboya.eth.limo</link>
+    <description><![CDATA[<img src="https://baboya.eth.limo/assets/img/blocks.png" alt="blocks Image" width="1600"><br>Generate live scripts for any Art Blocks (+Engine) collections.]]></description>
+    <pubDate>Thu, 22 Feb 2024 05:00:00 GMT</pubDate>
   </item>
 
 </channel>
