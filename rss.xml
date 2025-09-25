@@ -4,11 +4,43 @@
   <title>baboya</title>
   <link>https://baboya.eth.limo</link>
   <description>A feed of my projects and thoughts.</description>
+
   <item>
-    <title>Welcome to my feed!</title>
+    <title>homepage</title>
     <link>https://baboya.eth.limo</link>
-    <description>This is the first item in my new RSS feed.</description>
     <pubDate>Wed, 24 Sep 2025 08:00:00 GMT</pubDate>
   </item>
+
+  <item>
+    <title>blocks</title>
+    <link>https://blocks.baboya.eth.limo</link>
+    <description>Generate live scripts for any Art Blocks (+Engine) collections.</description>
+    <enclosure url="https://baboya.eth.limo/assets/img/blocks.png" type="image/png" length="42843" />
+    <pubDate>Thu, 22 Feb 2024 05:00:00 GMT</pubDate>
+  </item>
+
+  <item>
+    <title>Procrastination</title>
+    <link>https://baboya.eth.limo/#blog/procrastination</link>
+    <description>On starting things but never finishing...</description>
+    <pubDate>Sat, 16 Aug 2025 08:00:00 GMT</pubDate>
+  </item>
+
+  <item>
+    <title>dappkit</title>
+    <link>https://github.com/b4b0y4/dappkit</link>
+    <description>A minimal dependency starter template for decentralized applications.</description>
+    <enclosure url="https://baboya.eth.limo/assets/img/dappkit.png" type="image/png" length="49810" />
+    <pubDate>Sun, 7 Sep 2025 06:00:00 GMT</pubDate>
+  </item>
+
+  <item>
+    <title>pool</title>
+    <link>https://pool.baboya.eth.limo</link>
+    <description>A lightweight multi-chain interface for PoolTogether V5 WETH vaults.</description>
+    <enclosure url="https://baboya.eth.limo/assets/img/pool.png" type="image/png" length="29051" />
+    <pubDate>Sun, 21 Sep 2025 08:00:00 GMT</pubDate>
+  </item>
+
 </channel>
 </rss>
