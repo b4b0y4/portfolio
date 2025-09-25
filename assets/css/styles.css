@@ -266,11 +266,15 @@ main {
     font-size: 0.9em;
     color: var(--color-sub);
     display: grid;
-    grid-template-columns: 150px 1fr;
+    grid-template-columns: 130px 1fr;
     margin-top: var(--spacing-xs);
     text-decoration: none;
     color: var(--color-sub);
     transition: color var(--smooth);
+    & .dot {
+      text-decoration-line: underline;
+      text-decoration-style: dotted;
+    }
     &:hover {
       color: var(--color-txt);
     }
