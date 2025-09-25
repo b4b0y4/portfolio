@@ -11,7 +11,6 @@
   --color-bg: #fffff8;
   --color-txt: #121212;
   --color-sub: #a5a5a5;
-  --color-bg-sub: color-mix(in srgb, var(--color-bg) 95%, black);
   --spacing-xs: 10px;
   --spacing-sm: 15px;
   --spacing-md: 20px;
@@ -26,7 +25,6 @@
   --color-bg: #101010;
   --color-txt: #b8b8b8;
   --color-sub: #6a6a6a;
-  --color-bg-sub: color-mix(in srgb, var(--color-bg) 95%, white);
 }
 
 *,
@@ -383,25 +381,26 @@ main {
   color: inherit;
   padding: var(--spacing-xs) var(--spacing-xs) var(--spacing-md);
   border-block-end: 1px dotted var(--color-sub);
-  transition: background-color var(--smooth);
   & h3 {
     font-size: 1.1em;
     margin-bottom: 5px;
     color: var(--color-txt);
   }
-  &:hover {
-    background-color: var(--color-bg-sub);
+  & p {
+    color: var(--color-sub);
+    transition: color var(--smooth);
+  }
+  &:hover p {
+    color: var(--color-txt);
   }
 }
 
 .post-date {
-  color: var(--color-sub);
   font-size: 0.9em;
   margin-bottom: var(--spacing-xs);
 }
 
 .post-teaser {
-  color: var(--color-sub);
   line-height: 1.6;
 }
 
