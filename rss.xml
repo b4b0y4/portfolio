@@ -6,12 +6,6 @@
   <description>A feed of my projects and thoughts.</description>
 
   <item>
-    <title>homepage</title>
-    <link>https://baboya.eth.limo</link>
-    <pubDate>Wed, 24 Sep 2025 08:00:00 GMT</pubDate>
-  </item>
-
-  <item>
     <title>blocks</title>
     <link>https://blocks.baboya.eth.limo</link>
     <description><![CDATA[<img src="https://baboya.eth.limo/assets/img/blocks.png" alt="blocks Image" width="1600"><br>Generate live scripts for any Art Blocks (+Engine) collections.]]></description>
