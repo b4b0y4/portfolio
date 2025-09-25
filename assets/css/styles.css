@@ -387,7 +387,6 @@ main {
     color: var(--color-txt);
   }
   & p {
-    color: var(--color-sub);
     transition: color var(--smooth);
   }
   &:hover p {
@@ -396,11 +395,13 @@ main {
 }
 
 .post-date {
+  color: var(--color-sub);
   font-size: 0.9em;
   margin-bottom: var(--spacing-xs);
 }
 
 .post-teaser {
+  color: var(--color-sub);
   line-height: 1.6;
 }
 
