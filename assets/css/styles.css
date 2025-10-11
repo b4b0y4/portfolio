@@ -173,6 +173,9 @@ nav {
   align-items: center;
   justify-content: center;
   color: var(--color-txt);
+  &:hover {
+    color: var(--color-sub);
+  }
   & svg {
     position: absolute;
     transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
