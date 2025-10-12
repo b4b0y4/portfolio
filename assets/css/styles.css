@@ -62,7 +62,7 @@ body {
 header {
   position: sticky;
   inset-block-start: env(safe-area-inset-top);
-  z-index: 100;
+  z-index: 1;
   background-color: var(--color-bg);
   padding: var(--spacing-lg) max(var(--spacing-lg), env(safe-area-inset-right))
     var(--spacing-lg) max(var(--spacing-lg), env(safe-area-inset-left));
