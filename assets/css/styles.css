@@ -48,7 +48,7 @@ body {
     "Source Code Pro", ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
   background-color: var(--color-bg);
   color: var(--color-txt);
-  min-height: 100dvh;
+  min-height: 100%;
   transition:
     background-color var(--smooth),
     color var(--smooth);
