@@ -38,9 +38,10 @@
 
 html {
   overflow-x: hidden;
+  background-color: var(--color-bg);
+  transition: background-color var(--smooth);
 }
 
-html,
 body {
   font-family:
     "Source Code Pro", ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
@@ -57,6 +58,8 @@ body {
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right)
+    env(safe-area-inset-bottom) env(safe-area-inset-left);
 }
 
 header {
