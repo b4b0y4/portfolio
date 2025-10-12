@@ -57,8 +57,6 @@ body {
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
-  padding: env(safe-area-inset-top) env(safe-area-inset-right)
-    env(safe-area-inset-bottom) env(safe-area-inset-left);
 }
 
 header {
@@ -66,7 +64,9 @@ header {
   inset-block-start: env(safe-area-inset-top);
   z-index: 100;
   background-color: var(--color-bg);
-  padding: var(--spacing-lg);
+  padding: var(--spacing-lg) max(var(--spacing-lg), env(safe-area-inset-right))
+    var(--spacing-lg) max(var(--spacing-lg), env(safe-area-inset-left));
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -190,7 +190,8 @@ nav {
 
 main {
   flex: 1;
-  padding: var(--spacing-lg);
+  padding: var(--spacing-lg) max(var(--spacing-lg), env(safe-area-inset-right))
+    var(--spacing-lg) max(var(--spacing-lg), env(safe-area-inset-left));
 }
 
 .home-wrapper {
@@ -437,7 +438,8 @@ main {
 footer {
   display: flex;
   justify-content: start;
-  padding: var(--spacing-md) var(--spacing-lg);
+  padding: var(--spacing-md) max(var(--spacing-lg), env(safe-area-inset-right))
+    var(--spacing-md) max(var(--spacing-lg), env(safe-area-inset-left));
   & p {
     color: var(--color-sub);
     font-size: 0.8em;
