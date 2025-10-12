@@ -40,6 +40,7 @@ html {
   overflow-x: hidden;
   background-color: var(--color-bg);
   transition: background-color var(--smooth);
+  min-height: 100%;
 }
 
 body {
