@@ -6,16 +6,26 @@
   <description>A feed of my projects and thoughts.</description>
 
   <item>
+    <title>rocket</title>
+    <link>https://rocket.baboya.eth.limo</link>
+    <description
+      ><![CDATA[<img src="https://baboya.eth.limo/assets/img/rocket.png" alt="rocket Image" width="1600"><br>Rocket Pool staking interface.]]></description>
+    <pubDate>Sun, 21 Jan 2026 08:00:00 GMT</pubDate>
+  </item>
+
+  <item>
     <title>pool</title>
     <link>https://pool.baboya.eth.limo</link>
-    <description><![CDATA[<img src="https://baboya.eth.limo/assets/img/pool.png" alt="pool Image" width="1600"><br>PoolTogetherV5 WETH vaults interface.]]></description>
+    <description
+      ><![CDATA[<img src="https://baboya.eth.limo/assets/img/pool.png" alt="pool Image" width="1600"><br>PoolTogetherV5 WETH vaults interface.]]></description>
     <pubDate>Sun, 21 Sep 2025 08:00:00 GMT</pubDate>
   </item>
 
   <item>
     <title>dappkit</title>
     <link>https://github.com/b4b0y4/dappkit</link>
-    <description><![CDATA[<img src="https://baboya.eth.limo/assets/img/dappkit.png" alt="dappkit Image" width="1600"><br>Minimal dependency template for dapps.]]></description>
+    <description
+      ><![CDATA[<img src="https://baboya.eth.limo/assets/img/dappkit.png" alt="dappkit Image" width="1600"><br>Minimal dependency template for dapps.]]></description>
     <pubDate>Sun, 7 Sep 2025 06:00:00 GMT</pubDate>
   </item>
 
@@ -29,7 +39,8 @@
   <item>
     <title>blocks</title>
     <link>https://blocks.baboya.eth.limo</link>
-    <description><![CDATA[<img src="https://baboya.eth.limo/assets/img/blocks.png" alt="blocks Image" width="1600"><br>Art Blocks live scripts  generator.]]></description>
+    <description
+      ><![CDATA[<img src="https://baboya.eth.limo/assets/img/blocks.png" alt="blocks Image" width="1600"><br>Art Blocks live scripts  generator.]]></description>
     <pubDate>Thu, 22 Feb 2024 05:00:00 GMT</pubDate>
   </item>
 
