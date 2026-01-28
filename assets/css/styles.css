@@ -54,6 +54,8 @@ body {
 
 .wrapper {
   width: 100dvw;
+  max-width: 1450px;
+  margin: 0 auto;
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
@@ -357,13 +359,66 @@ main {
   }
 }
 
+.dump-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(348px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.dump-cards .card-link,
+.dump-cards .card-link:last-of-type {
+  padding: 0;
+  height: 100%;
+  border-bottom: none;
+  position: relative;
+  z-index: 0;
+  transition: z-index 0s 0.3s;
+}
+
+.dump-cards .card-link:hover {
+  z-index: 2;
+  transition-delay: 0s;
+}
+
 .dump-cards .card {
-  flex-direction: row-reverse;
-  align-items: flex-end;
-  & h3,
-  & .card-teaser {
-    text-align: right;
-  }
+  padding: 0;
+  flex-direction: column-reverse;
+  gap: var(--spacing-xs);
+  align-items: flex-start;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.dump-cards .card img {
+  width: 100%;
+  filter: none;
+  transition: filter var(--smooth);
+}
+
+.dump-cards .card-link:hover img {
+  filter: brightness(0.7);
+}
+
+.dump-cards .card .card-text {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  transform: translateY(100%);
+  background: rgba(255, 255, 248, 0.9);
+  padding: var(--spacing-md);
+  transition: transform var(--smooth);
+}
+
+[data-theme="dark"] .dump-cards .card .card-text {
+  background: rgba(16, 16, 16, 0.9);
+}
+
+.dump-cards .card h3,
+.dump-cards .card .card-teaser {
+  text-align: left;
 }
 
 .blog-wrapper {
@@ -373,7 +428,7 @@ main {
 
 .blog-intro {
   max-width: 800px;
-  margin: 0 auto var(--spacing-xl);
+  margin: 0 auto var(--spacing-3xl);
   & h2 {
     font-size: 1.1em;
   }
@@ -473,6 +528,16 @@ footer {
   }
 }
 
+@media (min-width: 769px) {
+  .dump-cards .card-link:hover .card-text {
+    transform: translateY(0);
+  }
+
+  .dump-cards .card-link .card-text .card-teaser {
+    color: var(--color-sub);
+  }
+}
+
 @media (max-width: 768px) {
   .burger-menu {
     display: block;
@@ -550,6 +615,10 @@ footer {
     }
   }
 
+  .blog-intro {
+    margin: 0 auto var(--spacing-xl);
+  }
+
   .card-box {
     width: 100%;
     margin-top: 0;
@@ -567,11 +636,22 @@ footer {
     }
   }
 
+  .dump-cards {
+    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  }
+
   .dump-cards .card {
+    overflow: visible;
     flex-direction: column-reverse;
     align-items: flex-start;
     & .card-text {
       order: 1;
+      position: static;
+      transform: none;
+      background: transparent;
+      padding: 0;
+      width: auto;
+      z-index: auto;
     }
     & h3,
     & .card-teaser {
