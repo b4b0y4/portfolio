@@ -103,9 +103,20 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: color var(--smooth);
-    &:hover {
-      color: var(--color-sub);
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 0;
+      height: 1.5px;
+      background-color: var(--color-txt);
+      border-radius: 10px;
+      transition: width var(--smooth);
+    }
+    &:hover::after {
+      width: 100%;
     }
   }
 }
