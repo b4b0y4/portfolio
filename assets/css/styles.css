@@ -637,7 +637,7 @@ footer {
   }
 
   .dump-cards {
-    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
 
   .dump-cards .card {
