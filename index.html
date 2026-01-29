@@ -61,6 +61,7 @@
       })();
     </script>
     <link rel="stylesheet" href="./assets/css/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   </head>
 
   <body>
@@ -405,44 +406,12 @@
           <div class="blog-intro">
             <h2>my thoughts on things I remembered to write down &darr;</h2>
           </div>
-
           <div class="blog-posts">
             <div class="post-list">
-              <a href="#blog/procrastination" class="post-link">
-                <h3>Procrastination</h3>
-                <p class="post-date">2025 Aug 16</p>
-              </a>
+              <!-- Blog posts will be injected here -->
             </div>
           </div>
         </div>
-      </template>
-
-      <template id="blog-procrastination">
-        <article class="blog-post">
-          <h2>Procrastination</h2>
-          <p class="post-date">2025 Aug 16</p>
-          <p>
-            I've been thinking a lot about how I start new things but don't very
-            often push through to finish them. I used to feel shitty about it.
-            Now I'm fine; I know that eventually I'll get back to it.
-          </p>
-          <p>
-            Some time ago, I started writing about things and after few month I
-            stoped. Doubt, anxiety — life simply got in the way. Few years
-            later, I picked up coding, and I was worried it would go the way of
-            my writing, but so far so good. Some days are slower than others,
-            yes, but it keeps me interested, and as a bonus: it seems I’m going
-            back to writing again!
-          </p>
-          <p>
-            I’m not pretending to be good or anything, but it's nice to be able
-            to dump some thoughts publicly in my little corner of the internet.
-            Who knows, it might help you, who is reading this, feel a bit less
-            shitty about yourself.
-          </p>
-
-          <a href="#blog" class="back-link">← Back to posts</a>
-        </article>
       </template>
 
       <main></main>
@@ -456,6 +425,7 @@
     </div>
 
     <script>
+      const postSlugs = ["procrastination", "my-first-post"];
       const header = document.querySelector("header"),
         nav = document.querySelector("nav"),
         main = document.querySelector("main"),
@@ -487,19 +457,81 @@
         },
       };
       let lastScroll = scrollY;
-      const loadPage = (page = location.hash.slice(1) || "home") => {
-        const templateId = page.replace("/", "-");
-        const template = document.getElementById(templateId);
+      const parseFrontmatter = (markdown) => {
+        const match = markdown.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
+        const meta = Object.fromEntries(
+          match[1]
+            .split("\n")
+            .filter((l) => l.trim())
+            .map((l) => {
+              const [k, v] = l.split(": ");
+              return [k, v];
+            }),
+        );
+        return { meta, content: match[2] };
+      };
+      const showPost = async (slug) => {
+        if (!postSlugs.includes(slug)) return (location.hash = "blog");
+        try {
+          const markdown = await fetch(`/blog/${slug}.md`).then((r) =>
+            r.ok ? r.text() : Promise.reject(r.statusText),
+          );
+          const { meta, content } = parseFrontmatter(markdown);
+          main.innerHTML = `<article class="blog-post"><h2>${meta.title}</h2><p class="post-date">${meta.date}</p>${marked.parse(content)}<a href="#blog" class="back-link">← Back to posts</a></article>`;
+        } catch (error) {
+          console.error("Failed to fetch post:", error);
+          location.hash = "blog";
+        }
+      };
+      const showBlogIndex = async () => {
+        const blogTemplate = document
+          .getElementById("blog")
+          .content.cloneNode(true);
+        const postList = await Promise.all(
+          postSlugs.map(async (slug) => {
+            try {
+              const markdown = await fetch(`/blog/${slug}.md`).then((r) =>
+                r.ok ? r.text() : Promise.reject(r.statusText),
+              );
+              const { meta } = parseFrontmatter(markdown);
+              return { slug, ...meta };
+            } catch {
+              return null;
+            }
+          }),
+        );
+        blogTemplate.querySelector(".post-list").innerHTML = postList
+          .filter((p) => p)
+          .sort((a, b) => new Date(b.date) - new Date(a.date))
+          .map(
+            (p) =>
+              `<a href="#blog/${p.slug}" class="post-link"><h3>${p.title}</h3><p class="post-date">${p.date}</p></a>`,
+          )
+          .join("");
+        main.innerHTML = "";
+        main.appendChild(blogTemplate);
+      };
+      const showTemplatePage = (page) => {
+        const template = document.getElementById(page.replace(/\//g, "-"));
         if (template) {
           main.innerHTML = "";
           main.appendChild(template.content.cloneNode(true));
-          scrollTo(0, 0);
         } else {
           location.hash = "home";
         }
       };
+      const loadPage = async (page = location.hash.slice(1) || "home") => {
+        if (page.startsWith("blog/")) {
+          await showPost(page.substring(5));
+        } else if (page === "blog") {
+          showBlogIndex();
+        } else {
+          showTemplatePage(page);
+        }
+        scrollTo(0, 0);
+      };
       addEventListener("DOMContentLoaded", () => {
-        let btn = document.getElementById("theme-btn");
+        const btn = document.getElementById("theme-btn");
         btn.onclick = () => themeManager.cycle();
         btn.ondblclick = (e) => (e.preventDefault(), themeManager.reset());
         matchMedia("(prefers-color-scheme: dark)").addEventListener(
