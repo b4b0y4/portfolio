@@ -449,17 +449,14 @@ main {
   text-decoration: none;
   color: inherit;
   padding: var(--spacing-xs) var(--spacing-xs) var(--spacing-md);
-  border-block-end: 1px dotted var(--color-sub);
   & h3 {
-    font-size: 1.1em;
+    font-size: 1.2em;
     margin-bottom: 5px;
     color: var(--color-txt);
   }
-  & p {
-    transition: color var(--smooth);
-  }
-  &:hover p {
-    color: var(--color-txt);
+  &:hover h3 {
+    text-decoration-line: underline;
+    text-decoration-style: dotted;
   }
 }
 
@@ -467,11 +464,6 @@ main {
   color: var(--color-sub);
   font-size: 0.9em;
   margin-bottom: var(--spacing-xs);
-}
-
-.post-teaser {
-  color: var(--color-sub);
-  line-height: 1.6;
 }
 
 .blog-post {
