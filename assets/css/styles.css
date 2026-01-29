@@ -10,7 +10,7 @@
   -webkit-text-size-adjust: 100%;
   --color-bg: #fffff8;
   --color-txt: #121212;
-  --color-sub: #a5a5a5;
+  --color-sub: #707070;
   --spacing-xs: 10px;
   --spacing-sm: 15px;
   --spacing-md: 20px;
@@ -24,7 +24,6 @@
 [data-theme="dark"] {
   --color-bg: #101010;
   --color-txt: #b8b8b8;
-  --color-sub: #6a6a6a;
 }
 
 *,
