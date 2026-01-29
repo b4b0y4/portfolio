@@ -442,13 +442,13 @@ main {
 .post-list {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-md);
+  gap: var(--spacing-xs);
 }
 
 .post-link {
   text-decoration: none;
   color: inherit;
-  padding: var(--spacing-xs) var(--spacing-xs) var(--spacing-md);
+  padding: var(--spacing-xs);
   & h3 {
     font-size: 1.2em;
     margin-bottom: 5px;
